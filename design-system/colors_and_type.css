@@ -1,0 +1,345 @@
+/* =============================================================
+   LAPZO DESIGN SYSTEM — Tokens
+   Colors, typography, spacing, shadows, radii.
+   Based on Lapzo brand manual v2.0 (rebranding 2025–2026).
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   Fonts — Poppins + Space Grotesk from local TTF files (fonts/).
+   Degular (display real de marca) aún pendiente: ver --font-display.
+   ------------------------------------------------------------- */
+/* Degular — display real de la marca (licencia propia, OH no Type Co).
+   'Degular Display' = óptica para titulares grandes (H1/hero/ads).
+   'Degular' variable = workhorse, cubre Light→Black. */
+@font-face { font-family: 'Degular Display'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/DegularDisplay-Regular.otf')  format('opentype'); }
+@font-face { font-family: 'Degular Display'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/DegularDisplay-Medium.otf')   format('opentype'); }
+@font-face { font-family: 'Degular Display'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/DegularDisplay-Semibold.otf') format('opentype'); }
+@font-face { font-family: 'Degular Display'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/DegularDisplay-Bold.otf')     format('opentype'); }
+@font-face { font-family: 'Degular'; font-style: normal; font-weight: 300 900; font-display: swap; src: url('fonts/DegularVariable.ttf') format('truetype-variations'); }
+
+/* Space Grotesk — local variable TTF (OFL). Respaldo si Degular no carga. */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('fonts/SpaceGrotesk-Variable.ttf') format('truetype-variations');
+}
+
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 100; font-display: swap; src: url('fonts/Poppins-Thin.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 100; font-display: swap; src: url('fonts/Poppins-ThinItalic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 200; font-display: swap; src: url('fonts/Poppins-ExtraLight.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 200; font-display: swap; src: url('fonts/Poppins-ExtraLightItalic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/Poppins-Light.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 300; font-display: swap; src: url('fonts/Poppins-LightItalic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/Poppins-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 400; font-display: swap; src: url('fonts/Poppins-Italic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/Poppins-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 500; font-display: swap; src: url('fonts/Poppins-MediumItalic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/Poppins-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 600; font-display: swap; src: url('fonts/Poppins-SemiBoldItalic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/Poppins-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 700; font-display: swap; src: url('fonts/Poppins-BoldItalic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 800; font-display: swap; src: url('fonts/Poppins-ExtraBold.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 800; font-display: swap; src: url('fonts/Poppins-ExtraBoldItalic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 900; font-display: swap; src: url('fonts/Poppins-Black.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 900; font-display: swap; src: url('fonts/Poppins-BlackItalic.ttf') format('truetype'); }
+
+:root {
+  /* ===== PRIMARY — VIOLETS ===== */
+  --lapzo-violet-darkest:   #240C50; /* wordmark, deep dark */
+  --lapzo-violet-dark:      #5029A3; /* deep secondary */
+  --lapzo-violet-mid:       #5B19BE;
+  --lapzo-violet-700:       #6E1FE2;
+  --lapzo-violet-brand:     #7D31F6; /* core brand violet */
+  --lapzo-violet:           #8B55FE; /* ⭐ CTA / isotipo / buttons */
+  --lapzo-violet-light:     #A685FF;
+  --lapzo-violet-pastel-1:  #C3B1FF;
+  --lapzo-violet-pastel-2:  #DDD4FF;
+  --lapzo-violet-pastel-3:  #ECE8FF;
+  --lapzo-violet-soft:      #F5F2FF; /* section bg */
+  --lapzo-violet-mist:      #DFD9F8; /* brochure / cover bg */
+  --lapzo-violet-stroke:    #C5A9FF; /* stroke / outline */
+
+  /* ===== PRIMARY — TEALS / VERDE LAPZO ===== */
+  --lapzo-teal-darkest:     #012D33;
+  --lapzo-teal-dark:        #0F4C52;
+  --lapzo-teal-mid:         #0C5C63;
+  --lapzo-teal-700:         #08757D;
+  --lapzo-teal:             #04949D; /* secondary brand */
+  --lapzo-teal-light:       #08BEC4;
+  --lapzo-teal-mint:        #21DDE0;
+  --lapzo-teal-bright:      #54F4F2;
+  --lapzo-teal-pastel:      #92FDF7;
+  --lapzo-teal-soft:        #C9FEFB;
+  --lapzo-teal-min:         #EFFEFC;
+
+  /* ===== FOUNDATION ===== */
+  --lapzo-bg-dark:          #14142A; /* sidebars, dark mode */
+  --lapzo-bg-page:          #F8FAFC; /* page bg */
+  --lapzo-bg-soft:          #F7F7FC; /* alt section bg */
+  --lapzo-bg-cardbox:       #F0EEEE; /* "Acerca de lapzo" box */
+  --lapzo-white:            #FFFFFF;
+
+  /* ===== SECONDARIES (max 20% surface) ===== */
+  --lapzo-pink:             #F3538E;
+  --lapzo-pink-mid:         #F9A6C4;
+  --lapzo-pink-light:       #FFD3E3;
+  --lapzo-orange:           #F9912A;
+  --lapzo-orange-mid:       #FBBE81;
+  --lapzo-orange-light:     #FDE0C3;
+  --lapzo-green-accent:     #01DA8C; /* success */
+  --lapzo-green-mid:        #7BECC3;
+  --lapzo-green-light:      #CCFFEC;
+  --lapzo-blue:             #2F80ED;
+  --lapzo-blue-mid:         #7FB2F0;
+  --lapzo-blue-light:       #D6E6FB;
+  --lapzo-yellow:           #F2C94C;
+  --lapzo-yellow-mid:       #F7DEBA;
+  --lapzo-yellow-light:     #FFF3CC;
+
+  /* ===== NEUTRALS / TEXT ===== */
+  --lapzo-ink:              #3F3F46; /* body text on light */
+  --lapzo-ink-2:            #71717A; /* secondary text */
+  --lapzo-ink-3:            #475569; /* slate */
+  --lapzo-ink-4:            #94A3B8; /* muted */
+  --lapzo-border:           #E2E2E8;
+  --lapzo-border-soft:      #EFF0F6;
+  --lapzo-divider:          #D9DBE9;
+
+  /* ===== SEMANTIC ===== */
+  --bg:                     var(--lapzo-bg-page);
+  --bg-elev:                var(--lapzo-white);
+  --bg-soft:                var(--lapzo-bg-soft);
+  --bg-dark:                var(--lapzo-bg-dark);
+
+  --fg:                     var(--lapzo-ink);
+  --fg-muted:               var(--lapzo-ink-2);
+  --fg-soft:                var(--lapzo-ink-4);
+  --fg-on-dark:             var(--lapzo-white);
+  --fg-on-violet:           var(--lapzo-white);
+
+  --accent:                 var(--lapzo-violet);
+  --accent-deep:            var(--lapzo-violet-darkest);
+  --accent-soft:            var(--lapzo-violet-soft);
+
+  --success:                var(--lapzo-green-accent);
+  --warning:                var(--lapzo-orange);
+  --danger:                 var(--lapzo-pink);
+  --info:                   var(--lapzo-blue);
+
+  /* ===== TYPOGRAPHY =====
+     Degular es la display real de la marca (ya cargada localmente, ver @font-face).
+     'Degular Display' para titulares grandes; 'Degular' para display general.
+     Poppins para todo lo demás. Space Grotesk queda como respaldo. */
+  --font-display:   'Degular Display', 'Degular', 'Space Grotesk', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-display-2: 'Degular', 'Space Grotesk', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-body:      'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+  --text-h1:        clamp(40px, 5vw, 64px);
+  --text-h2:        32px;
+  --text-h3:        24px;
+  --text-h4:        18px;
+  --text-body:      16px;
+  --text-small:     14px;
+  --text-caption:   12px;
+  --text-eyebrow:   13px;
+
+  --leading-tight:  1.0;
+  --leading-snug:   1.2;
+  --leading-cozy:   1.3;
+  --leading-normal: 1.4;
+  --leading-relaxed: 1.6;
+
+  --tracking-eyebrow: 0.08em;
+
+  /* ===== RADII ===== */
+  --radius-xs:      4px;
+  --radius-sm:      8px;
+  --radius-md:      12px;   /* photos, mockups */
+  --radius-lg:      16px;
+  --radius-xl:      20px;
+  --radius-2xl:     24px;   /* IA cards */
+  --radius-pill:    9999px; /* buttons, pills */
+
+  /* ===== SPACING ===== */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ===== SHADOWS ===== */
+  --shadow-hard:    4px 4px 0 #14142A;
+  --shadow-hard-sm: 3px 3px 0 #14142A;
+  --shadow-soft:    0 4px 20px rgba(0,0,0,0.08);
+  --shadow-pop:     0 8px 28px rgba(20,20,42,0.12);
+  --shadow-glow:    0 0 24px rgba(139,85,254,0.20);
+
+  /* ===== GRADIENTS ===== */
+  --gradient-brand:       linear-gradient(135deg, #5029A3 0%, #8B55FE 60%, #C3B1FF 100%);
+  --gradient-brand-soft:  linear-gradient(135deg, #8B55FE 0%, #C3B1FF 60%, #ECE8FF 100%);
+  --gradient-ia:          linear-gradient(135deg, #A685FF 0%, #DDD4FF 100%);
+  --gradient-teal:        linear-gradient(135deg, #04949D 0%, #21DDE0 70%, #92FDF7 100%);
+  --gradient-warm:        linear-gradient(135deg, #F9912A 0%, #FBBE81 60%, #FDE0C3 100%);
+  --gradient-pink:        linear-gradient(135deg, #F3538E 0%, #F9A6C4 60%, #FFD3E3 100%);
+
+  /* ===== DATA-VIZ / CHARTS (People Analytics) =====
+     Paleta categórica ordenada por máxima distinción. Para texto sobre un
+     fill, usar el tono *-dark del mismo color. Series secuenciales para
+     heatmaps; positive/negative para deltas. */
+  --chart-1: #8B55FE; /* violeta */
+  --chart-2: #04949D; /* teal */
+  --chart-3: #F9912A; /* naranja */
+  --chart-4: #F3538E; /* rosa */
+  --chart-5: #2F80ED; /* azul */
+  --chart-6: #01DA8C; /* verde */
+  --chart-7: #F2C94C; /* amarillo */
+  --chart-8: #5029A3; /* violeta oscuro */
+
+  --chart-positive: #01DA8C;
+  --chart-negative: #F3538E;
+  --chart-neutral:  #94A3B8;
+  --chart-grid:     #E2E2E8;
+  --chart-axis:     #71717A;
+
+  /* secuencial violeta (claro→oscuro) para heatmaps / intensidad */
+  --chart-seq-1: #ECE8FF; --chart-seq-2: #C3B1FF; --chart-seq-3: #A685FF;
+  --chart-seq-4: #8B55FE; --chart-seq-5: #7D31F6; --chart-seq-6: #5029A3;
+}
+
+/* -------------------------------------------------------------
+   SEMANTIC TYPOGRAPHY
+   ------------------------------------------------------------- */
+html, body {
+  font-family: var(--font-body);
+  color: var(--fg);
+  background: var(--bg);
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-h1);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  color: var(--accent-deep);
+  text-wrap: balance;
+}
+h2, .h2 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-h2);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.01em;
+  color: var(--accent-deep);
+  text-wrap: balance;
+}
+h3, .h3 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-h3);
+  line-height: var(--leading-cozy);
+  color: var(--accent-deep);
+}
+h4, .h4 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-h4);
+  line-height: var(--leading-normal);
+  color: var(--accent-deep);
+}
+p, .body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+  color: var(--fg);
+  text-wrap: pretty;
+}
+.small, small {
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+  color: var(--fg-muted);
+}
+.caption {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-caption);
+  line-height: var(--leading-normal);
+  color: var(--fg-muted);
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+em, .italic { font-style: italic; }
+strong, b { font-weight: 600; }
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+a:hover { color: var(--accent-deep); }
+
+/* -------------------------------------------------------------
+   COMPONENT PRIMITIVES
+   ------------------------------------------------------------- */
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-body);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 14px 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn-primary { background: var(--lapzo-violet); color: var(--lapzo-white); }
+.btn-primary:hover { background: var(--lapzo-violet-brand); }
+.btn-primary:active { transform: scale(.98); }
+.btn-ghost {
+  background: transparent;
+  border: 1.5px solid var(--lapzo-violet);
+  color: var(--lapzo-violet);
+  font-weight: 500;
+}
+.btn-ghost:hover { background: var(--lapzo-violet-soft); }
+.btn-dark { background: var(--lapzo-bg-dark); color: var(--lapzo-white); }
+.btn-dark:hover { background: #1f1f3d; }
+.btn-sm { padding: 8px 16px; font-size: var(--text-small); }
+.btn-lg { padding: 18px 32px; font-size: var(--text-h4); }
+
+.card {
+  background: var(--bg-elev);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-6);
+}
+.card-hard {
+  background: var(--bg-elev);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hard);
+  border: 1.5px solid var(--lapzo-bg-dark);
+  padding: var(--space-6);
+}
+.card-ia {
+  background: var(--gradient-ia);
+  border: 1px solid var(--lapzo-violet-pastel-2);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+}

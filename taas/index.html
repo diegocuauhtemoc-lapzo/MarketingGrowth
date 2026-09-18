@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaaS · Talent-as-a-Service — Lapzo</title>
+<meta name="description" content="Lapzo opera el ciclo completo de desarrollo de talento por ti. Ideal para empresas de 25 a 60 colaboradores que no tienen (o no necesitan) un área de RH completa.">
+<link rel="stylesheet" href="../design-system/colors_and_type.css">
+<style>
+  :root { --max: 1200px; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#fff; color:#3F3F46; }
+  img { max-width:100%; display:block; }
+
+  /* Nav */
+  nav.top { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9); backdrop-filter: blur(16px); border-bottom:1px solid #EFF0F6; }
+  nav.top .wrap { max-width: var(--max); margin:0 auto; padding:14px 28px; display:flex; align-items:center; gap:24px; }
+  nav.top img.logo { height:32px; }
+  nav.top .links { display:flex; gap:22px; flex:1; }
+  nav.top .links a { color:#3F3F46; text-decoration:none; font-size:14px; font-weight:500; }
+  nav.top .links a:hover { color:#8B55FE; }
+  .btn { font-family:var(--font-body); font-weight:600; font-size:14px; padding:11px 22px; border-radius:9999px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; transition: all .15s; text-decoration:none; white-space:nowrap; }
+  .btn-primary { background:#8B55FE; color:#fff; }
+  .btn-primary:hover { background:#7D31F6; }
+  .btn-ghost { background:transparent; border:1.5px solid #8B55FE; color:#8B55FE; font-weight:500; padding:9.5px 22px; }
+  .btn-ghost:hover { background:#F5F2FF; }
+  .btn-lg { padding:16px 30px; font-size:16px; }
+
+  /* Hero */
+  .hero { position:relative; overflow:hidden; background:#FBFAFE; }
+  .hero .wrap { max-width: var(--max); margin:0 auto; padding:64px 28px 76px; display:grid; grid-template-columns: 1.1fr 1fr; gap:50px; align-items:center; }
+  .hero .eye { display:inline-flex; align-items:center; gap:8px; padding:6px 14px; background:#ECE8FF; color:#5029A3; font-size:12.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; border-radius:9999px; margin-bottom:18px; }
+  .hero h1 { font-family: var(--font-display); font-weight:700; font-size: clamp(34px, 4.6vw, 54px); line-height:1.05; letter-spacing:-0.02em; color:#240C50; margin:0 0 18px; text-wrap:balance; }
+  .hero h1 .accent { position:relative; display:inline-block; color:#8B55FE; font-style:italic; font-family:var(--font-body); font-weight:600; }
+  .hero h1 .accent::after { content:''; position:absolute; left:-4px; right:-4px; bottom:-2px; height:8px; background:url('../design-system/assets/decor/squiggle-line-teal.svg') center/contain no-repeat; }
+  .hero p.lede { font-size:17px; line-height:1.55; color:#3F3F46; margin:0 0 26px; max-width:520px; }
+  .hero .ctas { display:flex; gap:12px; flex-wrap:wrap; }
+  .hero .proof { margin-top:26px; font-size:12.5px; color:#71717A; }
+
+  .hero .stage { position:relative; aspect-ratio:1; width:100%; max-width:460px; margin:0 auto; }
+  .hero .stage .grad { position:absolute; inset:8%; border-radius:50%; background: radial-gradient(circle at 30% 30%, #C3B1FF, #8B55FE 50%, #5029A3 95%); filter: blur(20px); opacity:.5; }
+  .hero .stage .circle { position:absolute; inset:2%; border:2px dashed #C3B1FF; border-radius:50%; transform: rotate(-10deg); }
+  .hero .stage .card1 { position:absolute; top:6%; left:2%; width:56%; background:#fff; border-radius:16px; box-shadow:0 20px 50px rgba(20,20,42,.18); border:1.5px solid #14142A; padding:18px; transform: rotate(-3deg); }
+  .hero .stage .card1 .ico { width:40px; height:40px; margin-bottom:10px; }
+  .hero .stage .card1 h4 { margin:0 0 4px; font-size:14px; color:#240C50; }
+  .hero .stage .card1 p { margin:0; font-size:12px; color:#71717A; }
+  .hero .stage .card2 { position:absolute; bottom:8%; right:0; width:64%; background:#14142A; color:#fff; border-radius:16px; box-shadow:0 20px 50px rgba(20,20,42,.25); padding:18px; transform: rotate(2deg); }
+  .hero .stage .card2 .lbl { font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#A685FF; margin-bottom:6px; }
+  .hero .stage .card2 .big { font-family:var(--font-display); font-size:30px; font-weight:700; color:#54F4F2; line-height:1; }
+  .hero .stage .card2 p { margin:6px 0 0; font-size:12.5px; color:rgba(255,255,255,.75); }
+  .hero .stage .lapzi { position:absolute; bottom:-6px; left:-4px; width:96px; }
+  .hero .stage .star { position:absolute; top:0; right:16%; width:30px; }
+  .hero .decor-arrow { position:absolute; left:32%; top:110px; width:120px; opacity:.35; pointer-events:none; }
+
+  /* Logos band */
+  .logos { background:#fff; padding: 32px 28px; border-top:1px solid #EFF0F6; border-bottom:1px solid #EFF0F6; }
+  .logos .wrap { max-width: var(--max); margin:0 auto; text-align:center; }
+  .logos .label { font-size:11.5px; color:#71717A; letter-spacing:.08em; text-transform:uppercase; margin-bottom:18px; }
+  .logos .row { display:flex; justify-content:space-around; gap:34px; flex-wrap:wrap; align-items:center; }
+  .logos .row img { height:26px; opacity:.55; filter: grayscale(1); }
+
+  /* Section base */
+  section.s { padding: 76px 28px; }
+  section.s .wrap { max-width: var(--max); margin:0 auto; }
+  .eyebrow { font-size:12.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#8B55FE; }
+  .sec-head { text-align:center; max-width:680px; margin:0 auto 46px; }
+  .sec-head h2 { font-family:var(--font-display); font-weight:700; font-size: clamp(26px, 3.2vw, 40px); line-height:1.08; letter-spacing:-0.02em; color:#240C50; margin:8px 0 12px; text-wrap:balance; }
+  .sec-head p { font-size:16px; color:#3F3F46; line-height:1.55; margin:0; }
+  .sec-head.left { text-align:left; max-width:none; }
+
+  /* Pains */
+  .pains { background:#F8FAFC; }
+  .pains .grid { display:grid; grid-template-columns: repeat(4,1fr); gap:18px; }
+  .pains .card { background:#fff; border-radius:18px; padding:24px; border:1px solid #EFF0F6; }
+  .pains .card img.ico { width:40px; height:40px; margin-bottom:14px; }
+  .pains .card h3 { font-family:var(--font-body); font-weight:600; font-size:15.5px; color:#240C50; margin:0 0 6px; line-height:1.3; }
+  .pains .card p { font-size:13.5px; color:#3F3F46; line-height:1.5; margin:0; }
+
+  /* Steps */
+  .steps { background:#fff; }
+  .steps .grid { display:grid; grid-template-columns: repeat(4,1fr); gap:0; position:relative; }
+  .steps .step { padding:0 20px; position:relative; }
+  .steps .step .num { width:40px; height:40px; border-radius:50%; background:#ECE8FF; color:#5029A3; font-family:var(--font-display); font-weight:700; font-size:16px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+  .steps .step h3 { font-family:var(--font-body); font-weight:600; font-size:16px; color:#240C50; margin:0 0 8px; }
+  .steps .step p { font-size:13.5px; color:#3F3F46; line-height:1.55; margin:0; }
+  .steps .step:not(:last-child)::after { content:''; position:absolute; top:20px; left:calc(100% - 6px); width:calc(100% - 28px); border-top:1.5px dashed #C3B1FF; }
+
+  /* Modules / lo que opera Lapzo */
+  .modules { background:#F5F2FF; }
+  .modules .grid { display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
+  .modules .card { background:#fff; border-radius:18px; padding:24px; border:1px solid #EFF0F6; transition: all .2s; position:relative; overflow:hidden; }
+  .modules .card:hover { transform: translateY(-3px); border-color:#C3B1FF; box-shadow:0 12px 28px rgba(139,85,254,.10); }
+  .modules .card img.ico { width:50px; height:50px; margin-bottom:14px; }
+  .modules .card .abbr { display:inline-block; padding:3px 8px; border-radius:6px; font-size:11px; font-weight:700; background:#ECE8FF; color:#5029A3; margin-bottom:8px; }
+  .modules .card h3 { font-family:var(--font-body); font-weight:600; font-size:17px; color:#240C50; margin:0 0 6px; }
+  .modules .card p { font-size:13.5px; color:#3F3F46; line-height:1.5; margin:0; }
+
+  /* Pillars */
+  .pillars { background:#14142A; color:#fff; }
+  .pillars .sec-head h2 { color:#fff; }
+  .pillars .sec-head p { color:rgba(255,255,255,.7); }
+  .pillars .grid { display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
+  .pillars .card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:28px; }
+  .pillars .card .eyebrow { color:#54F4F2; }
+  .pillars .card h3 { font-family:var(--font-display); font-weight:700; font-size:20px; color:#fff; margin:10px 0 10px; letter-spacing:-0.01em; }
+  .pillars .card p { color:rgba(255,255,255,.72); font-size:14px; line-height:1.6; margin:0; }
+
+  /* Persona */
+  .personas { background:#fff; }
+  .personas .tabs { display:flex; gap:10px; margin-bottom:24px; flex-wrap:wrap; }
+  .personas .tab { padding:8px 16px; border-radius:9999px; border:1px solid #E2E2E8; background:#fff; cursor:pointer; font-size:13px; font-weight:500; color:#3F3F46; }
+  .personas .tab.active { background:#240C50; color:#fff; border-color:#240C50; }
+  .personas .panel { display:none; grid-template-columns: 1fr 1fr; gap:40px; align-items:center; }
+  .personas .panel.active { display:grid; }
+  .personas .panel h3 { font-family:var(--font-display); font-weight:700; font-size:28px; color:#240C50; margin:0 0 10px; letter-spacing:-0.02em; }
+  .personas .panel .quote { font-size:17px; font-style:italic; color:#5029A3; line-height:1.5; border-left:3px solid #8B55FE; padding:6px 0 6px 16px; margin: 14px 0; }
+  .personas .panel ul { list-style:none; padding:0; margin: 14px 0; }
+  .personas .panel ul li { padding:7px 0; display:flex; gap:10px; font-size:14px; }
+  .personas .panel ul li::before { content:'✓'; color:#01DA8C; font-weight:700; flex-shrink:0; }
+  .personas .panel .ph { aspect-ratio:1.15; border-radius:18px; background: linear-gradient(135deg,#DDD4FF,#8B55FE); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+  .personas .panel .ph::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 70% 30%, rgba(255,255,255,.35), transparent 60%); }
+  .personas .panel .ph .lapzi { position:absolute; right:18px; bottom:18px; width:84px; }
+  .personas .panel .ph .label { font-family:var(--font-display); font-weight:700; font-size:30px; color:#fff; padding:24px; line-height:1.1; position:relative; z-index:1; }
+
+  /* Fit checklist */
+  .fit { background:#F8FAFC; }
+  .fit .box { background:#fff; border-radius:24px; border:1px solid #EFF0F6; box-shadow:0 6px 24px rgba(20,20,42,.06); padding:44px; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+  .fit .box h3 { font-family:var(--font-display); font-weight:700; font-size:26px; color:#240C50; margin:0 0 16px; letter-spacing:-0.01em; }
+  .fit ul { list-style:none; padding:0; margin:0; }
+  .fit ul li { padding:9px 0; display:flex; gap:10px; font-size:14.5px; border-bottom:1px solid #F0EEEE; }
+  .fit ul li:last-child { border-bottom:none; }
+  .fit ul li::before { content:'✓'; color:#01DA8C; font-weight:700; flex-shrink:0; }
+  .fit .note { background:#F5F2FF; border-radius:16px; padding:22px; font-size:13.5px; color:#5029A3; line-height:1.6; }
+  .fit .note strong { display:block; margin-bottom:6px; color:#240C50; font-size:14.5px; }
+
+  /* FAQ */
+  .faq { background:#fff; }
+  .faq .list { max-width:760px; margin:0 auto; }
+  .faq details { border-bottom:1px solid #EFF0F6; padding:18px 0; }
+  .faq summary { cursor:pointer; font-family:var(--font-body); font-weight:600; font-size:15.5px; color:#240C50; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:'+'; font-size:22px; color:#8B55FE; font-weight:400; flex-shrink:0; }
+  .faq details[open] summary::after { content:'–'; }
+  .faq details p { font-size:14.5px; color:#3F3F46; line-height:1.6; margin:12px 0 0; }
+
+  /* CTA strip */
+  .cta-strip { padding: 70px 28px 90px; background:#FBFAFE; }
+  .cta-strip .wrap { max-width:var(--max); margin:0 auto; background: #14142A; border-radius:24px; padding:50px; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; position:relative; overflow:hidden; }
+  .cta-strip h2 { font-family:var(--font-display); font-weight:700; font-size:34px; line-height:1.08; color:#fff; margin:0; letter-spacing:-0.02em; max-width:560px; }
+  .cta-strip h2 em { color:#54F4F2; font-style:italic; font-family:var(--font-body); }
+  .cta-strip .deco { position:absolute; right:30px; top:-30px; width:110px; opacity:.25; }
+  .cta-strip .actions { display:flex; gap:12px; flex-wrap:wrap; }
+
+  /* Footer */
+  footer { background:#0a0a1a; color:#fff; padding: 48px 28px 24px; }
+  footer .wrap { max-width:var(--max); margin:0 auto; }
+  footer .top { display:flex; justify-content:space-between; align-items:center; gap:24px; padding-bottom:24px; border-bottom:1px solid rgba(255,255,255,.08); flex-wrap:wrap; }
+  footer .top img { height:30px; }
+  footer .top p { color:rgba(255,255,255,.5); font-size:12.5px; margin:0; }
+  footer .bottom { padding-top:20px; color:rgba(255,255,255,.4); font-size:12px; }
+
+  @media (max-width: 880px) {
+    .hero .wrap { grid-template-columns:1fr; padding-top:40px; }
+    .hero .stage { margin-top:20px; }
+    .pains .grid, .modules .grid, .pillars .grid { grid-template-columns: repeat(2,1fr); }
+    .steps .grid { grid-template-columns: 1fr 1fr; row-gap:32px; }
+    .steps .step:nth-child(2)::after { display:none; }
+    .personas .panel, .fit .box { grid-template-columns:1fr; }
+    nav.top .links { display:none; }
+  }
+  @media (max-width: 560px) {
+    .pains .grid, .modules .grid, .pillars .grid, .steps .grid { grid-template-columns: 1fr; }
+    .steps .step::after { display:none; }
+    .cta-strip .wrap { padding:34px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="wrap">
+    <img class="logo" src="../design-system/assets/logo/lapzo-logo.png" alt="Lapzo">
+    <div class="links">
+      <a href="https://www.lapzo.com">Producto</a>
+      <a href="#modulos">TaaS</a>
+      <a href="#para-ti">¿Es para ti?</a>
+      <a href="#faq">Preguntas</a>
+    </div>
+    <a class="btn btn-primary" href="#cta">Agenda tu diagnóstico</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="decor-arrow" src="../design-system/assets/decor/arrow-curve-violet.svg" alt="">
+  <div class="wrap">
+    <div>
+      <div class="eye">Talent-as-a-Service</div>
+      <h1>Opera el ciclo completo de talento <span class="accent">sin armar un área de RH</span></h1>
+      <p class="lede">Para empresas de 25 a 60 colaboradores que necesitan capacitación, evaluación y desarrollo de talento bien hecho, sin contratar ni coordinar a un equipo interno. Lapzo lo opera por ti, como tu aliado estratégico.</p>
+      <div class="ctas">
+        <a class="btn btn-primary btn-lg" href="#cta">Agenda tu diagnóstico →</a>
+        <a class="btn btn-ghost btn-lg" href="#como-funciona">Ver cómo funciona</a>
+      </div>
+      <div class="proof">✦ Cocreado con expertos de RH · Pensado para equipos sin área de talento dedicada</div>
+    </div>
+    <div class="stage">
+      <div class="grad"></div>
+      <div class="circle"></div>
+      <div class="card1">
+        <img class="ico" src="../design-system/assets/modules/icon-rocket-violet.svg" alt="">
+        <h4>Plan de talento activo</h4>
+        <p>Operado por especialistas + Lapzo.IA</p>
+      </div>
+      <div class="card2">
+        <div class="lbl">Reportes al día</div>
+        <div class="big">100%</div>
+        <p>Visibilidad de avance sin pedirle nada a tu equipo</p>
+      </div>
+      <img class="lapzi" src="../design-system/assets/lapzi/lapzi-yougotthis.png" alt="">
+      <img class="star" src="../design-system/assets/decor/star.svg" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS BAND -->
+<div class="logos">
+  <div class="wrap">
+    <div class="label">Más de 200 empresas en México y LATAM confían en Lapzo</div>
+    <div class="row">
+      <img src="../design-system/assets/client-logos/mazda.svg" alt="Mazda">
+      <img src="../design-system/assets/client-logos/rotoplas.svg" alt="Rotoplas">
+      <img src="../design-system/assets/client-logos/oxxo.svg" alt="Oxxo">
+      <img src="../design-system/assets/client-logos/bbva.svg" alt="BBVA">
+      <img src="../design-system/assets/client-logos/farmacias-del-ahorro.svg" alt="Farmacias del Ahorro">
+      <img src="../design-system/assets/client-logos/tecmilenio.svg" alt="Tecmilenio">
+    </div>
+  </div>
+</div>
+
+<!-- PAINS -->
+<section class="s pains" id="para-ti">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">¿Te suena familiar?</div>
+      <h2>Eres selección, capacitación y desempeño al mismo tiempo</h2>
+      <p>Cuando una sola persona sostiene todo el desarrollo de talento, algo se queda sin atención — casi siempre lo estratégico.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <img class="ico" src="../design-system/assets/icons/cog.svg" alt="">
+        <h3>Cero tiempo para lo operativo</h3>
+        <p>Entre capacitar, evaluar y dar seguimiento, no queda espacio para diseñar estrategia.</p>
+      </div>
+      <div class="card">
+        <img class="ico" src="../design-system/assets/icons/folder.svg" alt="">
+        <h3>Herramientas dispersas</h3>
+        <p>Un Excel para evaluaciones, otro para cursos, un tercero para OKRs — y ningún dato conectado.</p>
+      </div>
+      <div class="card">
+        <img class="ico" src="../design-system/assets/icons/alert-circle.svg" alt="">
+        <h3>Se apagan incendios, no se construye</h3>
+        <p>El día a día no deja avanzar los planes de desarrollo que sí moverían la aguja.</p>
+      </div>
+      <div class="card">
+        <img class="ico" src="../design-system/assets/icons/target.svg" alt="">
+        <h3>Te piden resultados, no procesos</h3>
+        <p>La dirección quiere ver impacto en el negocio, no una lista de tareas de RH.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="s steps" id="como-funciona">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Cómo opera Lapzo por ti</div>
+      <h2>Tu ciclo de talento, operado de principio a fin</h2>
+      <p>No es una plataforma que te dejamos usando sola — es un equipo experto acompañado de Lapzo.IA, operando el ciclo completo contigo.</p>
+    </div>
+    <div class="grid">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Diagnóstico inicial</h3>
+        <p>Mapeamos a tus colaboradores, brechas de competencias y prioridades de negocio.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Plan operado por Lapzo</h3>
+        <p>Diseñamos y ejecutamos capacitación, evaluaciones y planes de desarrollo por ti.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Lapzo.IA acelera el día a día</h3>
+        <p>Cursos, rutas y reportes se generan y ajustan en minutos, no en semanas.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Reportes con impacto real</h3>
+        <p>Ves el avance y el resultado en el negocio, listo para presentar a dirección.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="s modules" id="modulos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Todo dentro de TaaS</div>
+      <h2>Un aliado, no seis herramientas más</h2>
+      <p>Lapzo opera los módulos que tu empresa necesita, conectados en un mismo sistema y sin que tengas que administrarlos.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <img class="ico" src="../design-system/assets/modules/icon-training-orange.svg" alt="">
+        <span class="abbr" style="background:#FDE0C3;color:#7A3A0A">CyA</span>
+        <h3>Capacitación y aprendizaje</h3>
+        <p>Cursos y rutas personalizadas creadas y asignadas por Lapzo, con certificaciones DC3/DC4 al día.</p>
+      </div>
+      <div class="card">
+        <img class="ico" src="../design-system/assets/modules/icon-competencies.svg" alt="">
+        <span class="abbr">DxC</span>
+        <h3>Desarrollo por competencias</h3>
+        <p>Mapeamos brechas y definimos planes individuales de desarrollo para cada colaborador.</p>
+      </div>
+      <div class="card">
+        <img class="ico" src="../design-system/assets/modules/icon-eval-pink-dark.svg" alt="">
+        <span class="abbr" style="background:#FFD3E3;color:#5A1838">EVA</span>
+        <h3>Evaluaciones y clima</h3>
+        <p>360°, 9-box y encuestas de clima, con lectura de resultados hecha por especialistas.</p>
+      </div>
+      <div class="card">
+        <img class="ico" src="../design-system/assets/modules/icon-eval-pink.svg" alt="">
+        <span class="abbr" style="background:#FFD3E3;color:#5A1838">S&amp;E</span>
+        <h3>Estrategia y ejecución</h3>
+        <p>OKRs alineados al negocio, con check-ins que damos seguimiento por ti.</p>
+      </div>
+      <div class="card">
+        <img class="ico" src="../design-system/assets/modules/icon-mortarboard.svg" alt="">
+        <span class="abbr">CAT</span>
+        <h3>Catálogo · +800 cursos</h3>
+        <p>Contenido listo en español, inglés y portugués, curado según tu sector.</p>
+      </div>
+      <div class="card">
+        <img class="ico" src="../design-system/assets/modules/icon-rocket-violet.svg" alt="">
+        <span class="abbr">TaaS</span>
+        <h3>Un equipo experto, no un manual</h3>
+        <p>Especialistas de Lapzo revisan avances contigo cada periodo — no solo un dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="s pillars">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:#54F4F2">Por qué confiar tu talento a Lapzo</div>
+      <h2>Tecnología, expertise humano y acompañamiento</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="eyebrow">Innovadora</div>
+        <h3>Lapzo.IA en cada paso</h3>
+        <p>Cursos desde un PDF, competencias mapeadas y OKRs sugeridos automáticamente, sin perder el criterio humano.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Confiable</div>
+        <h3>Cocreado con expertos de RH</h3>
+        <p>Alianza con Tecmilenio y respaldo de YCombinator. No improvisamos el desarrollo de tu gente.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Experta en talento</div>
+        <h3>Un equipo, no solo software</h3>
+        <p>Especialistas en desarrollo de talento operan tu plan — tú mantienes la decisión, no la carga operativa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAS -->
+<section class="s personas">
+  <div class="wrap">
+    <div class="sec-head left">
+      <div class="eyebrow">Hecho para quien hoy hace de todo</div>
+      <h2>Mismo TaaS, ángulo distinto según tu rol</h2>
+    </div>
+    <div class="tabs">
+      <div class="tab active" data-tab="sofia">Sofía · RH multi-rol</div>
+      <div class="tab" data-tab="santiago">Santiago · Directivo</div>
+    </div>
+
+    <div class="panel active" id="panel-sofia">
+      <div>
+        <h3>Sofía, el área de RH completa de su empresa</h3>
+        <div class="quote">"Tu aliado estratégico para centralizar la gestión, capacitación y desempeño del talento de tu organización, manteniéndolo motivado."</div>
+        <ul>
+          <li>Deja de sostener selección, capacitación y desempeño tú sola</li>
+          <li>Todo centralizado en un mismo lugar — sin fees dispersos por herramienta</li>
+          <li>Implementación pensada para equipos sin estructura grande de RH</li>
+          <li>Reportes listos para mostrar avance sin trabajo extra de tu parte</li>
+        </ul>
+        <a class="btn btn-primary" href="#cta" style="margin-top:8px">Agenda tu diagnóstico →</a>
+      </div>
+      <div class="ph">
+        <div class="label">"¿Eres el área de RH completa? Lapzo fue hecho para ti."</div>
+        <img class="lapzi" src="../design-system/assets/lapzi/lapzi-motivated.png" alt="">
+      </div>
+    </div>
+
+    <div class="panel" id="panel-santiago">
+      <div>
+        <h3>Santiago, directivo con presión por resultados</h3>
+        <div class="quote">"Tu aliado estratégico para asegurar los resultados de negocio a través de una estrategia de talento."</div>
+        <ul>
+          <li>Profesionaliza el desarrollo de talento sin construir un área de RH desde cero</li>
+          <li>Reportes de impacto listos para presentar a dirección o consejo</li>
+          <li>Implementación corta, sin distraer a tu equipo actual</li>
+          <li>Talento desarrollado con método, no con esfuerzo individual disperso</li>
+        </ul>
+        <a class="btn btn-primary" href="#cta" style="margin-top:8px">Agenda tu diagnóstico →</a>
+      </div>
+      <div class="ph">
+        <div class="label">"El talento bien desarrollado es una empresa más rentable."</div>
+        <img class="lapzi" src="../design-system/assets/lapzi/lapzi-cool.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section class="s fit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">¿Es TaaS para tu empresa?</div>
+      <h2>Está pensado para un momento específico</h2>
+    </div>
+    <div class="box">
+      <div>
+        <h3>TaaS es para ti si...</h3>
+        <ul>
+          <li>Tu empresa tiene entre 25 y 60 colaboradores</li>
+          <li>Una sola persona (o nadie) sostiene RH hoy</li>
+          <li>Necesitas capacitación, evaluación y desarrollo bien hechos, ya</li>
+          <li>Quieres resultados medibles sin construir un equipo interno</li>
+        </ul>
+      </div>
+      <div class="note">
+        <strong>¿Tu empresa es más grande?</strong>
+        A partir de 60 colaboradores, Lapzo también opera con planes que se integran a tu equipo de RH existente. Cuéntanos tu caso en el diagnóstico y te orientamos a la opción correcta.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Antes de agendar</div>
+      <h2>Preguntas frecuentes sobre TaaS</h2>
+    </div>
+    <div class="list">
+      <details open>
+        <summary>¿Pierdo el control de las decisiones sobre mi gente?</summary>
+        <p>No. Lapzo opera lo operativo — capacitación, evaluaciones, seguimiento — pero cada decisión importante sobre tu equipo la tomas tú. Lapzo.IA sugiere y acelera; tú decides.</p>
+      </details>
+      <details>
+        <summary>¿Necesito contratar a alguien de RH antes de empezar?</summary>
+        <p>No, ese es justo el punto de TaaS: Lapzo opera el ciclo completo de talento para que no tengas que armar un área desde cero.</p>
+      </details>
+      <details>
+        <summary>¿Cómo se conecta con lo que ya hago hoy?</summary>
+        <p>Empezamos con un diagnóstico de tu situación actual — herramientas, procesos y prioridades — y desde ahí diseñamos el plan que Lapzo opera contigo.</p>
+      </details>
+      <details>
+        <summary>¿Qué tan rápido veo resultados?</summary>
+        <p>La implementación está diseñada para arrancar sin distraer a tu equipo actual. En el diagnóstico te compartimos un plan con tiempos concretos para tu caso.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA strip -->
+<section class="cta-strip" id="cta">
+  <div class="wrap">
+    <img class="deco" src="../design-system/assets/decor/arrow-curve-violet.svg" alt="">
+    <h2>¿Listo para <em>operar tu talento</em> sin armar un equipo desde cero?</h2>
+    <div class="actions">
+      <a class="btn btn-primary btn-lg" href="#">Agenda tu diagnóstico</a>
+      <a class="btn" href="#" style="background:transparent;border:1.5px solid #fff;color:#fff;padding:14px 28px">Habla con un experto</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <img src="../design-system/assets/logo/lapzo-logo-on-dark.png" alt="Lapzo">
+      <p>Aliado estratégico de las organizaciones latinoamericanas en el desarrollo de talento.</p>
+    </div>
+    <div class="bottom">© 2026 Lapzo. Hecho con ✦ en CDMX.</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.personas .tab').forEach(tab => tab.addEventListener('click', () => {
+    document.querySelectorAll('.personas .tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.personas .panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+  }));
+</script>
+
+</body>
+</html>
