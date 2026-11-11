@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanzamiento suite Q4</title>
+<link rel="stylesheet" href="../design-system/colors_and_type.css">
+<style>
+  * { box-sizing:border-box; }
+  html, body { margin:0; height:100%; background:#0a0a1a; overflow:hidden; }
+  .deck { position:relative; width:100vw; height:100vh; }
+  .slide { position:absolute; inset:0; display:none; padding:6vh 7vw; background:#fff; color:#3F3F46; overflow:auto; }
+  .slide.on { display:flex; flex-direction:column; justify-content:center; }
+  .slide.dark { background:#14142A; color:#fff; }
+  .slide.violet { background:#F5F2FF; }
+  .eyebrow { font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#8B55FE; margin-bottom:10px; }
+  .dark .eyebrow { color:#54F4F2; }
+  h1 { font-family:var(--font-display); font-weight:700; font-size:clamp(36px,5.4vw,76px); line-height:1.02; letter-spacing:-0.02em; color:#240C50; margin:0 0 18px; }
+  h2 { font-family:var(--font-display); font-weight:700; font-size:clamp(28px,3.4vw,46px); line-height:1.06; letter-spacing:-0.02em; color:#240C50; margin:0 0 22px; }
+  .dark h1, .dark h2 { color:#fff; }
+  h1 em, h2 em { color:#8B55FE; font-family:var(--font-body); font-weight:600; }
+  .dark h1 em, .dark h2 em { color:#54F4F2; }
+  p.lede { font-size:clamp(16px,1.5vw,21px); line-height:1.5; max-width:880px; margin:0; }
+  .dark p.lede { color:rgba(255,255,255,.78); }
+  .g { display:grid; gap:16px; }
+  .g2 { grid-template-columns:repeat(2,1fr); } .g3 { grid-template-columns:repeat(3,1fr); } .g4 { grid-template-columns:repeat(4,1fr); }
+  .c { background:#fff; border:1px solid #EFF0F6; border-radius:18px; padding:20px 22px; }
+  .violet .c { border-color:#DDD4FF; }
+  .dark .c { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.1); }
+  .c h3 { font-size:17px; font-weight:600; color:#240C50; margin:0 0 6px; }
+  .dark .c h3 { color:#fff; }
+  .c p, .c li { font-size:14px; line-height:1.5; margin:0; }
+  .dark .c p, .dark .c li { color:rgba(255,255,255,.75); }
+  .c ul { margin:6px 0 0; padding-left:18px; }
+  .big { font-family:var(--font-display); font-weight:700; font-size:clamp(34px,3.6vw,52px); color:#8B55FE; line-height:1; margin-bottom:8px; }
+  .dark .big { color:#54F4F2; }
+  .pill { display:inline-block; font-size:11px; font-weight:700; padding:3px 9px; border-radius:9999px; margin-bottom:8px; }
+  .ok { background:#CCFFEC; color:#0B6B47; } .wait { background:#FFF3CC; color:#7A5A00; } .no { background:#FFD3E3; color:#5A1838; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:#71717A; padding:8px 10px; border-bottom:1.5px solid #E2E2E8; }
+  td { padding:9px 10px; border-bottom:1px solid #EFF0F6; vertical-align:top; }
+  td b { color:#240C50; }
+  .timeline { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-top:8px; }
+  .ph { border-radius:16px; padding:16px; background:#fff; border:1px solid #DDD4FF; position:relative; }
+  .ph .d { font-size:12px; font-weight:700; color:#8B55FE; text-transform:uppercase; letter-spacing:.05em; }
+  .ph h3 { font-size:15px; margin:6px 0; color:#240C50; }
+  .ph p { font-size:12.5px; margin:0; line-height:1.45; }
+  .ph.key { background:#14142A; border-color:#14142A; } .ph.key h3 { color:#fff; } .ph.key p { color:rgba(255,255,255,.75); } .ph.key .d { color:#54F4F2; }
+  .bar { display:flex; height:44px; border-radius:12px; overflow:hidden; margin:10px 0 18px; font-size:13px; font-weight:600; color:#fff; }
+  .bar div { display:flex; align-items:center; justify-content:center; }
+  .lapzi { position:absolute; right:6vw; bottom:5vh; width:min(16vw,180px); }
+  .logo { height:34px; margin-bottom:5vh; align-self:flex-start; }
+  .nav { position:fixed; bottom:16px; right:20px; display:flex; gap:8px; align-items:center; z-index:9; font:600 12px var(--font-body); color:#71717A; }
+  .nav button { width:34px; height:34px; border-radius:50%; border:1px solid #E2E2E8; background:#fff; cursor:pointer; font-size:15px; color:#240C50; }
+  .q { font-size:clamp(15px,1.3vw,18px); line-height:1.5; counter-reset:q; list-style:none; padding:0; margin:0; columns:2; column-gap:40px; }
+  .q li { counter-increment:q; padding:10px 0 10px 44px; position:relative; break-inside:avoid; border-bottom:1px solid #EFF0F6; }
+  .q li::before { content:counter(q); position:absolute; left:0; top:9px; width:30px; height:30px; border-radius:50%; background:#ECE8FF; color:#5029A3; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center; }
+  @media (max-width:900px) {
+    html, body { overflow:auto; height:auto; }
+    .deck { height:auto; }
+    .slide { position:relative; display:flex !important; flex-direction:column; min-height:100vh; padding:48px 16px; }
+    .g2,.g3,.g4,.timeline { grid-template-columns:1fr; }
+    .q { columns:1; }
+    .nav { display:none; }
+    .lapzi { position:static; width:110px; margin-top:20px; }
+    table { font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 1 -->
+<section class="slide dark on">
+  <img class="logo" src="../design-system/assets/logo/lapzo-logo-on-dark.png" alt="Lapzo">
+  <div class="eyebrow">Lanzamiento Q4 2026 · Growth</div>
+  <h1>Tu gente, <em>de principio a fin</em></h1>
+  <p class="lede">Estrategia de lanzamiento de Reclutamiento, Gestión de Personal y Reloj Checador. Propuesta para la sesión de seguimiento.</p>
+  <img class="lapzi" src="../design-system/assets/lapzi/lapzi-yougotthis.png" alt="">
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="eyebrow">Lo que acordamos el 3-nov</div>
+  <h2>Punto de partida</h2>
+  <div class="g g3">
+    <div class="c"><span class="pill ok">Disponible</span><h3>Reclutamiento</h3><p>Vacantes por competencias + IAMatch. Vacantes y postulantes ilimitados.</p></div>
+    <div class="c"><span class="pill ok">Disponible</span><h3>Gestión de Personal</h3><p>Organigrama, expediente, solicitudes con aprobación, documentos. <b>Sin firma digital.</b></p></div>
+    <div class="c"><span class="pill wait">31-dic · habilita en enero</span><h3>Reloj Checador</h3><p>Jornadas, turnos, marcación, correcciones con aprobación. <b>Sin nómina, biométricos, geo ni kiosco.</b></p></div>
+  </div>
+  <div class="g g4" style="margin-top:16px">
+    <div class="c"><h3>17-nov</h3><p>Arranca la comunicación, para clientes y no clientes</p></div>
+    <div class="c"><h3>Módulos separados</h3><p>Reloj y GP se venden solos o en bundle. Comunidad, de regalo</p></div>
+    <div class="c"><h3>Sin precios</h3><p>Pricing en construcción (Fer + Diego)</p></div>
+    <div class="c"><h3>Exclusión partners</h3><p>Fuera de toda lista: clientes FitchUp / Worky</p></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="slide dark">
+  <div class="eyebrow">Por qué ahora</div>
+  <h2>El 1 de enero el registro de jornada <em>deja de ser opcional</em></h2>
+  <div class="g g4">
+    <div class="c"><div class="big">1-ene-27</div><p>Registro electrónico de jornada obligatorio (reforma LFT, 40 horas)</p></div>
+    <div class="c"><div class="big">48→46 h</div><p>Primera reducción de jornada en 2027; meta de 40 h en 2030</p></div>
+    <div class="c"><div class="big">~$590k</div><p>Multa máxima reportada por incumplimiento (validar con legal)</p></div>
+    <div class="c"><div class="big">45 días</div><p>Ciclo de venta actual. Para cerrar en enero, el lead tiene que entrar en noviembre</p></div>
+  </div>
+  <p class="lede" style="margin-top:24px">Buk ya manda WhatsApp masivo de Reloj, Kerana hace workshops presenciales y Runa cotiza ~$22 por colaborador. Además, dic-ene es temporada de presupuesto en RH. <b style="color:#fff">Si esperamos al release, el cliente ya eligió con quién.</b></p>
+</section>
+
+<!-- 4 -->
+<section class="slide violet">
+  <div class="eyebrow">Objetivos (propuesta a validar)</div>
+  <h2>Pipeline + preventa de Reloj</h2>
+  <div class="g g4">
+    <div class="c"><div class="big">35</div><h3>SQLs nuevos</h3><p>No clientes, al 15-ene · Fer</p></div>
+    <div class="c"><div class="big">25</div><h3>Opps de cross-sell</h3><p>Clientes, al 15-ene · Vips / Pedro</p></div>
+    <div class="c"><div class="big">12</div><h3>Preventas de Reloj</h3><p>Solo o bundle GP + Reloj, al 15-ene</p></div>
+    <div class="c"><div class="big">300</div><h3>Registros al webinar</h3><p>2-dic · ≥35% de asistencia</p></div>
+  </div>
+  <table style="margin-top:22px;background:#fff;border-radius:14px">
+    <tr><th>Soporte</th><th>Meta</th><th>Soporte</th><th>Meta</th></tr>
+    <tr><td>Lista prioritaria Reloj</td><td><b>150 empresas</b></td><td>CPL pauta</td><td><b>≤ $120 MXN</b></td></tr>
+    <tr><td>Demos de Reloj con prototipo</td><td><b>40</b></td><td>MQL → SQL</td><td><b>≥ 25%</b></td></tr>
+    <tr><td>Contacto a lead</td><td><b>&lt; 24 h hábiles</b></td><td>Conversión de landing</td><td><b>≥ 12%</b></td></tr>
+  </table>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="eyebrow">Mensaje</div>
+  <h2>Una campaña paraguas, <em>un mensaje por producto</em></h2>
+  <table>
+    <tr><th>Producto</th><th>Mensaje</th><th>CTA</th></tr>
+    <tr><td><b>Suite</b></td><td>Tu gente, de principio a fin: atrae, administra y desarrolla con el mismo aliado</td><td>Webinar 2-dic</td></tr>
+    <tr><td><b>Reloj Checador</b></td><td>El 1 de enero el registro de jornada deja de ser opcional. Llega preparado</td><td>Lista prioritaria · primera ola de enero</td></tr>
+    <tr><td><b>Gestión de Personal</b></td><td>Tu gente en un solo lugar, sin perseguir a nadie</td><td>Agenda una demo</td></tr>
+    <tr><td><b>Reclutamiento</b></td><td>Contrata por competencias, no por corazonadas</td><td>Agenda una demo</td></tr>
+    <tr><td><b>Bundle GP + Reloj</b></td><td>Tu gente y su jornada, en un solo lugar</td><td>Cotiza el paquete</td></tr>
+  </table>
+  <p class="lede" style="margin-top:18px;font-size:15px"><b>Guardrails:</b> nada de nómina, biométricos, geolocalización, kiosco ni firma digital · sin precios · nunca "cumple al 100% con la ley" · Reloj siempre como "llega el 31-dic".</p>
+</section>
+
+<!-- 6 -->
+<section class="slide violet">
+  <div class="eyebrow">Plan por fases</div>
+  <h2>Del 17-nov al 31-ene</h2>
+  <div class="timeline">
+    <div class="ph"><div class="d">11–16 nov</div><h3>F0 · Preparación</h3><p>Landings, artes, forms, exclusiones, kit de ventas, prototipo</p></div>
+    <div class="ph key"><div class="d">17 nov</div><h3>F1 · Lanzamiento suite</h3><p>Email + in-app + WhatsApp CSM a clientes; LinkedIn + pauta</p></div>
+    <div class="ph"><div class="d">17 nov – 1 dic</div><h3>F2 · Awareness</h3><p>Cuenta regresiva, nurturing GP/Rec, registros al webinar</p></div>
+    <div class="ph key"><div class="d">2 – 24 dic</div><h3>F3 · Webinar + preventa</h3><p>Webinar 2-dic, lista prioritaria, ventana de presupuesto</p></div>
+    <div class="ph key"><div class="d">31 dic / 5 ene</div><h3>F4 · "Ya está aquí"</h3><p>Release interno 31-dic; anuncio externo + retargeting 5-ene</p></div>
+    <div class="ph"><div class="d">6 – 31 ene</div><h3>F5 · Habilitación</h3><p>Primera ola, primer caso, retro de campaña 30-ene</p></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <div class="eyebrow">Hacia adentro y hacia afuera</div>
+  <h2>Mismo mensaje, <em>distintos canales</em></h2>
+  <div class="g g2">
+    <div class="c">
+      <h3>Clientes (retención + cross-sell)</h3>
+      <ul>
+        <li><b>A. Cuentas clave:</b> 1:1 CSM/Pedro + invitación personal</li>
+        <li><b>B. Multi-módulo:</b> email + in-app + WhatsApp CSM</li>
+        <li><b>C. Un módulo:</b> email + in-app (GP como retención)</li>
+        <li><b>D. Renovación ≤ 90 días:</b> GP + Reloj como palanca TaaS</li>
+        <li style="color:#F3538E"><b>Exclusión:</b> clientes FitchUp / Worky en HubSpot, Meta y WhatsApp</li>
+      </ul>
+    </div>
+    <div class="c">
+      <h3>No clientes (demanda)</h3>
+      <ul>
+        <li><b>Base propia:</b> leads y MQLs no convertidos, últimos 18 meses</li>
+        <li><b>Pauta:</b> RH, Dirección y Operaciones en MX, industrias con turnos (manufactura, retail, logística, farma, hotelería, automotriz)</li>
+        <li><b>Voceros:</b> Santiago, Pedro y Fer en LinkedIn</li>
+        <li><b>Retargeting:</b> visitantes de las landings y registrados al webinar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="slide dark">
+  <div class="eyebrow">Webinar · miércoles 2-dic · 10:00 CDMX</div>
+  <h2>Registro electrónico de jornada 2027: <em>lo que tu empresa debe tener listo el 1 de enero</em></h2>
+  <div class="g g4">
+    <div class="c"><h3>0–15'</h3><p>La reforma en 10 minutos, con un invitado laboral</p></div>
+    <div class="c"><h3>15–30'</h3><p>Las 5 claves para prepararte (Pedro)</p></div>
+    <div class="c"><h3>30–45'</h3><p>Demo con prototipo de Reloj + lista prioritaria</p></div>
+    <div class="c"><h3>45–60'</h3><p>Q&amp;A con respuestas preparadas sobre lo que NO incluye</p></div>
+  </div>
+  <p class="lede" style="margin-top:22px">Seguimiento en &lt; 24 h: los nuevos van a Fer, los clientes a su CSM. La grabación y el one-pager salen el 3-dic.</p>
+</section>
+
+<!-- 9 -->
+<section class="slide violet">
+  <div class="eyebrow">Presupuesto de pauta</div>
+  <h2>$28,000 MXN, enfocados en registros y retargeting</h2>
+  <div class="bar">
+    <div style="width:39%;background:#5029A3">LinkedIn $11k</div>
+    <div style="width:25%;background:#8B55FE">Meta $7k</div>
+    <div style="width:22%;background:#04949D">Google $6k</div>
+    <div style="width:14%;background:#F9912A">Retarget $4k</div>
+  </div>
+  <div class="g g4">
+    <div class="c"><h3>LinkedIn</h3><p>Lead Gen Form del webinar · cargos RH y Dirección · 17-nov a 1-dic</p></div>
+    <div class="c"><h3>Meta</h3><p>Webinar + lista prioritaria · perfil Sofía · 17-nov a 23-dic</p></div>
+    <div class="c"><h3>Google Search</h3><p>"reloj checador", "registro de jornada" · dic y ene</p></div>
+    <div class="c"><h3>Retargeting</h3><p>Preventa en dic y "ya está aquí" en ene</p></div>
+  </div>
+  <p class="lede" style="margin-top:16px;font-size:15px">Pauta en pausa del 24-dic al 4-ene. Cada lunes se mueve presupuesto al canal con mejor costo por SQL.</p>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <div class="eyebrow">Entregables listos</div>
+  <h2>Lo que ya está construido</h2>
+  <div class="g g3">
+    <div class="c"><h3>3 landings</h3><p>Reloj (lista prioritaria + webinar + versión "ya está aquí"), GP y Reclutamiento. Responsive, con el design system y forms listos para HubSpot.</p></div>
+    <div class="c"><h3>Copys</h3><p>Emails (anuncio, nurturing, webinar, preventa, 5-ene), WhatsApp CSM, in-app, LinkedIn, Meta, Google RSA y guion del webinar.</p></div>
+    <div class="c"><h3>Briefs de artes + FAQ</h3><p>Key visual, piezas y tamaños para diseño. FAQ interna para que ventas y CS no prometan de más.</p></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <div class="eyebrow">Riesgos</div>
+  <h2>Qué puede salir mal y cómo lo cubrimos</h2>
+  <table>
+    <tr><th>Riesgo</th><th>Mitigación</th></tr>
+    <tr><td><b>Estabilidad</b> (incidente SSO del 3-nov, 17 clientes)</td><td>Vips confirma casos cerrados el 16-nov; a las cuentas afectadas les llega primero un mensaje 1:1</td></tr>
+    <tr><td><b>Demo de Reloj sin producto</b></td><td>Prototipo Figma de Carolina + discurso "llega el 31-dic"</td></tr>
+    <tr><td><b>Prometer de más</b></td><td>Check de alcance de Producto por pieza + FAQ interna</td></tr>
+    <tr><td><b>Partners FitchUp / Worky</b></td><td>Exclusión global; Fer y Santiago hablan con ellos antes del 1-dic</td></tr>
+    <tr><td><b>Pricing sin definir</b></td><td>CTAs de demo / cotiza; variable [OFERTA] en la preventa</td></tr>
+    <tr><td><b>Afirmaciones legales</b></td><td>Validar fechas y multas con legal o el invitado antes de publicar</td></tr>
+  </table>
+</section>
+
+<!-- 12 -->
+<section class="slide violet">
+  <div class="eyebrow">Necesito decisiones hoy</div>
+  <h2>Para arrancar el martes 17</h2>
+  <ol class="q">
+    <li>¿Validamos las metas: 60 SQLs y 12 preventas de Reloj al 15-ene?</li>
+    <li>Gancho de preventa [OFERTA]: ¿early adopter, bundle con Comunidad o solo prioridad?</li>
+    <li>Webinar: ¿host Pedro? ¿Quién es el invitado laboral?</li>
+    <li>Fecha firme del prototipo navegable de Reloj (Carolina)</li>
+    <li>Lista de exclusión FitchUp / Worky: ¿Vips para el 13-nov?</li>
+    <li>¿Quién firma los mensajes a clientes: Vips, Santiago o Lapzo?</li>
+    <li>Go / no-go de estabilidad de plataforma el 16-nov</li>
+    <li>Nombre oficial: "Gestión de Personal" (recomendado) vs "de Personas"</li>
+  </ol>
+</section>
+
+<!-- 13 -->
+<section class="slide dark">
+  <div class="eyebrow">Siguiente paso</div>
+  <h1>17-nov: <em>salimos</em></h1>
+  <p class="lede">Con las decisiones de hoy cierro artes, forms y listas el lunes 16 y lanzamos el martes 17 para clientes y no clientes.</p>
+  <img class="lapzi" src="../design-system/assets/lapzi/lapzi-party.png" alt="">
+</section>
+
+</div>
+<div class="nav"><button id="prev" aria-label="Anterior">←</button><span id="count"></span><button id="next" aria-label="Siguiente">→</button></div>
+<script>
+  const s = [...document.querySelectorAll('.slide')]; let i = 0;
+  const go = n => { s[i].classList.remove('on'); i = Math.max(0, Math.min(s.length-1, n)); s[i].classList.add('on'); document.getElementById('count').textContent = (i+1)+' / '+s.length; };
+  document.addEventListener('keydown', e => { if (['ArrowRight','PageDown',' '].includes(e.key)) go(i+1); if (['ArrowLeft','PageUp'].includes(e.key)) go(i-1); });
+  document.getElementById('next').onclick = () => go(i+1);
+  document.getElementById('prev').onclick = () => go(i-1);
+  go(0);
+</script>
+</body>
+</html>
