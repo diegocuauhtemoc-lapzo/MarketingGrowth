@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanzamiento Q4 2026</title>
+<link rel="stylesheet" href="../design-system/colors_and_type.css">
+<style>
+  * { box-sizing:border-box; }
+  html, body { margin:0; height:100%; background:#0a0a1a; overflow:hidden; }
+  .deck { position:relative; width:100vw; height:100vh; }
+  .slide { position:absolute; inset:0; display:none; padding:6vh 7vw; background:#fff; color:#3F3F46; overflow:auto; }
+  .slide.on { display:flex; flex-direction:column; justify-content:center; }
+  .slide.dark { background:#14142A; color:#fff; }
+  .slide.violet { background:#F5F2FF; }
+  .eyebrow { font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#8B55FE; margin-bottom:10px; }
+  .dark .eyebrow { color:#54F4F2; }
+  h1 { font-family:var(--font-display); font-weight:700; font-size:clamp(36px,5.4vw,76px); line-height:1.02; letter-spacing:-0.02em; color:#240C50; margin:0 0 18px; }
+  h2 { font-family:var(--font-display); font-weight:700; font-size:clamp(28px,3.4vw,46px); line-height:1.06; letter-spacing:-0.02em; color:#240C50; margin:0 0 22px; }
+  .dark h1, .dark h2 { color:#fff; }
+  h1 em, h2 em { color:#8B55FE; font-family:var(--font-body); font-weight:600; }
+  .dark h1 em, .dark h2 em { color:#54F4F2; }
+  p.lede { font-size:clamp(16px,1.5vw,21px); line-height:1.5; max-width:880px; margin:0; }
+  .dark p.lede { color:rgba(255,255,255,.78); }
+  .g { display:grid; gap:16px; }
+  .g2 { grid-template-columns:repeat(2,1fr); } .g3 { grid-template-columns:repeat(3,1fr); } .g4 { grid-template-columns:repeat(4,1fr); }
+  .c { background:#fff; border:1px solid #EFF0F6; border-radius:18px; padding:20px 22px; }
+  .violet .c { border-color:#DDD4FF; }
+  .dark .c { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.1); }
+  .c h3 { font-size:17px; font-weight:600; color:#240C50; margin:0 0 6px; }
+  .dark .c h3 { color:#fff; }
+  .c p, .c li { font-size:14px; line-height:1.5; margin:0; }
+  .dark .c p, .dark .c li { color:rgba(255,255,255,.75); }
+  .c ul { margin:6px 0 0; padding-left:18px; }
+  .big { font-family:var(--font-display); font-weight:700; font-size:clamp(34px,3.6vw,52px); color:#8B55FE; line-height:1; margin-bottom:8px; }
+  .dark .big { color:#54F4F2; }
+  .pill { display:inline-block; font-size:11px; font-weight:700; padding:3px 9px; border-radius:9999px; margin-bottom:8px; }
+  .ok { background:#CCFFEC; color:#0B6B47; } .wait { background:#FFF3CC; color:#7A5A00; } .no { background:#FFD3E3; color:#5A1838; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:#71717A; padding:8px 10px; border-bottom:1.5px solid #E2E2E8; }
+  td { padding:9px 10px; border-bottom:1px solid #EFF0F6; vertical-align:top; }
+  td b { color:#240C50; }
+  .timeline { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-top:8px; }
+  .ph { border-radius:16px; padding:16px; background:#fff; border:1px solid #DDD4FF; position:relative; }
+  .ph .d { font-size:12px; font-weight:700; color:#8B55FE; text-transform:uppercase; letter-spacing:.05em; }
+  .ph h3 { font-size:15px; margin:6px 0; color:#240C50; }
+  .ph p { font-size:12.5px; margin:0; line-height:1.45; }
+  .ph.key { background:#14142A; border-color:#14142A; } .ph.key h3 { color:#fff; } .ph.key p { color:rgba(255,255,255,.75); } .ph.key .d { color:#54F4F2; }
+  .bar { display:flex; height:44px; border-radius:12px; overflow:hidden; margin:10px 0 18px; font-size:13px; font-weight:600; color:#fff; }
+  .bar div { display:flex; align-items:center; justify-content:center; }
+  .lapzi { position:absolute; right:6vw; bottom:5vh; width:min(16vw,180px); }
+  .logo { height:34px; margin-bottom:5vh; align-self:flex-start; }
+  .nav { position:fixed; bottom:16px; right:20px; display:flex; gap:8px; align-items:center; z-index:9; font:600 12px var(--font-body); color:#71717A; }
+  .nav button { width:34px; height:34px; border-radius:50%; border:1px solid #E2E2E8; background:#fff; cursor:pointer; font-size:15px; color:#240C50; }
+  .q { font-size:clamp(15px,1.3vw,18px); line-height:1.5; counter-reset:q; list-style:none; padding:0; margin:0; columns:2; column-gap:40px; }
+  .q li { counter-increment:q; padding:10px 0 10px 44px; position:relative; break-inside:avoid; border-bottom:1px solid #EFF0F6; }
+  .q li::before { content:counter(q); position:absolute; left:0; top:9px; width:30px; height:30px; border-radius:50%; background:#ECE8FF; color:#5029A3; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center; }
+  @media (max-width:900px) {
+    html, body { overflow:auto; height:auto; }
+    .deck { height:auto; }
+    .slide { position:relative; display:flex !important; flex-direction:column; min-height:100vh; padding:48px 16px; }
+    .g2,.g3,.g4,.timeline { grid-template-columns:1fr; }
+    .q { columns:1; }
+    .nav { display:none; }
+    .lapzi { position:static; width:110px; margin-top:20px; }
+    table { font-size:12.5px; }
+  }
+  .slide.tight { padding-top:4vh; padding-bottom:4vh; } .tight h2 { margin-bottom:12px; } .comp { font-size:12px; } .comp td, .comp th { padding:5px 8px; line-height:1.35; } .comp td:first-child { white-space:nowrap; }
+  .tag3 { display:inline-block; font-size:10.5px; font-weight:700; padding:2px 7px; border-radius:9999px; background:#FFF3CC; color:#7A5A00; margin-left:4px; }
+  .note { font-size:12px; color:#71717A; margin-top:12px; }
+  .host { display:flex; gap:16px; align-items:center; }
+  .host img { width:96px; height:96px; border-radius:18px; object-fit:cover; border:2px solid #54F4F2; }
+  .host .ph2 { width:96px; height:96px; border-radius:18px; border:2px dashed rgba(255,255,255,.3); display:grid; place-items:center; font-size:12px; color:rgba(255,255,255,.6); text-align:center; }
+  .steps td:nth-child(1) { width:28px; color:#5029A3; font-weight:700; } .steps td:nth-child(4) { white-space:nowrap; } .steps td:nth-child(5) { white-space:nowrap; color:#5029A3; font-weight:600; }
+  .keys .c { background:#211435; border-color:#211435; padding:14px 18px; } .keys .c h3 { color:#C7A4FF; font-size:18px; } .keys .c p { color:rgba(255,255,255,.85); font-size:14px; }
+  .tight .note { margin-top:8px; }
+  .scen td:nth-child(2), .scen td:nth-child(3), .scen th:nth-child(2), .scen th:nth-child(3) { width:32%; } .scen th:nth-child(3) { color:#5029A3; } .scen .sub { font-size:12px; color:#71717A; }
+  .tbc { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:9999px; background:#FFF3CC; color:#7A5A00; margin-left:4px; }
+  .pod { margin-top:16px; background:#211435; color:#fff; border-radius:14px; padding:14px 18px; font-size:15px; line-height:1.5; } .pod b { color:#C7A4FF; }
+  .calc { background:#fff; border:1px solid #DDD4FF; border-radius:14px; padding:12px 16px; margin-top:14px; font-size:14px; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 1 -->
+<section class="slide dark on">
+  <img class="logo" src="../design-system/assets/logo/lapzo-logo-on-dark.png" alt="Lapzo">
+  <div class="eyebrow">Lanzamiento Q4 2026 · Marketing y Growth</div>
+  <h1>Estrategia de <em>Reloj Checador</em></h1>
+  <img class="lapzi" src="../design-system/assets/lapzi/lapzi-yougotthis.png" alt="">
+</section>
+
+<!-- 3 -->
+<section class="slide dark">
+  <div class="eyebrow">Contexto</div>
+  <h2>El 1 de enero el registro de jornada <em>deja de ser opcional</em></h2>
+  <div class="g g4">
+    <div class="c"><div class="big">1-ene-2027</div><p>Registro electrónico de jornada obligatorio (art. 132, fracc. XXXIV de la LFT)</p></div>
+    <div class="c"><div class="big">48 → 46 h</div><p>Primera reducción de la jornada semanal en 2027; meta de 40 horas en 2030</p></div>
+    <div class="c"><div class="big">~$590k</div><p>Multa máxima reportada (hasta 5,000 UMA). Validar con el área legal</p></div>
+    <div class="c"><div class="big">45 días</div><p>Ciclo de venta actual: para cerrar en enero, el lead debe generarse en noviembre</p></div>
+  </div>
+  <p class="lede" style="margin-top:24px">Buk envía campañas masivas de WhatsApp sobre reloj checador, Crehana realiza workshops presenciales y Runa cotiza alrededor de $22 MXN por colaborador. Diciembre y enero son temporada de presupuesto en RH. <b style="color:#fff">Si esperamos al release, el cliente ya habrá elegido proveedor.</b></p>
+</section>
+
+<!-- 4 -->
+<section class="slide tight">
+  <div class="eyebrow">Panorama competitivo</div>
+  <h2>Benchmark</h2>
+  <table class="comp">
+    <tr><th>Competidor</th><th>Control de asistencia</th><th>Oferta principal</th><th>Precio público</th><th>Comunicación de la reforma</th></tr>
+    <tr><td><b>Buk</b></td><td>Biométrico, facial o app con geocercas; integrado a nómina</td><td>Nómina, beneficios, capacitación, desempeño y clima</td><td>Cotización por plan y colaboradores. Desde ~$2,814 MXN/mes<span class="tag3">terceros</span></td><td>Blog, kit para RH y guía de 40 horas</td></tr>
+    <tr><td><b>Crehana</b></td><td>Crehana Time: digital, biométrico y remoto; integrado a nómina</td><td>Aprendizaje, talento, desempeño, clima y nómina</td><td>Cotización. Promoción: sin pago hasta la primera nómina</td><td>Comparativas contra Worky y Runa</td></tr>
+    <tr><td><b>Runa</b></td><td>App, web o reloj; integra biométricos; horas extra en nómina</td><td>Nómina y maquila, RH, vacaciones y encuestas</td><td>Cotización por colaborador, con mínimo mensual</td><td>Landing de la reforma, taller y guía 2027</td></tr>
+    <tr><td><b>Factorial</b></td><td>App, tablet o computadora con geolocalización</td><td>Ausencias, turnos, nómina, desempeño y reclutamiento</td><td>Desde $80.10 MXN por persona/mes<span class="tag3">terceros</span></td><td>Blog sobre registro electrónico y multas</td></tr>
+    <tr><td><b>Humand</b></td><td>App con reconocimiento facial, geolocalización y kiosco</td><td>Comunicación interna para personal operativo</td><td>No publicado. Desde ~USD 4 por usuario/mes<span class="tag3">terceros</span></td><td>Sin campaña 2027 identificada</td></tr>
+    <tr><td><b>Rankmi</b></td><td>Biométrico, facial, app con GPS y WhatsApp</td><td>Desempeño, clima, nómina y aprendizaje</td><td>Cotización</td><td>Blogs, landing México y comparativas contra Buk</td></tr>
+    <tr><td><b>Ubits</b></td><td>No ofrece control de asistencia</td><td>Aprendizaje, desempeño, reclutamiento y NOM-035</td><td>No publicado</td><td>Sin comunicación identificada</td></tr>
+    <tr><td><b>Worky</b> <span class="tag3" style="background:#ECE8FF;color:#5029A3">partner</span></td><td>WhatsApp, app, web, QR y GPS; integrado a nómina</td><td>Nómina, Core HR, vacaciones e intranet</td><td>Core HR $30 MXN por colaborador/mes; asistencia +$45<span class="tag3">terceros</span></td><td>Landings "obligatorio 2027" y multas</td></tr>
+    <tr><td><b>FitchUp</b> <span class="tag3" style="background:#ECE8FF;color:#5029A3">partner</span></td><td>Control horario para personal operativo</td><td>RH en la nube para personal operativo</td><td>Cotización por colaborador activo</td><td>Landing de la ley de 40 horas</td></tr>
+  </table>
+  <div class="g g3 keys" style="margin-top:12px">
+    <div class="c"><h3>El mensaje de miedo ya está ocupado</h3><p>Lapzo se diferencia como aliado de talento: cumplimiento más conocimiento de los colaboradores.</p></div>
+    <div class="c"><h3>La ley no exige biométricos</h3><p>Reloj Checador cumple sin hardware adicional. La mayoría condiciona la asistencia a migrar su nómina.</p></div>
+    <div class="c"><h3>Referencia de precio</h3><p>Asistencia entre $45 y $80 MXN por colaborador/mes. Publicar precio sería un diferenciador.</p></div>
+  </div>
+  <p class="note">Fuentes públicas consultadas el 12 de noviembre de 2026. Los precios marcados como "terceros" provienen de reseñas o comparativas y deben validarse antes de usarse externamente.</p>
+</section>
+
+<!-- 5 -->
+<section class="slide violet">
+  <div class="eyebrow">Objetivos al 15 de enero</div>
+  <h2>Dos escenarios de resultados</h2>
+  <table class="scen" style="background:#fff;border-radius:14px">
+    <tr><th>Indicador</th><th>Escenario asequible</th><th>Escenario ambicioso</th></tr>
+    <tr><td>Registros al webinar</td><td><b>60</b> de 30 empresas</td><td><b>100</b> de 50 empresas</td></tr>
+    <tr><td>Asistentes en vivo</td><td><b>24</b> (40%)</td><td><b>40</b> (40%)</td></tr>
+    <tr><td>Registros pagados (LinkedIn + Meta)</td><td><b>30</b></td><td><b>50</b></td></tr>
+    <tr><td>CPL de pauta del webinar</td><td><b>≤ $400 MXN</b><br><span class="sub">LinkedIn ≈ $650 · Meta ≈ $220</span></td><td><b>≤ $240 MXN</b><br><span class="sub">LinkedIn ≈ $400 · Meta ≈ $130</span></td></tr>
+    <tr><td>Lista prioritaria de Reloj Checador</td><td><b>15</b> empresas</td><td><b>25</b> empresas</td></tr>
+    <tr><td>Demos con prototipo</td><td><b>8</b></td><td><b>15</b></td></tr>
+    <tr><td>SQLs</td><td><b>12</b> (7 nuevos · 5 cross-sell)</td><td><b>20</b> (12 nuevos · 8 cross-sell)</td></tr>
+    <tr><td>Preventas de Reloj Checador</td><td><b>3</b></td><td><b>5</b></td></tr>
+  </table>
+  <div class="calc"><b>Cálculo del CPL:</b> $12,000 MXN de pauta para el webinar (LinkedIn $8,000 + Meta $4,000) entre los registros pagados: $12,000 ÷ 30 = $400 en el escenario asequible y $12,000 ÷ 50 = $240 en el ambicioso. El resto de los registros proviene de la base de clientes, email, WhatsApp y orgánico. Metas comunes a ambos escenarios: contacto a lead en menos de 24 horas hábiles y MQL a SQL ≥ 25%.</div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="eyebrow">Mensajes</div>
+  <h2>Una campaña general y <em>un mensaje por producto</em></h2>
+  <table>
+    <tr><th>Producto</th><th>Mensaje</th><th>Llamado a la acción</th></tr>
+    <tr><td><b>Campaña general</b><br><span style="font-size:12px;color:#71717A">Los tres productos</span></td><td>Tu gente, de principio a fin: atrae, administra y registra la jornada de tus colaboradores con el mismo aliado</td><td>Regístrate al webinar del 24 de noviembre</td></tr>
+    <tr><td><b>Reloj Checador</b><br><span style="font-size:12px;color:#71717A">Prelanzamiento · hasta el 4 de enero</span></td><td>El 1 de enero el registro de jornada deja de ser opcional. Prepara a tu empresa para el Reloj Checador</td><td>Regístrate al webinar · Únete a la lista prioritaria</td></tr>
+    <tr><td><b>Reloj Checador</b><br><span style="font-size:12px;color:#71717A">Lanzamiento · desde el 5 de enero</span></td><td>Reloj Checador ya está aquí: el registro de jornada de tu empresa, resuelto en Lapzo</td><td>Agenda tu habilitación</td></tr>
+    <tr><td><b>Gestión de Personal</b></td><td>Tu gente en un solo lugar, sin perseguir a nadie</td><td>Agenda una demo</td></tr>
+    <tr><td><b>Reclutamiento</b></td><td>Contrata por competencias, no por corazonadas</td><td>Agenda una demo</td></tr>
+    <tr><td><b>Paquete Gestión de Personal + Reloj Checador</b></td><td>Tu gente y su jornada, en un solo lugar</td><td>Cotiza el paquete</td></tr>
+  </table>
+  <p class="lede" style="margin-top:18px;font-size:15px"><b>Lineamientos:</b> no se comunican nómina, biométricos, geolocalización, kiosco ni firma digital; no se publican precios; nunca se afirma "cumple al 100% con la ley"; hasta el 4 de enero Reloj Checador se comunica como "disponible el 31 de diciembre".</p>
+</section>
+
+<!-- 7 -->
+<section class="slide violet">
+  <div class="eyebrow">Plan por fases</div>
+  <h2>Del 16 de noviembre al 31 de enero</h2>
+  <div class="timeline">
+    <div class="ph"><div class="d">11–15 nov</div><h3>F0 · Preparación</h3><p>Landings, artes, formularios, exclusiones, kit de ventas y prototipo</p></div>
+    <div class="ph key"><div class="d">16–17 nov</div><h3>F1 · Lanzamiento</h3><p>Pauta desde el 16; el 17, email, WhatsApp de CSM y LinkedIn</p></div>
+    <div class="ph"><div class="d">16–23 nov</div><h3>F2 · Captación</h3><p>Ocho días de pauta para el webinar, cuenta regresiva y nurturing de Gestión de Personal</p></div>
+    <div class="ph key"><div class="d">24 nov – 24 dic</div><h3>F3 · Webinar y preventa</h3><p>Webinar del 24 de noviembre, lista prioritaria y cierre de presupuesto</p></div>
+    <div class="ph key"><div class="d">31 dic / 5 ene</div><h3>F4 · Lanzamiento de Reloj</h3><p>Release interno el 31 de diciembre; anuncio externo y retargeting el 5 de enero</p></div>
+    <div class="ph"><div class="d">6–31 ene</div><h3>F5 · Habilitación</h3><p>Primera ola, primer caso de éxito y cierre de campaña el 30 de enero</p></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="eyebrow">Audiencias y canales</div>
+  <h2>Clientes y no clientes: <em>mismo mensaje, distintos canales</em></h2>
+  <div class="g g2">
+    <div class="c">
+      <h3>Clientes (retención y cross-sell)</h3>
+      <ul>
+        <li><b>A. Cuentas clave:</b> contacto 1:1 de CSM o de Pedro e invitación personal</li>
+        <li><b>B. Varios módulos:</b> email y WhatsApp de CSM</li>
+        <li><b>C. Un módulo:</b> email, con Gestión de Personal como palanca de retención</li>
+        <li><b>D. Renovación en ≤ 90 días:</b> Gestión de Personal y Reloj Checador como palanca TaaS</li>
+        <li style="color:#F3538E"><b>Exclusión:</b> clientes de FitchUp y Worky en HubSpot, Meta y WhatsApp</li>
+      </ul>
+    </div>
+    <div class="c">
+      <h3>No clientes (generación de demanda)</h3>
+      <ul>
+        <li><b>Base propia:</b> leads y MQLs no convertidos de los últimos 18 meses</li>
+        <li><b>Pauta:</b> RH, Dirección y Operaciones en México, en industrias con turnos (manufactura, retail, logística, farmacéutica, hotelería y automotriz)</li>
+        <li><b>Voceros:</b> Santiago, Pedro y Fernando en LinkedIn</li>
+        <li><b>Retargeting:</b> visitantes de las landings y registrados al webinar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="slide dark">
+  <div class="eyebrow">Webinar · martes 24 de noviembre · 10:00 CDMX</div>
+  <h2>Registro electrónico de jornada 2027: <em>lo que tu empresa debe tener listo el 1 de enero</em></h2>
+  <div class="g g2" style="margin-bottom:16px">
+    <div class="c host"><img src="artes/recursos/personas/pedro-sors.png" alt="Pedro Sors"><div><h3>Pedro Sors</h3><p>COO de Lapzo · Presentador</p></div></div>
+    <div class="c host"><div class="ph2">Por<br>confirmar</div><div><h3>Especialista laboral invitado</h3><p>Por confirmar</p></div></div>
+  </div>
+  <div class="g g4">
+    <div class="c"><h3>0–15 min</h3><p>La reforma en diez minutos</p></div>
+    <div class="c"><h3>15–30 min</h3><p>Las cinco claves para prepararse</p></div>
+    <div class="c"><h3>30–45 min</h3><p>Demostración del prototipo de Reloj Checador <span class="tbc">TBC</span></p></div>
+    <div class="c"><h3>45–60 min</h3><p>Preguntas y respuestas, con respuestas preparadas sobre el alcance</p></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="slide violet">
+  <div class="eyebrow">Presupuesto de pauta</div>
+  <h2>$28,000 MXN para registros al webinar y retargeting</h2>
+  <div class="bar">
+    <div style="width:39%;background:#5029A3">LinkedIn $11k</div>
+    <div style="width:25%;background:#8B55FE">Meta $7k</div>
+    <div style="width:22%;background:#04949D">Google $6k</div>
+    <div style="width:14%;background:#F9912A">Retargeting $4k</div>
+  </div>
+  <div class="g g4">
+    <div class="c"><h3>LinkedIn</h3><p>Lead Gen Form del webinar para RH y Dirección: $8,000 del 16 al 23 de noviembre (20 registros, CPL ≈ $400). Después, lista prioritaria</p></div>
+    <div class="c"><h3>Meta</h3><p>Webinar y lista prioritaria: $4,000 del 16 al 23 de noviembre (30 registros, CPL ≈ $130) y $3,000 hasta el 23 de diciembre</p></div>
+    <div class="c"><h3>Google Search</h3><p>"reloj checador" y "registro de jornada": del 16 de noviembre al 23 de diciembre y en enero</p></div>
+    <div class="c"><h3>Retargeting</h3><p>Preventa en diciembre y lanzamiento de Reloj Checador en enero</p></div>
+  </div>
+  <p class="lede" style="margin-top:16px;font-size:15px">La pauta se pausa del 24 de diciembre al 4 de enero. Cada lunes se reasigna presupuesto al canal con mejor CPL.</p>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <div class="eyebrow">Riesgos</div>
+  <h2>Riesgos = Mitigación</h2>
+  <table>
+    <tr><th>Riesgo</th><th>Mitigación</th><th>Responsable</th></tr>
+    <tr><td><b>Demostraciones de Reloj Checador sin producto liberado</b></td><td>Prototipo navegable en Figma y discurso "disponible el 31 de diciembre"</td><td>Carolina</td></tr>
+    <tr><td><b>Comunicar funciones fuera de alcance</b></td><td>Validación de alcance por Producto en cada pieza y FAQ interna</td><td>Carolina</td></tr>
+    <tr><td><b>Pricing sin definir</b></td><td>Llamados a la acción de demo y cotización; variable [OFERTA] en la preventa</td><td>Fernando · Diego</td></tr>
+    <tr><td><b>Ventana de captación de ocho días</b></td><td>Corte el 20 de noviembre: con menos de 50 registros, la reserva de $2,000 se asigna a LinkedIn y Meta</td><td>Diego</td></tr>
+  </table>
+  <div class="pod"><b>POD de lanzamiento.</b> Para mitigar estos riesgos se conforma un POD con Producto, Marketing, Ventas y Customer Success, con revisión semanal de alcance, piezas, pipeline y preventas hasta la habilitación de enero.</div>
+</section>
+
+<!-- 12 -->
+<section class="slide violet">
+  <div class="eyebrow">Acuerdos pendientes</div>
+  <h2>Siguientes pasos</h2>
+  <table class="steps" style="background:#fff;border-radius:14px">
+    <tr><th>#</th><th>Tema</th><th>Acción</th><th>Responsable</th><th>Fecha</th></tr>
+    <tr><td>1</td><td><b>Metas</b></td><td>Aprobación del escenario de metas: SQLs y preventas de Reloj Checador al 15 de enero</td><td>Fernando · Vivian</td><td>13 nov</td></tr>
+    <tr><td>2</td><td><b>Webinar</b></td><td>Definición del formato del webinar: presentación individual o con un especialista laboral invitado</td><td>Pedro</td><td>13 nov</td></tr>
+    <tr><td>3</td><td><b>Oferta de preventa</b></td><td>Definición de la oferta de preventa: precio early adopter, paquete con Comunidad o prioridad de habilitación</td><td>Fernando · Diego</td><td>20 nov</td></tr>
+    <tr><td>4</td><td><b>Prototipo</b></td><td>Confirmación del prototipo navegable del Reloj Checador para el 20 de noviembre</td><td>Carolina</td><td>13 nov</td></tr>
+    <tr><td>5</td><td><b>Alcance del release</b></td><td>Confirmación del alcance del release del 31 de diciembre: descansos, confirmación de cierre y horas extra</td><td>Carolina</td><td>13 nov</td></tr>
+    <tr><td>6</td><td><b>Exclusión de partners</b></td><td>Entrega de la lista de clientes de FitchUp y Worky</td><td>Vivian</td><td>13 nov</td></tr>
+    <tr><td>7</td><td><b>Firma a clientes</b></td><td>Definición de la firma de los mensajes a clientes</td><td>Vivian</td><td>13 nov</td></tr>
+  </table>
+</section>
+
+<!-- 13 -->
+<section class="slide dark">
+  <div class="eyebrow">Próximo hito</div>
+  <h1>Inicio de campaña: <em>16 de noviembre</em></h1>
+  <p class="lede">Con los acuerdos de esta sesión se cierran artes, formularios y listas el viernes 13. La pauta inicia el lunes 16 y el anuncio a clientes y no clientes se envía el martes 17.</p>
+</section>
+
+</div>
+<div class="nav"><button id="prev" aria-label="Anterior">←</button><span id="count"></span><button id="next" aria-label="Siguiente">→</button></div>
+<script>
+  const s = [...document.querySelectorAll('.slide')]; let i = 0;
+  const go = n => { s[i].classList.remove('on'); i = Math.max(0, Math.min(s.length-1, n)); s[i].classList.add('on'); document.getElementById('count').textContent = (i+1)+' / '+s.length; };
+  document.addEventListener('keydown', e => { if (['ArrowRight','PageDown',' '].includes(e.key)) go(i+1); if (['ArrowLeft','PageUp'].includes(e.key)) go(i-1); });
+  document.getElementById('next').onclick = () => go(i+1);
+  document.getElementById('prev').onclick = () => go(i-1);
+  go(0);
+</script>
+</body>
+</html>
