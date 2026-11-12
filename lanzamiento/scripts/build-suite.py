@@ -246,7 +246,7 @@ details.guide article{{padding:0 20px 20px;max-width:none}}
 <main>
   <section class="view full" id="v-presentacion" aria-label="Presentación">
     <div class="toolbar wrap">
-      <span>13 diapositivas · flechas del teclado o botones para avanzar</span><span class="sp"></span>
+      <span>12 diapositivas · flechas del teclado o botones para avanzar</span><span class="sp"></span>
       <button type="button" class="btn" id="d-prev" aria-label="Diapositiva anterior">←</button>
       <button type="button" class="btn" id="d-next" aria-label="Diapositiva siguiente">→</button>
       <button type="button" class="btn primary" id="d-full">Pantalla completa</button>

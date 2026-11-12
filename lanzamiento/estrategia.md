@@ -87,6 +87,18 @@ Las metas cuantitativas son **hipótesis a validar** el jueves con Fer (ventas n
 | Demos de Reloj (con prototipo/Figma) | 15 | 31-dic | Fer / Vips |
 | Preventas de Reloj firmadas (solas o bundle GP + Reloj) | 5 | 15-ene | Fer / Vips |
 
+### Escenarios
+| Indicador | Asequible | Ambicioso (metas de este documento) |
+|---|---|---|
+| Registros al webinar | 60 de 30 empresas | 100 de 50 empresas |
+| Asistentes | 24 | 40 |
+| Registros pagados | 30 | 50 |
+| CPL de pauta del webinar | ≤ $400 MXN | ≤ $240 MXN |
+| Lista prioritaria | 15 empresas | 25 empresas |
+| Demos | 8 | 15 |
+| SQLs | 12 (7 + 5) | 20 (12 + 8) |
+| Preventas de Reloj Checador | 3 | 5 |
+
 ### KPIs de soporte (salud del funnel)
 | Métrica | Meta |
 |---|---|
@@ -319,12 +331,24 @@ Revisión semanal (lunes): se mueve presupuesto al canal con mejor CPL→SQL, no
 | Presupuesto bajo de pauta | Poco volumen externo | Apalancar base propia, voceros, webinar co-organizado con un aliado legal (su audiencia) y orgánico |
 | Afirmaciones legales erróneas | Riesgo reputacional | Validar con legal o el invitado laboral: fechas (1-ene-2027 registro electrónico; 48 a 46 h en 2027; 40 h en 2030) y monto de multas antes de publicar |
 
+
+**POD de lanzamiento.** Para mitigar estos riesgos se conforma un POD con Producto, Marketing, Ventas y Customer Success, con revisión semanal de alcance, piezas, pipeline y preventas hasta la habilitación de enero.
+
 ---
 
 ## 11. Siguientes pasos
 
-| # | Tema | Pregunta o acción | Responsable | Fecha |
+| # | Tema | Acción | Responsable | Fecha |
 |---|---|---|---|---|
+| 1 | Metas | Aprobación del escenario de metas (asequible o ambicioso): SQLs y preventas de Reloj Checador al 15-ene | Fernando · Vivian | 13-nov |
+| 2 | Webinar | Definición del formato del webinar: presentación individual o con un especialista laboral invitado | Pedro | 13-nov |
+| 3 | Oferta de preventa | Definición de la oferta de preventa: precio early adopter, paquete con Comunidad o prioridad de habilitación | Fernando · Diego | 20-nov |
+| 4 | Prototipo | Confirmación del prototipo navegable del Reloj Checador para el 20-nov | Carolina | 13-nov |
+| 5 | Alcance del release | Confirmación del alcance del release del 31-dic: descansos, confirmación de cierre y horas extra | Carolina | 13-nov |
+| 6 | Exclusión de partners | Entrega de la lista de clientes de FitchUp y Worky | Vivian | 13-nov |
+| 7 | Firma a clientes | Definición de la firma de los mensajes a clientes | Vivian | 13-nov |
+
+---|---|---|---|---|
 | 1 | Metas | ¿Aprobamos 20 SQLs (12 nuevos + 8 cross-sell) y 5 preventas de Reloj Checador al 15-ene? | Fernando Núñez y Vivian Cazadero | 13-nov |
 | 2 | Webinar | Pedro, ¿lo vas a presentar solo o con un especialista laboral invitado? Si hay invitado, ¿quién es y quién lo contacta? | Pedro Sors | 13-nov |
 | 3 | Oferta de preventa | ¿La preventa tendrá precio early adopter, bundle con Comunidad o solo prioridad de habilitación? | Fernando Núñez y Diego Cuauhtémoc; aprueba Santiago Maldonado | 20-nov |

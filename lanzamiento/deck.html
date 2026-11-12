@@ -65,13 +65,18 @@
     .lapzi { position:static; width:110px; margin-top:20px; }
     table { font-size:12.5px; }
   }
-  .comp { font-size:12.5px; } .comp td, .comp th { padding:6px 8px; } .comp td:first-child { white-space:nowrap; }
+  .slide.tight { padding-top:4vh; padding-bottom:4vh; } .tight h2 { margin-bottom:12px; } .comp { font-size:12px; } .comp td, .comp th { padding:5px 8px; line-height:1.35; } .comp td:first-child { white-space:nowrap; }
   .tag3 { display:inline-block; font-size:10.5px; font-weight:700; padding:2px 7px; border-radius:9999px; background:#FFF3CC; color:#7A5A00; margin-left:4px; }
   .note { font-size:12px; color:#71717A; margin-top:12px; }
   .host { display:flex; gap:16px; align-items:center; }
   .host img { width:96px; height:96px; border-radius:18px; object-fit:cover; border:2px solid #54F4F2; }
   .host .ph2 { width:96px; height:96px; border-radius:18px; border:2px dashed rgba(255,255,255,.3); display:grid; place-items:center; font-size:12px; color:rgba(255,255,255,.6); text-align:center; }
   .steps td:nth-child(1) { width:28px; color:#5029A3; font-weight:700; } .steps td:nth-child(4) { white-space:nowrap; } .steps td:nth-child(5) { white-space:nowrap; color:#5029A3; font-weight:600; }
+  .keys .c { background:#211435; border-color:#211435; padding:14px 18px; } .keys .c h3 { color:#C7A4FF; font-size:18px; } .keys .c p { color:rgba(255,255,255,.85); font-size:14px; }
+  .tight .note { margin-top:8px; }
+  .scen td:nth-child(2), .scen td:nth-child(3), .scen th:nth-child(2), .scen th:nth-child(3) { width:32%; } .scen th:nth-child(3) { color:#5029A3; } .scen .sub { font-size:12px; color:#71717A; }
+  .tbc { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:9999px; background:#FFF3CC; color:#7A5A00; margin-left:4px; }
+  .pod { margin-top:16px; background:#211435; color:#fff; border-radius:14px; padding:14px 18px; font-size:15px; line-height:1.5; } .pod b { color:#C7A4FF; }
   .calc { background:#fff; border:1px solid #DDD4FF; border-radius:14px; padding:12px 16px; margin-top:14px; font-size:14px; }
 </style>
 </head>
@@ -82,26 +87,8 @@
 <section class="slide dark on">
   <img class="logo" src="../design-system/assets/logo/lapzo-logo-on-dark.png" alt="Lapzo">
   <div class="eyebrow">Lanzamiento Q4 2026 · Marketing y Growth</div>
-  <h1>Tu gente, <em>de principio a fin</em></h1>
-  <p class="lede">Estrategia de lanzamiento de Reclutamiento, Gestión de Personal y Reloj Checador.</p>
+  <h1>Estrategia de <em>Reloj Checador</em></h1>
   <img class="lapzi" src="../design-system/assets/lapzi/lapzi-yougotthis.png" alt="">
-</section>
-
-<!-- 2 -->
-<section class="slide">
-  <div class="eyebrow">Acuerdos de la sesión del 3 de noviembre</div>
-  <h2>Punto de partida</h2>
-  <div class="g g3">
-    <div class="c"><span class="pill ok">Disponible</span><h3>Reclutamiento</h3><p>Vacantes por competencias e IAMatch. Vacantes y postulantes ilimitados.</p></div>
-    <div class="c"><span class="pill ok">Disponible</span><h3>Gestión de Personal</h3><p>Organigrama, expediente, solicitudes con aprobación y documentos. <b>Sin firma digital.</b></p></div>
-    <div class="c"><span class="pill wait">31 de diciembre · habilitación en enero</span><h3>Reloj Checador</h3><p>Jornadas, turnos, registro de entrada y salida, correcciones con aprobación. <b>Sin nómina, biométricos, geolocalización ni kiosco.</b></p></div>
-  </div>
-  <div class="g g4" style="margin-top:16px">
-    <div class="c"><h3>16 y 17 de noviembre</h3><p>Pauta desde el lunes 16; anuncio de los tres productos el martes 17</p></div>
-    <div class="c"><h3>Módulos independientes</h3><p>Reloj Checador y Gestión de Personal se venden por separado o en paquete. Comunidad como incentivo de cierre</p></div>
-    <div class="c"><h3>Precios en definición</h3><p>Propuesta de pricing a cargo de Fernando Núñez y Diego Cuauhtémoc</p></div>
-    <div class="c"><h3>Exclusión de partners</h3><p>Los clientes de FitchUp y Worky quedan fuera de todas las listas y audiencias</p></div>
-  </div>
 </section>
 
 <!-- 3 -->
@@ -118,9 +105,9 @@
 </section>
 
 <!-- 4 -->
-<section class="slide">
+<section class="slide tight">
   <div class="eyebrow">Panorama competitivo</div>
-  <h2>Qué ofrece y cuánto cobra <em>la competencia</em></h2>
+  <h2>Benchmark</h2>
   <table class="comp">
     <tr><th>Competidor</th><th>Control de asistencia</th><th>Oferta principal</th><th>Precio público</th><th>Comunicación de la reforma</th></tr>
     <tr><td><b>Buk</b></td><td>Biométrico, facial o app con geocercas; integrado a nómina</td><td>Nómina, beneficios, capacitación, desempeño y clima</td><td>Cotización por plan y colaboradores. Desde ~$2,814 MXN/mes<span class="tag3">terceros</span></td><td>Blog, kit para RH y guía de 40 horas</td></tr>
@@ -133,7 +120,7 @@
     <tr><td><b>Worky</b> <span class="tag3" style="background:#ECE8FF;color:#5029A3">partner</span></td><td>WhatsApp, app, web, QR y GPS; integrado a nómina</td><td>Nómina, Core HR, vacaciones e intranet</td><td>Core HR $30 MXN por colaborador/mes; asistencia +$45<span class="tag3">terceros</span></td><td>Landings "obligatorio 2027" y multas</td></tr>
     <tr><td><b>FitchUp</b> <span class="tag3" style="background:#ECE8FF;color:#5029A3">partner</span></td><td>Control horario para personal operativo</td><td>RH en la nube para personal operativo</td><td>Cotización por colaborador activo</td><td>Landing de la ley de 40 horas</td></tr>
   </table>
-  <div class="g g3" style="margin-top:14px">
+  <div class="g g3 keys" style="margin-top:12px">
     <div class="c"><h3>El mensaje de miedo ya está ocupado</h3><p>Lapzo se diferencia como aliado de talento: cumplimiento más conocimiento de los colaboradores.</p></div>
     <div class="c"><h3>La ley no exige biométricos</h3><p>Reloj Checador cumple sin hardware adicional. La mayoría condiciona la asistencia a migrar su nómina.</p></div>
     <div class="c"><h3>Referencia de precio</h3><p>Asistencia entre $45 y $80 MXN por colaborador/mes. Publicar precio sería un diferenciador.</p></div>
@@ -144,20 +131,19 @@
 <!-- 5 -->
 <section class="slide violet">
   <div class="eyebrow">Objetivos al 15 de enero</div>
-  <h2>Pipeline y preventa de Reloj Checador</h2>
-  <div class="g g4">
-    <div class="c"><div class="big">100</div><h3>Registros al webinar</h3><p>De 50 empresas · martes 24 de noviembre</p></div>
-    <div class="c"><div class="big">40</div><h3>Asistentes</h3><p>40% de los registros</p></div>
-    <div class="c"><div class="big">20</div><h3>SQLs</h3><p>12 nuevos · 8 de cross-sell</p></div>
-    <div class="c"><div class="big">5</div><h3>Preventas de Reloj Checador</h3><p>Individual o en paquete con Gestión de Personal</p></div>
-  </div>
-  <table style="margin-top:20px;background:#fff;border-radius:14px">
-    <tr><th>Indicador</th><th>Meta</th><th>Indicador</th><th>Meta</th></tr>
-    <tr><td>Lista prioritaria de Reloj Checador</td><td><b>25 empresas</b></td><td>CPL de pauta del webinar</td><td><b>≤ $240 MXN</b></td></tr>
-    <tr><td>Demos con prototipo</td><td><b>15</b></td><td>MQL a SQL</td><td><b>≥ 25%</b></td></tr>
-    <tr><td>Tiempo de contacto a lead</td><td><b>&lt; 24 h hábiles</b></td><td>Conversión de landing</td><td><b>≥ 8%</b></td></tr>
+  <h2>Dos escenarios de resultados</h2>
+  <table class="scen" style="background:#fff;border-radius:14px">
+    <tr><th>Indicador</th><th>Escenario asequible</th><th>Escenario ambicioso</th></tr>
+    <tr><td>Registros al webinar</td><td><b>60</b> de 30 empresas</td><td><b>100</b> de 50 empresas</td></tr>
+    <tr><td>Asistentes en vivo</td><td><b>24</b> (40%)</td><td><b>40</b> (40%)</td></tr>
+    <tr><td>Registros pagados (LinkedIn + Meta)</td><td><b>30</b></td><td><b>50</b></td></tr>
+    <tr><td>CPL de pauta del webinar</td><td><b>≤ $400 MXN</b><br><span class="sub">LinkedIn ≈ $650 · Meta ≈ $220</span></td><td><b>≤ $240 MXN</b><br><span class="sub">LinkedIn ≈ $400 · Meta ≈ $130</span></td></tr>
+    <tr><td>Lista prioritaria de Reloj Checador</td><td><b>15</b> empresas</td><td><b>25</b> empresas</td></tr>
+    <tr><td>Demos con prototipo</td><td><b>8</b></td><td><b>15</b></td></tr>
+    <tr><td>SQLs</td><td><b>12</b> (7 nuevos · 5 cross-sell)</td><td><b>20</b> (12 nuevos · 8 cross-sell)</td></tr>
+    <tr><td>Preventas de Reloj Checador</td><td><b>3</b></td><td><b>5</b></td></tr>
   </table>
-  <div class="calc"><b>Cálculo del CPL:</b> $12,000 MXN de pauta para el webinar (LinkedIn $8,000 + Meta $4,000) entre 50 registros pagados = <b>$240 MXN por registro</b>. LinkedIn ≈ $400 (20 registros) y Meta ≈ $130 (30 registros). Los otros 50 registros provienen de la base de clientes, email, WhatsApp y orgánico.</div>
+  <div class="calc"><b>Cálculo del CPL:</b> $12,000 MXN de pauta para el webinar (LinkedIn $8,000 + Meta $4,000) entre los registros pagados: $12,000 ÷ 30 = $400 en el escenario asequible y $12,000 ÷ 50 = $240 en el ambicioso. El resto de los registros proviene de la base de clientes, email, WhatsApp y orgánico. Metas comunes a ambos escenarios: contacto a lead en menos de 24 horas hábiles y MQL a SQL ≥ 25%.</div>
 </section>
 
 <!-- 6 -->
@@ -198,7 +184,7 @@
     <div class="c">
       <h3>Clientes (retención y cross-sell)</h3>
       <ul>
-        <li><b>A. Cuentas clave:</b> contacto 1:1 de CSM o de Pedro Sors e invitación personal</li>
+        <li><b>A. Cuentas clave:</b> contacto 1:1 de CSM o de Pedro e invitación personal</li>
         <li><b>B. Varios módulos:</b> email y WhatsApp de CSM</li>
         <li><b>C. Un módulo:</b> email, con Gestión de Personal como palanca de retención</li>
         <li><b>D. Renovación en ≤ 90 días:</b> Gestión de Personal y Reloj Checador como palanca TaaS</li>
@@ -210,7 +196,7 @@
       <ul>
         <li><b>Base propia:</b> leads y MQLs no convertidos de los últimos 18 meses</li>
         <li><b>Pauta:</b> RH, Dirección y Operaciones en México, en industrias con turnos (manufactura, retail, logística, farmacéutica, hotelería y automotriz)</li>
-        <li><b>Voceros:</b> Santiago Maldonado, Pedro Sors y Fernando Núñez en LinkedIn</li>
+        <li><b>Voceros:</b> Santiago, Pedro y Fernando en LinkedIn</li>
         <li><b>Retargeting:</b> visitantes de las landings y registrados al webinar</li>
       </ul>
     </div>
@@ -223,15 +209,14 @@
   <h2>Registro electrónico de jornada 2027: <em>lo que tu empresa debe tener listo el 1 de enero</em></h2>
   <div class="g g2" style="margin-bottom:16px">
     <div class="c host"><img src="artes/recursos/personas/pedro-sors.png" alt="Pedro Sors"><div><h3>Pedro Sors</h3><p>COO de Lapzo · Presentador</p></div></div>
-    <div class="c host"><div class="ph2">Por<br>confirmar</div><div><h3>Especialista laboral invitado</h3><p>Pendiente de confirmar con Pedro Sors</p></div></div>
+    <div class="c host"><div class="ph2">Por<br>confirmar</div><div><h3>Especialista laboral invitado</h3><p>Por confirmar</p></div></div>
   </div>
   <div class="g g4">
     <div class="c"><h3>0–15 min</h3><p>La reforma en diez minutos</p></div>
     <div class="c"><h3>15–30 min</h3><p>Las cinco claves para prepararse</p></div>
-    <div class="c"><h3>30–45 min</h3><p>Demostración del prototipo de Reloj Checador y lista prioritaria</p></div>
+    <div class="c"><h3>30–45 min</h3><p>Demostración del prototipo de Reloj Checador <span class="tbc">TBC</span></p></div>
     <div class="c"><h3>45–60 min</h3><p>Preguntas y respuestas, con respuestas preparadas sobre el alcance</p></div>
   </div>
-  <p class="lede" style="margin-top:20px">Seguimiento en menos de 24 horas: los no clientes con Fernando Núñez y los clientes con su CSM. La grabación y el one-pager se envían el 25 de noviembre.</p>
 </section>
 
 <!-- 10 -->
@@ -258,15 +243,13 @@
   <div class="eyebrow">Riesgos</div>
   <h2>Riesgos = Mitigación</h2>
   <table>
-    <tr><th>Riesgo</th><th>Mitigación</th></tr>
-    <tr><td><b>Estabilidad de la plataforma</b> (incidente de SSO del 3 de noviembre, 17 clientes)</td><td>Vivian Cazadero confirma el cierre de casos el 16 de noviembre; las cuentas afectadas reciben primero un mensaje 1:1</td></tr>
-    <tr><td><b>Demostraciones de Reloj Checador sin producto liberado</b></td><td>Prototipo de Figma de Carolina Archila y discurso "disponible el 31 de diciembre"</td></tr>
-    <tr><td><b>Comunicar funciones fuera de alcance</b></td><td>Validación de alcance por Producto en cada pieza y FAQ interna</td></tr>
-    <tr><td><b>Relación con partners FitchUp y Worky</b></td><td>Exclusión global; Fernando Núñez y Santiago Maldonado conversan con ellos antes del 23 de noviembre</td></tr>
-    <tr><td><b>Pricing sin definir</b></td><td>Llamados a la acción de demo y cotización; variable [OFERTA] en la preventa</td></tr>
-    <tr><td><b>Ventana de captación de ocho días</b></td><td>Corte el 20 de noviembre: con menos de 50 registros, la reserva de $2,000 se asigna a LinkedIn y Meta</td></tr>
-    <tr><td><b>Afirmaciones legales</b></td><td>Validación de fechas y multas con el área legal o el especialista invitado antes de publicar</td></tr>
+    <tr><th>Riesgo</th><th>Mitigación</th><th>Responsable</th></tr>
+    <tr><td><b>Demostraciones de Reloj Checador sin producto liberado</b></td><td>Prototipo navegable en Figma y discurso "disponible el 31 de diciembre"</td><td>Carolina</td></tr>
+    <tr><td><b>Comunicar funciones fuera de alcance</b></td><td>Validación de alcance por Producto en cada pieza y FAQ interna</td><td>Carolina</td></tr>
+    <tr><td><b>Pricing sin definir</b></td><td>Llamados a la acción de demo y cotización; variable [OFERTA] en la preventa</td><td>Fernando · Diego</td></tr>
+    <tr><td><b>Ventana de captación de ocho días</b></td><td>Corte el 20 de noviembre: con menos de 50 registros, la reserva de $2,000 se asigna a LinkedIn y Meta</td><td>Diego</td></tr>
   </table>
+  <div class="pod"><b>POD de lanzamiento.</b> Para mitigar estos riesgos se conforma un POD con Producto, Marketing, Ventas y Customer Success, con revisión semanal de alcance, piezas, pipeline y preventas hasta la habilitación de enero.</div>
 </section>
 
 <!-- 12 -->
@@ -274,16 +257,14 @@
   <div class="eyebrow">Acuerdos pendientes</div>
   <h2>Siguientes pasos</h2>
   <table class="steps" style="background:#fff;border-radius:14px">
-    <tr><th>#</th><th>Tema</th><th>Pregunta o acción</th><th>Responsable</th><th>Fecha</th></tr>
-    <tr><td>1</td><td><b>Metas</b></td><td>¿Aprobamos 20 SQLs (12 nuevos y 8 de cross-sell) y 5 preventas de Reloj Checador al 15 de enero?</td><td>Fernando Núñez · Vivian Cazadero</td><td>13 nov</td></tr>
-    <tr><td>2</td><td><b>Webinar</b></td><td>Pedro, ¿lo vas a presentar solo o con un especialista laboral invitado? Si hay invitado, ¿quién es y quién lo contacta?</td><td>Pedro Sors</td><td>13 nov</td></tr>
-    <tr><td>3</td><td><b>Oferta de preventa</b></td><td>¿La preventa tendrá precio early adopter, paquete con Comunidad o solo prioridad de habilitación?</td><td>Fernando Núñez · Diego Cuauhtémoc (aprueba Santiago Maldonado)</td><td>20 nov</td></tr>
-    <tr><td>4</td><td><b>Prototipo</b></td><td>Carolina, ¿confirmas el prototipo navegable de Reloj Checador para el 20 de noviembre?</td><td>Carolina Archila</td><td>13 nov</td></tr>
-    <tr><td>5</td><td><b>Alcance del release</b></td><td>Carolina, ¿descansos, confirmación de cierre y horas extra entran en el release del 31 de diciembre?</td><td>Carolina Archila</td><td>13 nov</td></tr>
-    <tr><td>6</td><td><b>Exclusión de partners</b></td><td>Vivian, ¿entregas la lista de clientes de FitchUp y Worky el 13 de noviembre?</td><td>Vivian Cazadero</td><td>13 nov</td></tr>
-    <tr><td>7</td><td><b>Firma a clientes</b></td><td>¿Los mensajes a clientes los firma Vivian Cazadero, Santiago Maldonado o Lapzo?</td><td>Vivian Cazadero</td><td>13 nov</td></tr>
-    <tr><td>8</td><td><b>Estabilidad</b></td><td>Vivian, ¿confirmas el 16 de noviembre que los casos del incidente del 3 de noviembre están cerrados?</td><td>Vivian Cazadero</td><td>16 nov</td></tr>
-    <tr><td>9</td><td><b>Nombre del producto</b></td><td>¿Usamos "Gestión de Personal" en todas las piezas?</td><td>Carolina Archila</td><td>13 nov</td></tr>
+    <tr><th>#</th><th>Tema</th><th>Acción</th><th>Responsable</th><th>Fecha</th></tr>
+    <tr><td>1</td><td><b>Metas</b></td><td>Aprobación del escenario de metas: SQLs y preventas de Reloj Checador al 15 de enero</td><td>Fernando · Vivian</td><td>13 nov</td></tr>
+    <tr><td>2</td><td><b>Webinar</b></td><td>Definición del formato del webinar: presentación individual o con un especialista laboral invitado</td><td>Pedro</td><td>13 nov</td></tr>
+    <tr><td>3</td><td><b>Oferta de preventa</b></td><td>Definición de la oferta de preventa: precio early adopter, paquete con Comunidad o prioridad de habilitación</td><td>Fernando · Diego</td><td>20 nov</td></tr>
+    <tr><td>4</td><td><b>Prototipo</b></td><td>Confirmación del prototipo navegable del Reloj Checador para el 20 de noviembre</td><td>Carolina</td><td>13 nov</td></tr>
+    <tr><td>5</td><td><b>Alcance del release</b></td><td>Confirmación del alcance del release del 31 de diciembre: descansos, confirmación de cierre y horas extra</td><td>Carolina</td><td>13 nov</td></tr>
+    <tr><td>6</td><td><b>Exclusión de partners</b></td><td>Entrega de la lista de clientes de FitchUp y Worky</td><td>Vivian</td><td>13 nov</td></tr>
+    <tr><td>7</td><td><b>Firma a clientes</b></td><td>Definición de la firma de los mensajes a clientes</td><td>Vivian</td><td>13 nov</td></tr>
   </table>
 </section>
 
