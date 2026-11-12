@@ -291,6 +291,8 @@ Tono más cercano, para Sofía y sin formalismos:
 
 ## 13. Briefs de artes (para diseño)
 
+> **Versión para producir:** [`artes/claude-design.md`](artes/claude-design.md) tiene el prompt para Claude Design, los textos finales por pieza, los lotes con fecha y los recursos en `artes/recursos/`. Ahí los artes usan el design system de lapzo.co (fondo `#211435`, acento `#C7A4FF`) y las capturas reales del widget; este brief queda como referencia.
+
 **Key visual de la campaña: "Tu gente, de principio a fin"**
 - Base: fondo `#14142A` o violeta mist `#DFD9F8`. Tres tarjetas en composición escalonada (estilo de las tarjetas del hero de TaaS), una por producto, con su color:
   - Reclutamiento: violeta `#8B55FE`
