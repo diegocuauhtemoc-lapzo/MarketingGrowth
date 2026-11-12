@@ -12,4 +12,4 @@ Material de Marketing/Growth para el lanzamiento acordado en la sesión *Product
 | [`index.html`](index.html) | **Visor**: navega todos los archivos (deck, estrategia, copys y landings con vista móvil) |
 | [`deck.html`](deck.html) | Deck para presentar la estrategia al equipo (flechas ← → para navegar) |
 
-Las landings usan `../design-system/` (tokens, fuentes, logos, Lapzi). Los formularios están marcados con `<!-- HUBSPOT -->`: hay que reemplazarlos por el embed del form de HubSpot correspondiente antes de publicar.
+`reloj-checador.html` está construida con el design system de `Lapzo-Growth/lapzo-marketing-studio` (tokens `--lz-*`, Degular/Poppins y patrones de las landings `/lp/`); sus fuentes, íconos, Lapzi y logos están en `lz/`. El widget de Control Horario (`lz/control-horario.js`) reproduce los 6 estados del Figma *Control Horario · Componentes — Opción A*. Las otras dos landings usan `../design-system/` (tokens, fuentes, logos, Lapzi). Los formularios están marcados con `<!-- HUBSPOT -->`: hay que reemplazarlos por el embed del form de HubSpot correspondiente antes de publicar.

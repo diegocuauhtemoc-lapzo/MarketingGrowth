@@ -42,6 +42,7 @@
 - ✅ Configuración de jornadas laborales
 - ✅ Creación y asignación de turnos
 - ✅ Registro de entradas y salidas (reloj checador) dentro de Lapzo
+- ✅ Registro de descansos, confirmación de cierre de jornada, horas fuera de turno marcadas aparte y notificaciones en cada paso (según el Figma *Control Horario · Opción A*; **validar con Carolina que entra en el release del 31-dic** antes de comunicarlo en pauta)
 - ✅ Solicitudes de corrección de marcación (p. ej., "olvidé marcar mi salida") con cadena de aprobación configurable
 - 🔜 Reportería (lo siguiente en el roadmap; comunicar como "próximamente", sin fecha)
 - ❌ Integración con nómina o con cualquier otro sistema (cero en este trimestre)

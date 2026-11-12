@@ -4,328 +4,337 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reloj Checador — Lapzo</title>
-<meta name="description" content="Desde el 1 de enero de 2027 el registro electrónico de jornada es obligatorio en México. Reloj Checador de Lapzo: jornadas, turnos, registro de entradas y salidas y correcciones con aprobación.">
-<link rel="stylesheet" href="../design-system/colors_and_type.css">
-<link rel="stylesheet" href="landing.css">
-<style>
-  :root { --prod-soft:#FDE0C3; --prod-ink:#7A3A0A; }
-  .eye .dot { background:#F9912A; }
-</style>
-<!-- TRACKING: pegar aquí Meta Pixel + LinkedIn Insight Tag + HubSpot tracking code -->
+<meta name="description" content="Registro electrónico de jornada para tu empresa: jornadas, turnos, entradas, salidas, descansos y correcciones con aprobación, dentro de Lapzo.">
+<link rel="stylesheet" href="lz/lz-landing.css">
+<!-- TRACKING: GTM / HubSpot tracking code / LinkedIn Insight / Meta Pixel van aquí al publicar. -->
 </head>
 <body>
 
-<nav class="top">
-  <div class="wrap">
-    <img class="logo" src="../design-system/assets/logo/lapzo-logo.png" alt="Lapzo">
-    <div class="links">
-      <a href="reclutamiento.html">Reclutamiento</a>
-      <a href="gestion-personal.html">Gestión de Personal</a>
-      <a href="reloj-checador.html" class="on">Reloj Checador</a>
+<header class="hdr">
+  <div class="in">
+    <a href="#top"><img class="logo" src="lz/lapzo-lockup-inverse.svg" alt="Lapzo"></a>
+    <nav aria-label="Secciones">
+      <a href="#ley">La reforma</a>
+      <a href="#dia">Cómo se ve</a>
+      <a href="#incluye">Qué incluye</a>
       <a href="#webinar" class="only-pre">Webinar 2-dic</a>
-    </div>
-    <a class="btn btn-primary" href="#registro" data-post="Agenda tu habilitación">Únete a la lista prioritaria</a>
+      <a class="lz-btn" data-size="small" href="#registro" data-post="Agenda tu habilitación">Únete a la lista prioritaria</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-  <img class="decor-arrow" src="../design-system/assets/decor/arrow-curve-violet.svg" alt="">
-  <div class="wrap">
-    <div>
-      <div class="eye"><span class="dot"></span><span data-post="Nuevo en Lapzo · Ya disponible">Nuevo en Lapzo · Llega el 31 de diciembre</span></div>
-      <h1 data-post="El registro de jornada ya es obligatorio. <span class='accent'>Tú ya estás listo</span>">El 1 de enero el registro de jornada <span class="accent">deja de ser opcional</span></h1>
-      <p class="lede">La reforma laboral pide a las empresas en México llevar un <em>registro electrónico de la jornada</em> de sus colaboradores a partir de 2027. Con Reloj Checador de Lapzo configuras jornadas y turnos, tu gente registra entradas y salidas, y las correcciones se aprueban sin perseguir a nadie.</p>
+<!-- 1. Hero -->
+<section class="ds-section ink hero" id="top">
+  <div class="blob" style="width:620px;height:620px;left:-180px;top:-260px;background:var(--lz-action);opacity:.35"></div>
+  <div class="blob" style="width:420px;height:420px;right:-120px;bottom:-200px;background:var(--lz-magenta-60);opacity:.22;animation-direction:alternate-reverse"></div>
+  <div class="rail">
+    <div class="hero-text">
+      <div class="eyebrow"><span class="ico spark" style="width:14px;height:14px"></span><span data-post="Nuevo en Lapzo · Ya disponible">Nuevo en Lapzo · Llega el 31 de diciembre</span></div>
+      <h1 class="h1" data-post="Registra la jornada de tu gente <span class='hl'>desde hoy.</span>">El 1 de enero el registro de jornada <span class="hl">deja de ser opcional.</span></h1>
+      <p class="lead">La reforma laboral pide a las empresas en México llevar un registro electrónico de la jornada a partir de 2027. Con Reloj Checador tu gente marca entrada, descansos y salida desde Lapzo, y RH tiene cada jornada confirmada.</p>
+      <div class="bullets">
+        <div><span class="ico check"></span>Entrada, descansos y salida en un clic</div>
+        <div><span class="ico check"></span>Cada colaborador confirma su jornada antes de cerrar</div>
+        <div><span class="ico check"></span>Correcciones con aprobación y horas extra a la vista</div>
+      </div>
       <div class="ctas">
-        <a class="btn btn-primary btn-lg" href="#registro" data-post="Agenda tu habilitación →">Quiero estar en la primera ola →</a>
-        <a class="btn btn-ghost btn-lg only-pre" href="#webinar">Regístrate al webinar</a>
-        <a class="btn btn-ghost btn-lg only-post" href="#incluye">Ver qué incluye</a>
+        <a class="lz-btn" data-size="large" href="#registro" data-post="Agenda tu habilitación">Quiero estar en la primera ola</a>
+        <a class="textlink" href="#dia">Así funciona <span class="ico down" style="width:16px;height:16px"></span></a>
       </div>
-      <div class="proof">✦ Del mismo aliado que ya desarrolla el talento de +200 empresas en México y LATAM</div>
-    </div>
-    <div class="stage">
-      <div class="grad"></div>
-      <div class="circle"></div>
-      <div class="c1">
-        <div class="lbl">Turno matutino · Planta</div>
-        <div class="row-item"><span>Ana R. · 07:58</span><span class="pill ok">Entrada</span></div>
-        <div class="row-item"><span>Luis M. · 08:12</span><span class="pill wait">Corrección</span></div>
-        <div class="row-item"><span>Sofía T. · 07:55</span><span class="pill ok">Entrada</span></div>
-      </div>
-      <div class="c2">
-        <div class="lbl" data-post="Desde el 1 de enero de 2027">Faltan para el 1 de enero de 2027</div>
-        <div class="big only-post">Vigente</div>
-        <div class="countdown only-pre" data-countdown="2027-01-01T00:00:00-06:00">
-          <div><b data-d>--</b><span>días</span></div>
-          <div><b data-h>--</b><span>horas</span></div>
-          <div><b data-m>--</b><span>min</span></div>
+      <div class="cd">
+        <span class="lbl" data-post="Registro electrónico obligatorio desde el 1 de enero de 2027">Faltan para el 1 de enero de 2027</span>
+        <div class="units only-pre" data-countdown="2027-01-01T00:00:00-06:00">
+          <div class="u"><b data-d>--</b><small>días</small></div>
+          <div class="u"><b data-h>--</b><small>horas</small></div>
+          <div class="u"><b data-m>--</b><small>min</small></div>
         </div>
-        <p>Registro electrónico de jornada obligatorio</p>
+        <span class="vig only-post">Vigente</span>
       </div>
-      <img class="lapzi" src="../design-system/assets/lapzi/lapzi-pointing.png" alt="">
-      <img class="star" src="../design-system/assets/decor/star.svg" alt="">
+    </div>
+
+    <!-- Visual: la app real (Figma "Control Horario · Topnav — Opción A") recorriendo sus estados -->
+    <div data-ch-stage data-autoplay="3800">
+      <div class="app" aria-label="Vista previa de Control Horario en Lapzo">
+        <div class="app-top">
+          <span class="t">Mi Perfil</span>
+          <div class="r"><span data-ch-nav></span><span class="dots" aria-hidden="true"><i></i><i></i></span></div>
+        </div>
+        <div class="app-body">
+          <div class="left" aria-hidden="true">
+          <div class="prof">
+            <div class="cover"></div>
+            <div class="who"><span class="av">AH</span></div>
+            <div class="nm">Abraham Hill</div>
+            <div class="meta">Content Strategist · Product Designer</div>
+            <div class="app-tabs"><span>Resumen</span><span>Información</span><span>Documentos</span><span>Solicitudes</span><span>Aprendizaje</span></div>
+          </div>
+          <div class="skel"><div><i></i><i></i><i></i></div><div><i></i><i></i><i></i></div><div><i></i><i></i><i></i></div><div><i></i><i></i><i></i></div></div>
+          </div>
+          <div class="pop" data-ch-widget></div>
+          <div class="toastslot" data-ch-toast></div>
+        </div>
+      </div>
+      <div class="states" role="group" aria-label="Estados de la jornada" id="hero-states"></div>
     </div>
   </div>
 </section>
 
-<div class="logos">
-  <div class="wrap">
-    <div class="label">Más de 200 empresas en México y LATAM confían en Lapzo</div>
-    <div class="row">
-      <img src="../design-system/assets/client-logos/mazda.svg" alt="Mazda">
-      <img src="../design-system/assets/client-logos/rotoplas.svg" alt="Rotoplas">
-      <img src="../design-system/assets/client-logos/oxxo.svg" alt="Oxxo">
-      <img src="../design-system/assets/client-logos/deacero.svg" alt="DEACERO">
-      <img src="../design-system/assets/client-logos/farmacias-del-ahorro.svg" alt="Farmacias del Ahorro">
-      <img src="../design-system/assets/client-logos/construrama.svg" alt="Construrama">
+<!-- 2. Confianza -->
+<section class="ds-section surface trust" style="border-bottom:1px solid var(--lz-border)">
+  <div class="in">
+    <div class="stats">
+      <div class="stat"><b>+200</b><span>empresas en México y LATAM</span></div>
+      <div class="vsep"></div>
+      <div class="stat"><b>+100,000</b><span>colaboradores impulsados</span></div>
     </div>
-  </div>
-</div>
-
-<!-- QUÉ CAMBIA -->
-<section class="s bg-soft" id="ley">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">La reforma, en corto</div>
-      <h2>Qué cambia para tu empresa a partir de <em>2027</em></h2>
-      <p>La reducción gradual a 40 horas viene con una obligación nueva: poder demostrar cuánto trabaja realmente cada colaborador.</p>
-    </div>
-    <div class="grid g4">
-      <div class="card">
-        <div class="num-big">1-ene</div>
-        <h3>Registro electrónico obligatorio</h3>
-        <p>Las empresas deben llevar un registro electrónico de la jornada de sus colaboradores.</p>
+    <div class="marq" aria-label="Empresas que confían en Lapzo">
+      <div class="track">
+        <div class="row" id="logos"></div>
+        <div class="row" id="logos2" aria-hidden="true"></div>
       </div>
-      <div class="card">
-        <div class="num-big">46 h</div>
-        <h3>Primera reducción de jornada</h3>
-        <p>En 2027 la jornada máxima semanal baja de 48 a 46 horas, rumbo a 40 horas en 2030.</p>
-      </div>
-      <div class="card">
-        <div class="num-big">+ min</div>
-        <h3>Horas extra a la vista</h3>
-        <p>El tiempo extra se registra y se paga. Sin registro claro, la diferencia es un riesgo.</p>
-      </div>
-      <div class="card">
-        <div class="num-big">$$$</div>
-        <h3>Multas por incumplimiento</h3>
-        <p>Las sanciones reportadas pueden llegar a cientos de miles de pesos por empresa.</p>
-      </div>
-    </div>
-    <p class="note">Información general con base en la reforma a la Ley Federal del Trabajo publicada en 2026. No constituye asesoría legal; valida tu caso con tu área jurídica.</p>
-  </div>
-</section>
-
-<!-- QUÉ INCLUYE -->
-<section class="s" id="incluye">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Qué incluye Reloj Checador</div>
-      <h2>La jornada de tu gente, <em>sin Excel</em> ni papelitos</h2>
-      <p>Pensado para equipos de RH que necesitan orden en jornadas, turnos y asistencias, sin agregar otra herramienta desconectada.</p>
-    </div>
-    <div class="grid g4">
-      <div class="card hover">
-        <img class="ico" src="../design-system/assets/icons/cog.svg" alt="">
-        <h3>Configuración de jornadas</h3>
-        <p>Define las jornadas laborales de tu empresa: horarios, días y descansos.</p>
-      </div>
-      <div class="card hover">
-        <img class="ico" src="../design-system/assets/icons/user.svg" alt="">
-        <h3>Turnos y asignación</h3>
-        <p>Crea turnos y asígnalos a cada colaborador o equipo según su operación real.</p>
-      </div>
-      <div class="card hover">
-        <img class="ico" src="../design-system/assets/icons/check-circle.svg" alt="">
-        <h3>Registro de entradas y salidas</h3>
-        <p>Tus colaboradores registran su asistencia desde Lapzo, el lugar donde ya se capacitan.</p>
-      </div>
-      <div class="card hover">
-        <img class="ico" src="../design-system/assets/icons/file-check.svg" alt="">
-        <h3>Correcciones con aprobación</h3>
-        <p>¿Olvidaron marcar su salida? Piden la corrección y su líder la aprueba con una cadena configurable.</p>
-      </div>
-    </div>
-    <p class="note">Próximamente: reportería de jornada y asistencia.</p>
-  </div>
-</section>
-
-<!-- CÓMO FUNCIONA -->
-<section class="s bg-violet">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Cómo funciona</div>
-      <h2>De cero a registro de jornada en <em>cuatro pasos</em></h2>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="num">1</div><h3>Configura tus jornadas</h3><p>Captura los horarios y días que aplican en tu empresa.</p></div>
-      <div class="step"><div class="num">2</div><h3>Crea y asigna turnos</h3><p>Asigna a cada colaborador su turno, sin hojas de cálculo.</p></div>
-      <div class="step"><div class="num">3</div><h3>Tu gente registra</h3><p>Entradas y salidas desde Lapzo, todos los días.</p></div>
-      <div class="step"><div class="num">4</div><h3>Aprueba correcciones</h3><p>Las excepciones llegan a quien debe aprobarlas, con trazabilidad.</p></div>
     </div>
   </div>
 </section>
 
-<!-- BUNDLE -->
-<section class="s">
-  <div class="wrap">
+<!-- 3. La reforma -->
+<section class="ds-section" id="ley">
+  <div class="rail">
+    <div class="head">
+      <div class="kicker">La reforma, en corto</div>
+      <h2 class="h2">Qué cambia para tu empresa a partir de 2027</h2>
+      <p class="lead">La reducción gradual a 40 horas viene con una obligación nueva: poder demostrar cuánto trabaja realmente cada colaborador.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="top"><b>1-ene</b></div><div class="bd"><h3>Registro electrónico obligatorio</h3><p>Las empresas deben llevar un registro electrónico de la jornada de sus colaboradores.</p></div></div>
+      <div class="card"><div class="top"><b>46 h</b></div><div class="bd"><h3>Primera reducción de jornada</h3><p>En 2027 la jornada máxima semanal baja de 48 a 46 horas, rumbo a 40 horas en 2030.</p></div></div>
+      <div class="card"><div class="top"><b>+ min</b></div><div class="bd"><h3>Horas extra a la vista</h3><p>El tiempo fuera de turno se registra y se paga. Sin un registro claro, la diferencia es un riesgo.</p></div></div>
+      <div class="card"><div class="top"><b>$$$</b></div><div class="bd"><h3>Multas por incumplimiento</h3><p>Las sanciones reportadas pueden llegar a cientos de miles de pesos por empresa.</p></div></div>
+    </div>
+    <p class="disclaimer"><span class="ico info"></span>Información general con base en la reforma a la Ley Federal del Trabajo publicada en 2026. No constituye asesoría legal; valida tu caso con tu área jurídica.</p>
+  </div>
+</section>
+
+<!-- 4. Un día con Reloj Checador (estados del Figma) -->
+<section class="ds-section ink" id="dia">
+  <div class="blob" style="width:520px;height:520px;right:-160px;top:-160px;background:var(--lz-action);opacity:.25"></div>
+  <div class="rail">
+    <div class="head">
+      <div class="kicker">Así se ve en Lapzo</div>
+      <h2 class="h2">Una jornada completa, <span class="hl">registrada y confirmada</span></h2>
+      <p class="lead">Tu gente marca desde el botón de jornada en la parte superior de Lapzo, el mismo lugar donde ya se capacita. Recorre un día de trabajo:</p>
+    </div>
+    <div class="day" data-ch-stage data-order="idle,work,break,confirm,done,extra">
+      <div class="steps">
+        <button class="step" data-ch-go="idle"><span class="n">1</span><b>Llega y empieza su jornada</b><span>Ve la hora actual y su turno del día. Un clic en <em>Iniciar jornada</em> deja registrada la entrada.</span></button>
+        <button class="step" data-ch-go="work"><span class="n">2</span><b>Trabaja con su tiempo a la vista</b><span>El contador corre en la barra superior y la línea de tiempo muestra lo trabajado frente a su turno.</span></button>
+        <button class="step" data-ch-go="break"><span class="n">3</span><b>Registra sus descansos</b><span>Inicia y termina cada descanso; Lapzo calcula los minutos y los separa del tiempo trabajado.</span></button>
+        <button class="step" data-ch-go="confirm"><span class="n">4</span><b>Confirma antes de cerrar</b><span>Revisa entrada, descansos y salida. Si algo no cuadra, solicita una corrección que aprueba su líder.</span></button>
+        <button class="step" data-ch-go="done"><span class="n">5</span><b>Jornada finalizada</b><span>El registro queda guardado y le recordamos a qué hora empieza su próximo turno.</span></button>
+        <button class="step" data-ch-go="extra"><span class="n">6</span><b>Horas extra, sin sorpresas</b><span>Si trabaja después de su turno, el tiempo extra se marca aparte para que RH lo vea y lo valide.</span></button>
+      </div>
+      <div class="stage">
+        <div class="navrow" aria-hidden="true"><span>Mi Perfil</span><span data-ch-nav></span></div>
+        <div data-ch-widget></div>
+        <div class="toastslot" data-ch-toast></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Qué incluye -->
+<section class="ds-section" id="incluye">
+  <div class="rail">
+    <div class="head">
+      <div class="kicker">Qué incluye Reloj Checador</div>
+      <h2 class="h2">La jornada de tu gente, sin Excel ni papelitos</h2>
+      <p class="lead">Pensado para equipos de RH que necesitan orden en jornadas, turnos y asistencias, sin agregar otra herramienta desconectada.</p>
+    </div>
+    <div class="feats">
+      <div class="feat"><span class="ic"><span class="ico spark"></span></span><h3>Jornadas y turnos</h3><p>Define horarios, días y descansos de tu empresa, crea turnos y asígnalos a cada colaborador o equipo.</p></div>
+      <div class="feat"><span class="ic"><span class="ico check"></span></span><h3>Entrada, descansos y salida</h3><p>Tu gente registra su jornada desde el botón superior de Lapzo, con el contador siempre visible.</p></div>
+      <div class="feat"><span class="ic"><span class="ico check"></span></span><h3>Confirmación de cierre</h3><p>Antes de terminar, cada colaborador revisa y confirma su jornada. Menos dudas a fin de quincena.</p></div>
+      <div class="feat"><span class="ic"><span class="ico user" style="--i:url(icons/user.svg)"></span></span><h3>Correcciones con aprobación</h3><p>¿Olvidó marcar su salida? Solicita la corrección y su líder la aprueba con una cadena configurable.</p></div>
+      <div class="feat"><span class="ic"><span class="ico info"></span></span><h3>Horas extra identificadas</h3><p>El tiempo después del turno se marca aparte en la línea de tiempo para validarlo a tiempo.</p></div>
+      <div class="feat"><span class="ic"><span class="ico books" style="--i:url(icons/books.svg)"></span></span><h3>Notificaciones en cada paso</h3><p>Confirmaciones al iniciar, al volver de un descanso y al cerrar la jornada, para que nadie dude si quedó registrado.</p></div>
+    </div>
+    <div class="soon"><span class="ico spark" style="width:15px;height:15px;color:var(--lz-action)"></span>Próximamente: reportería de jornada y asistencia para RH.</div>
+  </div>
+</section>
+
+<!-- 6. Mejor juntos -->
+<section class="ds-section surface">
+  <div class="rail">
     <div class="split">
       <div>
-        <div class="eyebrow">Mejor juntos</div>
-        <h3>Tu gente y su jornada, en un solo lugar</h3>
-        <p>Reloj Checador funciona por sí solo, y junto con <a href="gestion-personal.html">Gestión de Personal</a> tu equipo de RH aprueba vacaciones, permisos y correcciones de marcación con la misma lógica.</p>
-        <ul class="check">
-          <li>Un solo lugar para solicitudes, documentos y asistencia</li>
-          <li>El expediente de cada colaborador conectado a su jornada</li>
-          <li>Contrátalo solo o en paquete, según lo que ya tienes</li>
-        </ul>
-        <a class="btn btn-primary" href="#registro">Cotiza el paquete →</a>
+        <div class="kicker">Mejor juntos</div>
+        <h2 class="h2" style="margin-top:12px">Tu gente y su jornada, en un solo lugar</h2>
+        <p class="lead" style="margin-top:12px">Reloj Checador funciona por sí solo. Junto con Gestión de Personal, tu equipo de RH aprueba vacaciones, permisos y correcciones de marcación con la misma lógica.</p>
+        <div class="checks">
+          <div><span class="ico check"></span>Un solo lugar para solicitudes, documentos y asistencia</div>
+          <div><span class="ico check"></span>El expediente de cada colaborador conectado a su jornada</div>
+          <div><span class="ico check"></span>Contrátalo solo o en paquete, según lo que ya tienes</div>
+        </div>
+        <a class="lz-btn" href="#registro">Cotiza el paquete</a>
       </div>
       <div class="combo">
-        <div class="m"><img src="../design-system/assets/modules/icon-people-violet.svg" alt=""><div><b>Gestión de Personal</b><span>Organigrama, expediente, solicitudes, documentos</span></div></div>
-        <div class="plus">+</div>
-        <div class="m"><img src="../design-system/assets/icons/target.svg" alt=""><div><b>Reloj Checador</b><span>Jornadas, turnos, registro y correcciones</span></div></div>
+        <div class="m"><b>Gestión de Personal</b><span>Organigrama, expediente, solicitudes y documentos</span></div>
+        <div class="plus" aria-hidden="true">+</div>
+        <div class="m me"><b>Reloj Checador</b><span>Jornadas, turnos, registro, descansos y correcciones</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WEBINAR -->
-<section class="s bg-dark only-pre" id="webinar">
-  <div class="wrap">
+<!-- 7. Webinar (solo antes del 5-ene) -->
+<section class="ds-section ink only-pre" id="webinar">
+  <div class="blob" style="width:520px;height:520px;left:-160px;bottom:-260px;background:var(--lz-action);opacity:.3"></div>
+  <div class="rail">
     <div class="event">
-      <div class="date">
-        <div class="eyebrow" style="color:#8B55FE">Webinar gratuito · en línea</div>
+      <div class="datebox">
+        <div class="kicker">Webinar gratuito · en línea</div>
         <div class="d">2 dic</div>
-        <div class="m">Miércoles · 10:00 a 11:00 (CDMX)</div>
-        <div class="h">Con Pedro Sors (Lapzo) y un especialista laboral invitado</div>
-        <a class="btn btn-primary" href="#registro" style="margin-top:18px">Reserva tu lugar →</a>
+        <div class="s">Miércoles · 10:00 a 11:00 (CDMX)</div>
+        <div class="s" style="color:rgba(255,255,255,.6)">Con Pedro Sors (Lapzo) y un especialista laboral invitado</div>
       </div>
       <div>
-        <div class="eyebrow">Registro electrónico de jornada 2027</div>
-        <h3>Lo que tu empresa debe tener listo el 1 de enero</h3>
-        <ol>
-          <li>La reforma en 10 minutos: qué entra en 2027 y qué no</li>
-          <li>Las 5 claves para preparar jornadas, turnos y horas extra</li>
-          <li>Así se verá en la práctica: demo de Reloj Checador</li>
-          <li>Preguntas en vivo</li>
-        </ol>
+        <div class="kicker">Registro electrónico de jornada 2027</div>
+        <h2 class="h2" style="margin-top:12px">Lo que tu empresa debe tener listo el <span class="hl">1 de enero</span></h2>
+        <div class="agenda">
+          <div><i>1</i>La reforma en 10 minutos: qué entra en 2027 y qué no</div>
+          <div><i>2</i>Las 5 claves para preparar jornadas, turnos y horas extra</div>
+          <div><i>3</i>Así se verá en la práctica: demo de Reloj Checador</div>
+          <div><i>4</i>Preguntas en vivo</div>
+        </div>
+        <a class="lz-btn" data-size="large" href="#registro">Reserva tu lugar</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FORM -->
-<section class="s bg-soft" id="registro">
-  <div class="wrap">
-    <div class="form-wrap">
+<!-- 8. Registro -->
+<section class="ds-section" id="registro">
+  <div class="rail">
+    <div class="split" style="align-items:start">
       <div>
-        <div class="eyebrow" data-post="Agenda tu habilitación">Lista prioritaria · primera ola de enero</div>
-        <h2 data-post="Empieza a registrar la jornada de tu gente <em>esta semana</em>">Asegura tu lugar en la <em>primera ola</em> de enero</h2>
-        <p data-post="Déjanos tus datos y un especialista de Lapzo te contacta en menos de 24 horas hábiles para agendar tu habilitación.">Reloj Checador llega el 31 de diciembre y lo habilitamos por olas a partir de enero. Las empresas en la lista prioritaria se habilitan primero y reciben la invitación al webinar del 2 de diciembre.</p>
-        <ul class="check">
-          <li>Te contactamos en menos de 24 horas hábiles</li>
-          <li>Te mostramos cómo funcionaría con tus turnos reales</li>
-          <li>Recibes la grabación y las 5 claves del webinar</li>
-        </ul>
+        <div class="kicker" data-post="Agenda tu habilitación">Lista prioritaria · primera ola de enero</div>
+        <h2 class="h2" style="margin-top:12px" data-post="Empieza a registrar la jornada de tu gente esta semana">Asegura tu lugar en la primera ola de enero</h2>
+        <p class="lead" style="margin-top:12px" data-post="Déjanos tus datos y un especialista de Lapzo te contacta en menos de 24 horas hábiles para agendar tu habilitación.">Reloj Checador llega el 31 de diciembre y lo habilitamos por olas a partir de enero. Las empresas en la lista prioritaria se habilitan primero y reciben la invitación al webinar del 2 de diciembre.</p>
+        <div class="checks">
+          <div><span class="ico check"></span>Te contactamos en menos de 24 horas hábiles</div>
+          <div><span class="ico check"></span>Te mostramos cómo funcionaría con tus turnos reales</div>
+          <div class="only-pre"><span class="ico check"></span>Recibes la grabación y las 5 claves del webinar</div>
+        </div>
       </div>
-      <!-- HUBSPOT: reemplazar este form por el embed "LP Reloj Checador - Lista prioritaria".
-           Propiedades: producto_interes=Reloj, es_cliente, tamano_empresa, opt_in_whatsapp, registro_webinar -->
-      <form class="lead">
-        <div class="two">
-          <label>Nombre<input required name="firstname" autocomplete="given-name"></label>
-          <label>Apellido<input required name="lastname" autocomplete="family-name"></label>
-        </div>
-        <label>Correo de trabajo<input required type="email" name="email" autocomplete="email"></label>
-        <div class="two">
-          <label>Empresa<input required name="company" autocomplete="organization"></label>
-          <label>Puesto<input required name="jobtitle"></label>
-        </div>
-        <div class="two">
-          <label>Colaboradores
-            <select required name="tamano_empresa">
-              <option value="">Selecciona</option>
-              <option>1 – 49</option><option>50 – 249</option><option>250 – 999</option><option>1,000 – 4,999</option><option>5,000 o más</option>
-            </select>
-          </label>
-          <label>¿Ya usas Lapzo?
-            <select required name="es_cliente"><option value="">Selecciona</option><option>Sí</option><option>No</option></select>
-          </label>
-        </div>
-        <label>WhatsApp (opcional)<input type="tel" name="phone" autocomplete="tel"></label>
-        <label class="opt only-pre"><input type="checkbox" name="registro_webinar" checked> Quiero registrarme también al webinar del 2 de diciembre</label>
-        <label class="opt"><input type="checkbox" name="opt_in_whatsapp"> Acepto recibir información de Lapzo por WhatsApp</label>
-        <button class="btn btn-primary btn-lg" type="submit" data-post="Agendar mi habilitación">Quiero estar en la primera ola</button>
-        <div class="ok">Listo. Te contactamos en menos de 24 horas hábiles.</div>
-      </form>
+      <div class="formcard">
+        <!-- HUBSPOT: reemplazar este form por el embed "LP Reloj Checador - Lista prioritaria".
+             Propiedades: producto_interes=Reloj, es_cliente, tamano_empresa, opt_in_whatsapp, registro_webinar -->
+        <form class="lead">
+          <label class="lz-field">Nombre<input class="lz-input" name="firstname" autocomplete="given-name" required></label>
+          <label class="lz-field">Apellido<input class="lz-input" name="lastname" autocomplete="family-name" required></label>
+          <label class="lz-field full">Correo de trabajo<input class="lz-input" type="email" name="email" autocomplete="email" required></label>
+          <label class="lz-field">Empresa<input class="lz-input" name="company" autocomplete="organization" required></label>
+          <label class="lz-field">Puesto<input class="lz-input" name="jobtitle" autocomplete="organization-title"></label>
+          <label class="lz-field">Colaboradores
+            <select class="lz-input" name="tamano_empresa" required><option value="">Selecciona</option><option>1 – 49</option><option>50 – 249</option><option>250 – 999</option><option>1,000 – 4,999</option><option>5,000 o más</option></select></label>
+          <label class="lz-field">¿Ya usas Lapzo?
+            <select class="lz-input" name="es_cliente" required><option value="">Selecciona</option><option>Sí</option><option>No</option></select></label>
+          <label class="lz-field full">WhatsApp (opcional)<input class="lz-input" type="tel" name="phone" autocomplete="tel"></label>
+          <label class="lz-check full only-pre"><input type="checkbox" name="registro_webinar" checked> Quiero registrarme también al webinar del 2 de diciembre</label>
+          <label class="lz-check full"><input type="checkbox" name="opt_in_whatsapp"> Acepto recibir información de Lapzo por WhatsApp</label>
+          <button class="lz-btn full" data-size="large" type="submit" data-post="Agendar mi habilitación">Quiero estar en la primera ola</button>
+          <div class="ok"><span class="ico check"></span>Listo. Te contactamos en menos de 24 horas hábiles.</div>
+          <p class="privacy full">Al enviar aceptas el aviso de privacidad de Lapzo.</p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="s" id="faq">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Antes de decidir</div>
-      <h2>Preguntas frecuentes</h2>
-    </div>
-    <div class="faq-list">
-      <details open>
-        <summary>¿Cuándo puedo empezar a usarlo?</summary>
-        <p>Reloj Checador se lanza el 31 de diciembre de 2026 y lo habilitamos por olas a partir de enero de 2027. Puedes contratarlo desde hoy para asegurar tu lugar en la primera ola.</p>
-      </details>
-      <details>
-        <summary>¿Necesito tener otros productos de Lapzo?</summary>
-        <p>No. Reloj Checador se contrata como módulo independiente. Si además usas Gestión de Personal, tus solicitudes y correcciones viven en el mismo lugar.</p>
-      </details>
-      <details>
-        <summary>¿Se integra con mi sistema de nómina?</summary>
-        <p>En esta primera versión no hay integración con nómina ni con otros sistemas. Reloj Checador te da el registro de jornada dentro de Lapzo; las integraciones están en evaluación para el roadmap.</p>
-      </details>
-      <details>
-        <summary>¿Usa huella, reconocimiento facial o geolocalización?</summary>
-        <p>No. El registro se hace desde Lapzo, sin dispositivos biométricos, sin geolocalización y sin modo kiosco en esta versión.</p>
-      </details>
-      <details>
-        <summary>¿Cuánto cuesta?</summary>
-        <p>Depende del tamaño de tu empresa y de si lo combinas con Gestión de Personal. Déjanos tus datos y te enviamos una propuesta a la medida.</p>
-      </details>
+<!-- 9. FAQ -->
+<section class="ds-section surface" id="faq">
+  <div class="rail">
+    <div class="faq">
+      <div class="faq-side">
+        <div class="head" style="margin:0">
+          <div class="kicker">Preguntas frecuentes</div>
+          <h2 class="h2">Las dudas antes de decidir</h2>
+          <p class="lead" style="font-size:15px;line-height:22px">Conoce el alcance de Reloj Checador en su primera versión.</p>
+        </div>
+        <div class="askcard">
+          <img src="lz/lapzi/lapzi-thinking.png" alt="Lapzi">
+          <b>¿Tienes otra duda?</b>
+          <span>Déjanos tus datos y el equipo de Lapzo revisa tu caso.</span>
+          <div><a class="lz-btn" href="#registro">Hablar con un especialista</a></div>
+        </div>
+      </div>
+      <div class="qs">
+        <details class="q" open><summary><span class="num">01</span>¿Cuándo puedo empezar a usarlo?<span class="ico down"></span></summary><p data-post="Reloj Checador ya está disponible. Lo habilitamos por olas: déjanos tus datos y agendamos tu habilitación.">Reloj Checador se lanza el 31 de diciembre de 2026 y lo habilitamos por olas a partir de enero de 2027. Puedes contratarlo desde hoy para asegurar tu lugar en la primera ola.</p></details>
+        <details class="q"><summary><span class="num">02</span>¿Necesito tener otros productos de Lapzo?<span class="ico down"></span></summary><p>No. Reloj Checador se contrata como módulo independiente. Si además usas Gestión de Personal, tus solicitudes y correcciones viven en el mismo lugar.</p></details>
+        <details class="q"><summary><span class="num">03</span>¿Cómo se registran los descansos?<span class="ico down"></span></summary><p>Desde el mismo botón de jornada: el colaborador inicia y termina cada descanso. Lapzo suma los minutos y los separa del tiempo trabajado en su línea de tiempo.</p></details>
+        <details class="q"><summary><span class="num">04</span>¿Qué pasa si alguien olvida marcar?<span class="ico down"></span></summary><p>Antes de cerrar su jornada, cada colaborador la confirma. Si algo no es correcto, solicita una corrección y su líder la aprueba con una cadena configurable.</p></details>
+        <details class="q"><summary><span class="num">05</span>¿Se integra con mi sistema de nómina?<span class="ico down"></span></summary><p>En esta primera versión no hay integración con nómina ni con otros sistemas. Reloj Checador te da el registro de jornada dentro de Lapzo; las integraciones están en evaluación para el roadmap.</p></details>
+        <details class="q"><summary><span class="num">06</span>¿Usa huella, reconocimiento facial o geolocalización?<span class="ico down"></span></summary><p>No. El registro se hace desde Lapzo, sin dispositivos biométricos, sin geolocalización y sin modo kiosco en esta versión.</p></details>
+        <details class="q"><summary><span class="num">07</span>¿Cuánto cuesta?<span class="ico down"></span></summary><p>Depende del tamaño de tu empresa y de si lo combinas con Gestión de Personal. Déjanos tus datos y te enviamos una propuesta a la medida.</p></details>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SUITE -->
-<section class="s bg-soft">
-  <div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Tu gente, de principio a fin</div><h2>Conoce lo nuevo de Lapzo</h2></div>
+<!-- 10. Suite -->
+<section class="ds-section">
+  <div class="rail" style="padding-top:72px;padding-bottom:72px">
+    <div class="head"><div class="kicker">Tu gente, de principio a fin</div><h2 class="h2">Conoce lo nuevo de Lapzo</h2></div>
     <div class="suite">
-      <a href="reclutamiento.html"><div class="card hover"><span class="pill ok">Disponible</span><h3>Reclutamiento</h3><p>Vacantes por competencias e IAMatch.</p><span class="go">Ver más →</span></div></a>
-      <a href="gestion-personal.html"><div class="card hover"><span class="pill ok">Disponible</span><h3>Gestión de Personal</h3><p>Expediente, solicitudes y documentos.</p><span class="go">Ver más →</span></div></a>
-      <a href="reloj-checador.html"><div class="card hover"><span class="pill wait" data-post="Disponible">31-dic</span><h3>Reloj Checador</h3><p>Jornadas, turnos y registro de asistencia.</p><span class="go">Estás aquí</span></div></a>
+      <a href="reclutamiento.html"><span class="pill">Disponible</span><b>Reclutamiento</b><span>Vacantes por competencias e IAMatch.</span><small>Ver más →</small></a>
+      <a href="gestion-personal.html"><span class="pill">Disponible</span><b>Gestión de Personal</b><span>Expediente, solicitudes y documentos.</span><small>Ver más →</small></a>
+      <a href="reloj-checador.html" class="me" aria-current="page"><span class="pill wait" data-post="Disponible">31-dic</span><b>Reloj Checador</b><span>Jornadas, turnos, registro y descansos.</span><small>Estás aquí</small></a>
     </div>
   </div>
 </section>
 
-<section class="cta-strip">
-  <div class="wrap">
-    <h2 data-post="El registro de jornada ya es obligatorio. <em>Tenlo hoy en Lapzo.</em>">Llega al 1 de enero con el registro de jornada <em>resuelto</em></h2>
-    <div class="actions">
-      <a class="btn btn-primary btn-lg" href="#registro" data-post="Agenda tu habilitación">Únete a la lista prioritaria</a>
-      <a class="btn btn-light btn-lg only-pre" href="#webinar">Webinar 2-dic</a>
+<!-- 11. Cierre -->
+<section class="ds-section ink final">
+  <div class="blob" style="width:640px;height:640px;left:50%;top:-320px;margin-left:-320px;background:var(--lz-action);opacity:.3;filter:blur(160px)"></div>
+  <div class="rail">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <h2 data-post="El registro de jornada ya es obligatorio. <span class='hl'>Tenlo hoy en Lapzo.</span>">Llega al 1 de enero con el registro de jornada <span class="hl">resuelto.</span></h2>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+        <div class="lapzi"><img src="lz/lapzi/lapzi-pointing-right.png" alt="Lapzi"></div>
+        <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex:1 1 220px">
+          <a class="lz-btn" data-size="large" href="#registro" data-post="Agenda tu habilitación">Únete a la lista prioritaria</a>
+          <span class="micro">Te contactamos en menos de 24 horas hábiles.</span>
+        </div>
+      </div>
+    </div>
+    <div class="datebox" style="gap:18px">
+      <div style="font:500 14px/20px var(--lz-font);color:var(--lz-marketing-highlight)">Qué pasa después</div>
+      <div class="agenda" style="margin:0">
+        <div><i>1</i>Un especialista revisa tus jornadas y turnos actuales</div>
+        <div><i>2</i>Te mostramos Reloj Checador con un caso como el tuyo</div>
+        <div><i>3</i>Agendamos tu habilitación en la primera ola de enero</div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div class="top">
-      <img src="../design-system/assets/logo/lapzo-logo-on-dark.png" alt="Lapzo">
-      <p>Aliado estratégico de las organizaciones latinoamericanas en el desarrollo de talento.</p>
-    </div>
-    <div class="bottom">© 2026 Lapzo. Hecho con ✦ en CDMX.<br>La información sobre la reforma laboral es de carácter general y no sustituye asesoría legal.</div>
+  <div class="in">
+    <img src="lz/lapzo-lockup-inverse.svg" alt="Lapzo">
+    <span>© 2026 Lapzo. La información sobre la reforma laboral es de carácter general y no sustituye asesoría legal.</span>
   </div>
 </footer>
 
+<script>
+  // Logos de clientes (mismos archivos que /public/clients del sitio).
+  const LOGOS = ['farmacias-del-ahorro.webp','deacero.webp','construrama.webp','tim-hortons.webp','neto.webp','tecmilenio.webp','mazda.svg','nestle-color.svg','berel.webp','oxxo.webp','rotoplas.webp','gonher.webp','grupo-petro.webp','innovasport.webp'];
+  const row = alt => LOGOS.map(f => `<img src="lz/clients/${f}" alt="${alt ? f.split('.')[0].replace(/-/g, ' ') : ''}" class="${f.endsWith('.svg') ? 'svg' : ''}" loading="lazy">`).join('');
+  document.getElementById('logos').innerHTML = row(true);
+  document.getElementById('logos2').innerHTML = row(false);
+  // Controles de estado del hero.
+  const ORDER = { idle: 'Sin iniciar', work: 'Trabajando', break: 'En descanso', confirm: 'Confirmar cierre', done: 'Finalizada' };
+  document.getElementById('hero-states').innerHTML = Object.entries(ORDER).map(([k, l]) => `<button type="button" data-ch-go="${k}">${l}</button>`).join('');
+</script>
+<script src="lz/control-horario.js"></script>
 <script src="landing.js"></script>
 </body>
 </html>
