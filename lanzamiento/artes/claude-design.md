@@ -19,7 +19,7 @@ Todo lo necesario para producir los artes de la campaña en Claude Design: el pr
 ## 2. Prompt maestro
 
 ```
-Eres el diseñador de la campaña de lanzamiento de Lapzo, una plataforma de talento para empresas en México y LATAM. Vas a crear artes para anuncios de LinkedIn y Meta, headers de email y banners. Todas las piezas son de la misma campaña y deben verse como un sistema.
+Eres el diseñador de la campaña de lanzamiento de Lapzo, una plataforma de talento para empresas en México y LATAM. Vas a crear artes para anuncios de LinkedIn y Meta y headers de email. Todas las piezas son de la misma campaña y deben verse como un sistema.
 
 CONTEXTO
 - Campaña paraguas: "Tu gente, de principio a fin". Lapzo lanza 3 productos: Reclutamiento y Gestión de Personal (ya disponibles) y Reloj Checador (llega el 31 de diciembre de 2026).
@@ -75,12 +75,12 @@ LOTE 1: webinar del martes 24 de noviembre. Crea estas 6 piezas con el sistema q
 | 5 | `meta-webinar-agenda-1080x1350.png` | 1080×1350 (Meta feed vertical) | Lo que tu empresa debe tener listo *el 1 de enero* | Lista: 1) La reforma en 10 minutos. 2) Las 5 claves para jornadas, turnos y horas extra. 3) Demo de Reloj Checador. 4) Preguntas en vivo. | Aparta tu lugar | `widget-1-sin-iniciar.png` abajo, con `boton-topnav-1-sin-iniciar.png` |
 | 6 | `meta-webinar-story-1080x1920.png` | 1080×1920 (Stories/Reels) | El registro de jornada *ya tiene fecha.* | 1 de enero de 2027. Prepárate con nosotros el martes 24 de noviembre. | Desliza para registrarte | `widget-4-confirmar-cierre.png` grande al centro + `lapzi-pointing-right.png`; respeta 250px libres arriba y abajo |
 
-Textos que acompañan cada anuncio en la plataforma: `copys.md` §11 (L1 y L2 para las piezas 1–3; M1 para 4–6).
+Textos que acompañan cada anuncio en la plataforma: `copys.md` §10 (L1 y L2 para las piezas 1–3; M1 para 4–6).
 
-### Lote 2: lanzamiento de la suite (para el lunes 16-nov)
+### Lote 2: anuncio de los tres productos (para el lunes 16-nov)
 
 ```
-LOTE 2: anuncio de la suite "Tu gente, de principio a fin". Tres tarjetas escalonadas, una por producto, cada una con su etiqueta: Reclutamiento (Disponible), Gestión de Personal (Disponible), Reloj Checador (Llega el 31 de diciembre). Fondo ink con manchas violeta y magenta. Lapzi: lapzi-yougotthis.png.
+LOTE 2: anuncio de los tres productos "Tu gente, de principio a fin". Tres tarjetas escalonadas, una por producto, cada una con su etiqueta: Reclutamiento (Disponible), Gestión de Personal (Disponible), Reloj Checador (Llega el 31 de diciembre). Fondo ink con manchas violeta y magenta. Lapzi: lapzi-yougotthis.png.
 ```
 
 | # | Archivo | Formato | Titular | Apoyo |
@@ -91,16 +91,15 @@ LOTE 2: anuncio de la suite "Tu gente, de principio a fin". Tres tarjetas escalo
 | 10 | `email-header-suite-600x200.png` | 600×200 (exporta a 1200×400) | Tu gente, *de principio a fin.* | — |
 | 11 | `email-header-webinar-600x200.png` | 600×200 (exporta a 1200×400) | Registro de jornada 2027 | Webinar · Mar 24 nov · 10:00 CDMX |
 | 12 | `email-header-reloj-600x200.png` | 600×200 (exporta a 1200×400) | Reloj Checador *llega el 31 de diciembre.* | — |
-| 13 | `inapp-banner.png` | Confirmar medida con Producto (propuesta 1200×200) | *Nuevo en Lapzo:* Gestión de Personal y Reclutamiento ya están aquí. | Reloj Checador llega el 31-dic · Botón "Regístrate al webinar del 24-nov" |
 
 ### Lote 3: después del webinar (para el 25-nov en adelante)
 
 | # | Archivo | Formato | Titular | Notas |
 |---|---|---|---|---|
-| 14 | `preventa-1080x1080.png` y `-1200x627.png` | 1080×1080, 1200×627 | Asegura tu lugar en la *primera ola* de enero. | `widget-5-jornada-finalizada.png`. CTA "Únete a la lista prioritaria" |
-| 15 | `countdown-30d.png`, `-14d.png`, `-7d.png` | 1080×1080 | Faltan *30 / 14 / 7 días* para el registro electrónico de jornada. | Publicar 2-dic, 18-dic y 25-dic (orgánico). Número gigante en lila |
-| 16 | `carrusel-que-cambia-1..6.png` | 1080×1350 × 6 | Ver `copys.md` §9 (carrusel "Qué cambia el 1 de enero") | Slide 1 portada, 2–5 un dato por slide, 6 CTA |
-| 17 | `ya-esta-aqui-*.png` | 1080×1080, 1200×627, 1080×1920 | Reloj Checador *ya está aquí.* | **No publicar antes del 5-ene.** Cambia el chip a "Disponible" |
+| 13 | `preventa-1080x1080.png` y `-1200x627.png` | 1080×1080, 1200×627 | Asegura tu lugar en la *primera ola* de enero. | `widget-5-jornada-finalizada.png`. CTA "Únete a la lista prioritaria" |
+| 14 | `countdown-30d.png`, `-14d.png`, `-7d.png` | 1080×1080 | Faltan *30 / 14 / 7 días* para el registro electrónico de jornada. | Publicar 2-dic, 18-dic y 25-dic (orgánico). Número gigante en lila |
+| 15 | `carrusel-que-cambia-1..6.png` | 1080×1350 × 6 | Ver `copys.md` §8 (carrusel "Qué cambia el 1 de enero") | Slide 1 portada, 2–5 un dato por slide, 6 CTA |
+| 16 | `ya-esta-aqui-*.png` | 1080×1080, 1200×627, 1080×1920 | Reloj Checador *ya está aquí.* | **No publicar antes del 5-ene.** Cambia el chip a "Disponible" |
 
 ---
 

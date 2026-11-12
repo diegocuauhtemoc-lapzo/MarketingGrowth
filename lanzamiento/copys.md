@@ -1,4 +1,4 @@
-# Copys y briefs de artes: lanzamiento de la suite Q4 2026
+# Copys y briefs de artes: lanzamiento Q4 2026
 
 Reglas de marca que aplican a todas las piezas:
 - Títulos en minúscula (solo primera letra en mayúscula). *Itálica* para la idea clave.
@@ -18,7 +18,7 @@ Variables:
 
 ---
 
-## 1. Email: clientes, anuncio de la suite (mar 17-nov)
+## 1. Email: clientes, anuncio de los tres productos (mar 17-nov)
 
 **Asunto A:** Lapzo crece contigo: 3 nuevos productos para tu equipo de RH
 **Asunto B:** [NOMBRE], lo que viene para tu gente en 2027
@@ -166,15 +166,7 @@ Desde el 1 de enero el registro electrónico de jornada ya no es opcional. **Rel
 
 ---
 
-## 8. In-app (banner o aviso para admins de RH)
-
-- **17 al 24-nov:** "*Nuevo en Lapzo:* Gestión de Personal y Reclutamiento ya están aquí. Reloj Checador llega el 31-dic." Botón: **Regístrate al webinar del 24-nov**
-- **25-nov al 23-dic:** "¿Listo para el registro electrónico de jornada? Asegura tu lugar en la primera ola de Reloj Checador." Botón: **Quiero estar en la primera ola**
-- **5 al 31-ene:** "Reloj Checador ya está disponible para tu empresa." Botón: **Agenda tu habilitación**
-
----
-
-## 9. LinkedIn: orgánico
+## 8. LinkedIn: orgánico
 
 **Post de anuncio (Lapzo, 17-nov)**
 > Durante años fuimos tu aliado para *desarrollar* a tu talento.
@@ -213,7 +205,7 @@ Desde el 1 de enero el registro electrónico de jornada ya no es opcional. **Rel
 
 ---
 
-## 10. Meta (IG/FB): orgánico
+## 9. Meta (IG/FB): orgánico
 
 Tono más cercano, para Sofía y sin formalismos:
 - **Reel con Lapzi:** "POV: es 2 de enero y alguien de dirección te pregunta cómo vas a registrar la jornada 😅" Corte a la demo del prototipo. CTA: "webinar gratis el 24-nov, link en bio".
@@ -221,14 +213,14 @@ Tono más cercano, para Sofía y sin formalismos:
 
 ---
 
-## 11. Pauta: anuncios
+## 10. Pauta: anuncios
 
 ### LinkedIn Ads (Lead Gen Form → registro al webinar)
 | Versión | Intro (≤150 car.) | Headline (≤70) | CTA |
 |---|---|---|---|
 | L1 Ley | Desde el 1 de enero de 2027, el registro electrónico de jornada es obligatorio. ¿Tu empresa está lista? | Registro de jornada 2027: lo que debes tener listo | Registrarse |
 | L2 Riesgo | Las horas extra que no registras son un riesgo legal. Aprende a prepararte en 45 min. | Webinar gratuito · 24 de noviembre · 10:00 CDMX | Registrarse |
-| L3 Suite | Reclutamiento, Gestión de Personal y Reloj Checador, con el mismo aliado que desarrolla a tu talento. | Tu gente, de principio a fin | Más información |
+| L3 Tres productos | Reclutamiento, Gestión de Personal y Reloj Checador, con el mismo aliado que desarrolla a tu talento. | Tu gente, de principio a fin | Más información |
 
 ### Meta Ads (lead form / tráfico a landing de Reloj)
 | Versión | Texto principal | Título | Descripción |
@@ -270,7 +262,7 @@ Tono más cercano, para Sofía y sin formalismos:
 
 ---
 
-## 12. Guion del webinar (mar 24-nov, 60 min)
+## 11. Guion del webinar (mar 24-nov, 60 min)
 
 | Min | Bloque | Quién | Contenido |
 |---|---|---|---|
@@ -289,7 +281,7 @@ Tono más cercano, para Sofía y sin formalismos:
 
 ---
 
-## 13. Briefs de artes (para diseño)
+## 12. Briefs de artes (para diseño)
 
 > **Versión para producir:** [`artes/claude-design.md`](artes/claude-design.md) tiene el prompt para Claude Design, los textos finales por pieza, los lotes con fecha y los recursos en `artes/recursos/`. Ahí los artes usan el design system de lapzo.co (fondo `#211435`, acento `#C7A4FF`) y las capturas reales del widget; este brief queda como referencia.
 
@@ -305,21 +297,20 @@ Tono más cercano, para Sofía y sin formalismos:
 **Piezas y tamaños**
 | Pieza | Formatos | Headline |
 |---|---|---|
-| Anuncio suite | 1200×627 (LinkedIn), 1080×1080, 1080×1350 | Tu gente, *de principio a fin* |
+| Anuncio de los tres productos | 1200×627 (LinkedIn), 1080×1080, 1080×1350 | Tu gente, *de principio a fin* |
 | Webinar | 1200×627, 1080×1080, 1080×1920 (story) | El 1 de enero el registro de jornada *deja de ser opcional* |
 | Countdown Reloj | 1080×1080 con contador "faltan X días" (3 versiones: 30, 14, 7) | Faltan *X días* para el registro electrónico de jornada |
 | Preventa | 1080×1080, 1200×627 | Asegura tu lugar en la *primera ola* |
 | Ya está aquí | 1080×1080, 1200×627, 1080×1920 | Reloj Checador *ya está aquí* |
-| Header email | 600×200 (3 versiones: suite, webinar, Reloj) | Igual que la pieza correspondiente |
-| Banner in-app | Medida según plataforma (confirmar con Producto) | Ver §8 |
-| Carrusel LinkedIn | 1080×1350 × 6 | Ver §9 |
+| Header email | 600×200 (3 versiones: tres productos, webinar, Reloj) | Igual que la pieza correspondiente |
+| Carrusel LinkedIn | 1080×1350 × 6 | Ver §8 |
 | One-pager por producto | A4/Carta PDF | Producto + 3 beneficios + alcance + CTA |
 
 **Mockups de producto:** usar las pantallas de los Figmas de Carolina (reloj, configuración de jornada, turnos) dentro de tarjetas con `border-radius 12px` y sombra suave. Nunca mostrar funcionalidades que no estén en el release (reportería solo como "próximamente").
 
 ---
 
-## 14. FAQ interna para ventas, CS y soporte
+## 13. FAQ interna para ventas, CS y soporte
 
 | Pregunta del cliente | Respuesta |
 |---|---|

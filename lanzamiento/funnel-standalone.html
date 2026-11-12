@@ -183,57 +183,55 @@ const rng = (a,b) => Array.from({length:b-a+1},(_,i)=>a+i);
 // lane: a = no clientes, m = convergen, b = clientes. col/row = posición en el lienzo.
 const NODES = [
   // Fuentes · no clientes
-  {id:'li',  lane:'a', col:0, row:0, t:'ads',   ic:'in', title:'LinkedIn Ads', m:'45', mu:'registros', budget:'$8k webinar (16–23 nov) + $3k lista (25 nov–18 dic)', owner:'Diego', date:'16 nov → 18 dic', weeks:rng(2,6),
-    detail:'Lead Gen Form a cargos de RH y Dirección en México. Proyección: ~36k impresiones, ~200 clics, CPL ~$180.', copy:'copys.md §11 · L1, L2, L3',
+  {id:'li',  lane:'a', col:0, row:0, t:'ads',   ic:'in', title:'LinkedIn Ads', m:'20', mu:'registros', budget:'$8k webinar (16–23 nov) + $3k lista (25 nov–18 dic)', owner:'Diego', date:'16 nov → 18 dic', weeks:rng(2,6),
+    detail:'Lead Gen Form a cargos de RH y Dirección en México. Proyección: ~20k impresiones, ~120 clics, CPL ≈ $400.', copy:'copys.md §10 · L1, L2, L3',
     imgs:['li-webinar-ley-1200x627.png','li-webinar-horas-extra-1200x627.png','li-webinar-ley-1080x1080.png','li-reloj-pedro-a-1200x627.png','li-reloj-pedro-b-1200x627.png','li-reloj-pedro-c-1200x627.png','li-reloj-pedro-d-1200x627.png']},
-  {id:'meta',lane:'a', col:0, row:1, t:'ads',   ic:'f',  title:'Meta Ads', m:'60', mu:'registros + 25 a lista', budget:'$4k webinar (16–23 nov) + $3k lista (25 nov–23 dic)', owner:'Diego', date:'16 nov → 23 dic', weeks:rng(2,7),
-    detail:'Lead form nativo y tráfico a la landing, perfil Sofía. Proyección: ~90k impresiones, ~1,000 clics, CPL ~$65.', copy:'copys.md §11 · M1, M2',
+  {id:'meta',lane:'a', col:0, row:1, t:'ads',   ic:'f',  title:'Meta Ads', m:'30', mu:'registros + 5 a lista', budget:'$4k webinar (16–23 nov) + $3k lista (25 nov–23 dic)', owner:'Diego', date:'16 nov → 23 dic', weeks:rng(2,7),
+    detail:'Lead form nativo y tráfico a la landing, perfil Sofía. Proyección: ~60k impresiones, ~600 clics, CPL ≈ $130.', copy:'copys.md §10 · M1, M2',
     imgs:['meta-webinar-excel-1080x1080.png','meta-webinar-agenda-1080x1350.png','meta-webinar-story-1080x1920.png']},
-  {id:'gg',  lane:'a', col:0, row:2, t:'ads',   ic:'G',  title:'Google Search', m:'25', mu:'registros / lista', budget:'$6k (16 nov–23 dic y 5–31 ene)', owner:'Diego', date:'16 nov → 31 ene', weeks:[...rng(2,7),...rng(9,11)],
-    detail:'Keywords de alta intención: "reloj checador", "registro electrónico de jornada". Proyección: ~500 clics a la landing.', copy:'copys.md §11 · RSA + keywords', imgs:[]},
-  {id:'org', lane:'a', col:0, row:3, t:'org',   ic:'✦',  title:'Orgánico + voceros', m:'30', mu:'registros', budget:'$0', owner:'Diego + Santiago, Pedro, Fer', date:'17 nov → 25 dic', weeks:rng(2,7),
-    detail:'Post de anuncio, carrusel "Qué cambia el 1 de enero", encuesta, reel con Lapzi y posts de voceros. Cuenta regresiva 30/14/7 días.', copy:'copys.md §9 y §10',
+  {id:'gg',  lane:'a', col:0, row:2, t:'ads',   ic:'G',  title:'Google Search', m:'3', mu:'registros / lista', budget:'$6k (16 nov–23 dic y 5–31 ene)', owner:'Diego', date:'16 nov → 31 ene', weeks:[...rng(2,7),...rng(9,11)],
+    detail:'Keywords de alta intención: "reloj checador", "registro electrónico de jornada". Proyección: ~250 clics a la landing; aporta sobre todo a la lista prioritaria.', copy:'copys.md §10 · RSA + keywords', imgs:[]},
+  {id:'org', lane:'a', col:0, row:3, t:'org',   ic:'✦',  title:'Orgánico + voceros', m:'4', mu:'registros', budget:'$0', owner:'Diego + Santiago, Pedro, Fer', date:'17 nov → 25 dic', weeks:rng(2,7),
+    detail:'Post de anuncio, carrusel "Qué cambia el 1 de enero", encuesta, reel con Lapzi y posts de voceros. Cuenta regresiva 30/14/7 días.', copy:'copys.md §8 y §10',
     imgs:['suite-1080x1080.png','carrusel-que-cambia-1.png','countdown-30d.png']},
-  {id:'eml', lane:'a', col:0, row:4, t:'email', ic:'✉',  title:'Email a base de leads', m:'20', mu:'registros', budget:'$0', owner:'Diego', date:'17 nov', weeks:[2],
+  {id:'eml', lane:'a', col:0, row:4, t:'email', ic:'✉',  title:'Email a base de leads', m:'3', mu:'registros', budget:'$0', owner:'Diego', date:'17 nov', weeks:[2],
     detail:'Invitación al webinar a leads no clientes en HubSpot (sin cuentas de la lista de exclusión FitchUp/Worky).', copy:'copys.md §4 · Invitación', imgs:['email-header-webinar-600x200.png']},
   // Fuentes · clientes
-  {id:'ecl', lane:'b', col:0, row:6, t:'client',ic:'✉',  title:'Email anuncio de la suite', m:'70', mu:'registros (CTR ≥3.5%)', budget:'$0', owner:'Diego (firma Vivian/Santiago)', date:'Mar 17 nov', weeks:[2],
+  {id:'ecl', lane:'b', col:0, row:6, t:'client',ic:'✉',  title:'Email anuncio de los tres productos', m:'25', mu:'registros (CTR ≥3.5%)', budget:'$0', owner:'Diego (firma Vivian/Santiago)', date:'Mar 17 nov', weeks:[2],
     detail:'"Lapzo crece contigo: 3 nuevos productos" a segmentos A–D, con invitación al webinar.', copy:'copys.md §1', imgs:['email-header-suite-600x200.png']},
-  {id:'app', lane:'b', col:0, row:7, t:'client',ic:'▣',  title:'Banner in-app', m:'25', mu:'registros', budget:'$0', owner:'Diego + Producto', date:'17 → 24 nov', weeks:[2,3],
-    detail:'Aviso a admins de RH. Después del webinar cambia a "primera ola" (25 nov–23 dic) y en enero a "agenda tu habilitación".', copy:'copys.md §8', imgs:['inapp-banner.png']},
-  {id:'wa',  lane:'b', col:0, row:8, t:'client',ic:'☏',  title:'WhatsApp CSM (1:1)', m:'25', mu:'registros', budget:'$0', owner:'Vips / CSMs', date:'17 nov · 23 nov', weeks:[2,3],
+  {id:'wa',  lane:'b', col:0, row:7.5, t:'client',ic:'☏',  title:'WhatsApp CSM (1:1)', m:'15', mu:'registros', budget:'$0', owner:'Vips / CSMs', date:'17 nov · 23 nov', weeks:[2,3],
     detail:'Mensaje personal de cada CSM a sus contactos clave (W1) y recordatorio a registrados (W2). Cuentas Tier 1: invitación 1:1 de Pedro.', copy:'copys.md §7 · W1, W2', imgs:[]},
   {id:'nur', lane:'b', col:2, row:9, t:'client',ic:'✉',  title:'Nurturing GP y Reclutamiento', m:'—', mu:'cross-sell', budget:'$0', owner:'Diego', date:'Jue 19 nov · Jue 26 nov', weeks:[2,3],
     detail:'Email de Gestión de Personal (con P.D. del webinar) y de Reclutamiento, a clientes y leads. Alimentan las demos de cross-sell.', copy:'copys.md §2 y §3', imgs:[]},
 
   // Captura
-  {id:'lgf', lane:'a', col:1, row:0.5, t:'form',ic:'▤',  title:'Formularios nativos', m:'105', mu:'registros', budget:'—', owner:'Diego', date:'16 → 23 nov', weeks:[2,3],
+  {id:'lgf', lane:'a', col:1, row:0.5, t:'form',ic:'▤',  title:'Formularios nativos', m:'50', mu:'registros pagados', budget:'—', owner:'Diego', date:'16 → 23 nov', weeks:[2,3],
     detail:'Lead Gen Form de LinkedIn y lead form de Meta conectados a HubSpot (producto_interes = Reloj, registro_webinar).', copy:'estrategia.md §3 · Tracking', imgs:[]},
-  {id:'lp',  lane:'a', col:1, row:3, t:'page',  ic:'◧',  title:'Landing Reloj Checador', m:'75', mu:'registros', budget:'—', owner:'Diego', date:'16 nov → ene', weeks:rng(2,11),
+  {id:'lp',  lane:'a', col:1, row:3, t:'page',  ic:'◧',  title:'Landing Reloj Checador', m:'10', mu:'registros', budget:'—', owner:'Diego', date:'16 nov → ene', weeks:rng(2,11),
     detail:'Registro al webinar + lista prioritaria. Cambia sola a "grabación" el 24-nov y a "ya está aquí" el 5-ene.', copy:'reloj-checador.html', link:'reloj-checador.html', imgs:['landing-reloj-checador.png']},
-  {id:'lpc', lane:'b', col:1, row:7, t:'page',  ic:'◧',  title:'Registro desde clientes', m:'120', mu:'registros', budget:'—', owner:'Diego', date:'17 → 24 nov', weeks:[2,3],
-    detail:'Link de registro del webinar (Zoom/Teams) desde email, in-app y WhatsApp.', copy:'estrategia.md §5 · F1', imgs:[]},
+  {id:'lpc', lane:'b', col:1, row:7, t:'page',  ic:'◧',  title:'Registro desde clientes', m:'40', mu:'registros', budget:'—', owner:'Diego', date:'17 → 24 nov', weeks:[2,3],
+    detail:'Link de registro del webinar (Zoom/Teams) desde email y WhatsApp.', copy:'estrategia.md §5 · F1', imgs:[]},
 
   // Convergen
-  {id:'reg', lane:'m', col:2, row:5, t:'form',  ic:'✓',  merge:1, title:'Registro al webinar', m:'300', mu:'registros (180 ext · 120 clientes)', budget:'CPL ≤ $120', owner:'Diego', date:'16 → 24 nov', weeks:[2,3],
-    detail:'Corte el viernes 20-nov: si vamos por debajo de 150, la reserva de $2k se mueve a LinkedIn y Meta.', copy:'estrategia.md §4', imgs:[]},
+  {id:'reg', lane:'m', col:2, row:5, t:'form',  ic:'✓',  merge:1, title:'Registro al webinar', m:'100', mu:'registros de 50 empresas (60 ext · 40 clientes)', budget:'CPL ≤ $240', owner:'Diego', date:'16 → 24 nov', weeks:[2,3],
+    detail:'Corte el viernes 20-nov: si vamos por debajo de 50, la reserva de $2k se mueve a LinkedIn y Meta.', copy:'estrategia.md §4', imgs:[]},
   {id:'rec', lane:'m', col:3, row:5, t:'email', ic:'⏰', title:'Recordatorios', m:'2', mu:'envíos', budget:'$0', owner:'Diego + CSMs', date:'Lun 23 · Mar 24 nov 8:30', weeks:[3],
     detail:'Email + LinkedIn el 23-nov y WhatsApp a registrados; email "en 90 minutos empezamos" el 24-nov.', copy:'copys.md §4 · Recordatorios', imgs:[]},
-  {id:'web', lane:'m', col:4, row:5, t:'event', ic:'▶',  merge:1, title:'Webinar · 24 nov 10:00', m:'105', mu:'asistentes (35%)', budget:'$0', owner:'Pedro (host) + Diego', date:'Mar 24 nov', weeks:[3],
-    detail:'"Registro electrónico de jornada 2027". Reforma (invitado laboral), 5 claves, demo con prototipo de Reloj y lista prioritaria.', copy:'copys.md §12 · Guion', imgs:[]},
-  {id:'grab',lane:'m', col:5, row:5, t:'email', ic:'▷',  title:'Grabación + one-pager', m:'300', mu:'envíos', budget:'$0', owner:'Diego', date:'Mié 25 nov', weeks:[3],
+  {id:'web', lane:'m', col:4, row:5, t:'event', ic:'▶',  merge:1, title:'Webinar · 24 nov 10:00', m:'40', mu:'asistentes (40%)', budget:'$0', owner:'Pedro (host) + Diego', date:'Mar 24 nov', weeks:[3],
+    detail:'"Registro electrónico de jornada 2027". Reforma (invitado laboral), 5 claves, demo con prototipo de Reloj y lista prioritaria.', copy:'copys.md §11 · Guion', imgs:[]},
+  {id:'grab',lane:'m', col:5, row:5, t:'email', ic:'▷',  title:'Grabación + one-pager', m:'100', mu:'envíos', budget:'$0', owner:'Diego', date:'Mié 25 nov', weeks:[3],
     detail:'A asistentes y no asistentes, con CTA a lista prioritaria / demo.', copy:'copys.md §4 · Post-webinar', imgs:[]},
 
   // Seguimiento por audiencia
-  {id:'fer', lane:'a', col:5, row:2, t:'sales', ic:'☎',  title:'Alta intención → Fer', m:'25', mu:'contactos en <24 h', budget:'—', owner:'Fer', date:'Desde 25 nov', weeks:rng(3,6),
+  {id:'fer', lane:'a', col:5, row:2, t:'sales', ic:'☎',  title:'Alta intención → Fer', m:'10', mu:'contactos en <24 h', budget:'—', owner:'Fer', date:'Desde 25 nov', weeks:rng(3,6),
     detail:'No clientes que asistieron y pidieron demo o tienen fit alto.', copy:'estrategia.md §5 · F3', imgs:[]},
-  {id:'rtg', lane:'a', col:5, row:3.5, t:'ads',   ic:'↺',  title:'Retargeting', m:'195', mu:'no asistentes + visitantes', budget:'$4k (25 nov–23 dic y 5–20 ene)', owner:'Diego', date:'25 nov → 20 ene', weeks:[...rng(3,7),...rng(9,11)],
-    detail:'Meta + LinkedIn a visitantes, registrados y engagement; excluye partners y clientes ya convertidos.', copy:'copys.md §11 · M3, M4', imgs:['preventa-1080x1080.png','preventa-1200x627.png']},
-  {id:'csm', lane:'b', col:5, row:7, t:'sales', ic:'☎',  title:'Alta intención → CSM', m:'15', mu:'clientes en <24 h', budget:'—', owner:'Vips / CSMs', date:'Desde 25 nov', weeks:rng(3,6),
+  {id:'rtg', lane:'a', col:5, row:3.5, t:'ads',   ic:'↺',  title:'Retargeting', m:'60', mu:'no asistentes + visitantes', budget:'$4k (25 nov–23 dic y 5–20 ene)', owner:'Diego', date:'25 nov → 20 ene', weeks:[...rng(3,7),...rng(9,11)],
+    detail:'Meta + LinkedIn a visitantes, registrados y engagement; excluye partners y clientes ya convertidos.', copy:'copys.md §10 · M3, M4', imgs:['preventa-1080x1080.png','preventa-1200x627.png']},
+  {id:'csm', lane:'b', col:5, row:7, t:'sales', ic:'☎',  title:'Alta intención → CSM', m:'6', mu:'clientes en <24 h', budget:'—', owner:'Vips / CSMs', date:'Desde 25 nov', weeks:rng(3,6),
     detail:'Clientes asistentes con interés en Reloj, GP o el bundle.', copy:'estrategia.md §5 · F3', imgs:[]},
 
   // Preventa
-  {id:'lista',lane:'m', col:6, row:5, t:'form', ic:'★',  merge:1, title:'Lista prioritaria', m:'150', mu:'empresas al 31 dic', budget:'—', owner:'Diego', date:'25 nov → 31 dic', weeks:rng(3,8),
+  {id:'lista',lane:'m', col:6, row:5, t:'form', ic:'★',  merge:1, title:'Lista prioritaria', m:'25', mu:'empresas al 31 dic', budget:'—', owner:'Diego', date:'25 nov → 31 dic', weeks:rng(3,8),
     detail:'Primera ola de habilitación en enero. El gancho comercial es [OFERTA] (pendiente de pricing).', copy:'copys.md §5', imgs:[]},
   {id:'seq', lane:'b', col:6, row:8, t:'email', ic:'✉',  title:'Secuencia de preventa', m:'3', mu:'emails + WhatsApp', budget:'$0', owner:'Diego + CSMs', date:'1 · 9 · 15 dic', weeks:[4,5,6],
     detail:'P1 "Asegura tu lugar" (1-dic), P2 presupuesto + W3 WhatsApp (9-dic), P3 "últimos lugares" (15-dic).', copy:'copys.md §5 y §7', imgs:[]},
@@ -241,32 +239,32 @@ const NODES = [
     detail:'"Faltan 30 / 14 / 7 días para el registro electrónico de jornada." Orgánico LinkedIn + IG.', copy:'artes/claude-design.md · Lote 3', imgs:['countdown-30d.png','countdown-14d.png','countdown-7d.png']},
 
   // Ventas
-  {id:'demo',lane:'m', col:7, row:5, t:'sales', ic:'◎',  merge:1, title:'Demos de Reloj', m:'40', mu:'al 31 dic', budget:'—', owner:'Fer / Vips', date:'25 nov → 31 dic', weeks:rng(3,8),
-    detail:'Con el prototipo de Figma de Carolina (meta 20-nov, límite 23-nov). Discurso: "llega el 31-dic, te muestro cómo funcionará".', copy:'copys.md §14 · FAQ', imgs:[]},
-  {id:'sqln',lane:'a', col:7, row:2, t:'sales', ic:'◆',  title:'SQLs nuevos', m:'35', mu:'al 15 ene', budget:'—', owner:'Fer', date:'→ 15 ene', weeks:rng(3,10),
+  {id:'demo',lane:'m', col:7, row:5, t:'sales', ic:'◎',  merge:1, title:'Demos de Reloj', m:'15', mu:'al 31 dic', budget:'—', owner:'Fer / Vips', date:'25 nov → 31 dic', weeks:rng(3,8),
+    detail:'Con el prototipo de Figma de Carolina (meta 20-nov, límite 23-nov). Discurso: "llega el 31-dic, te muestro cómo funcionará".', copy:'copys.md §13 · FAQ', imgs:[]},
+  {id:'sqln',lane:'a', col:7, row:2, t:'sales', ic:'◆',  title:'SQLs nuevos', m:'12', mu:'al 15 ene', budget:'—', owner:'Fer', date:'→ 15 ene', weeks:rng(3,10),
     detail:'Pipeline de no clientes: Reloj, GP, Reclutamiento o bundle.', copy:'estrategia.md §4', imgs:[]},
-  {id:'sqlc',lane:'b', col:7, row:8, t:'sales', ic:'◆',  title:'SQLs cross-sell', m:'25', mu:'al 15 ene', budget:'—', owner:'Vips / Pedro', date:'→ 15 ene', weeks:rng(2,10),
+  {id:'sqlc',lane:'b', col:7, row:8, t:'sales', ic:'◆',  title:'SQLs cross-sell', m:'8', mu:'al 15 ene', budget:'—', owner:'Vips / Pedro', date:'→ 15 ene', weeks:rng(2,10),
     detail:'Oportunidades en clientes actuales (GP, Reclutamiento, Reloj). Palanca de retención TaaS.', copy:'estrategia.md §4', imgs:[]},
 
   // Cierre
   {id:'ya',  lane:'a', col:8, row:1, t:'event', ic:'✺',  title:'"Ya está aquí"', m:'5 ene', mu:'todos los canales', budget:'Retargeting + Google', owner:'Diego', date:'Mar 5 ene', weeks:[9],
-    detail:'Email + WhatsApp + in-app + landing versión B. Release interno el 31-dic (Carolina).', copy:'copys.md §6 · W4 · M4', imgs:['ya-esta-aqui-1080x1080.png','ya-esta-aqui-1200x627.png']},
-  {id:'pre', lane:'m', col:8, row:5, t:'money', ic:'$',  merge:1, title:'Preventas firmadas', m:'12', mu:'al 15 ene', budget:'—', owner:'Fer / Vips', date:'→ 15 ene', weeks:rng(3,10),
+    detail:'Email + WhatsApp + landing versión B. Release interno el 31-dic (Carolina).', copy:'copys.md §6 · W4 · M4', imgs:['ya-esta-aqui-1080x1080.png','ya-esta-aqui-1200x627.png']},
+  {id:'pre', lane:'m', col:8, row:5, t:'money', ic:'$',  merge:1, title:'Preventas firmadas', m:'5', mu:'al 15 ene', budget:'—', owner:'Fer / Vips', date:'→ 15 ene', weeks:rng(3,10),
     detail:'Reloj solo o bundle GP + Reloj. Corte de KPIs el viernes 15-ene.', copy:'estrategia.md §4', imgs:[]},
-  {id:'hab', lane:'b', col:8, row:7.5, t:'client',ic:'⚙', title:'Habilitación 1.ª ola', m:'12', mu:'empresas', budget:'—', owner:'Producto / CS', date:'Mar 12 ene', weeks:[10,11],
+  {id:'hab', lane:'b', col:8, row:7.5, t:'client',ic:'⚙', title:'Habilitación 1.ª ola', m:'5', mu:'empresas', budget:'—', owner:'Producto / CS', date:'Mar 12 ene', weeks:[10,11],
     detail:'Onboarding de la primera ola, primer caso de uso para fines de enero y retro el 30-ene.', copy:'estrategia.md §5 · F5', imgs:[]},
 ];
 
 const EDGES = [
-  ['li','lgf','45'],['meta','lgf','60'],['meta','lp',''],['gg','lp','25'],['org','lp','30'],['eml','lp','20'],
-  ['ecl','lpc','70'],['app','lpc','25'],['wa','lpc','25'],
-  ['lgf','reg','105'],['lp','reg','75'],['lpc','reg','120'],
-  ['reg','rec',''],['rec','web','105'],['web','grab',''],
-  ['grab','fer','25'],['grab','rtg','195'],['grab','csm','15'],['grab','lista',''],
+  ['li','lgf','20'],['meta','lgf','30'],['meta','lp',''],['gg','lp','3'],['org','lp','4'],['eml','lp','3'],
+  ['ecl','lpc','25'],['wa','lpc','15'],
+  ['lgf','reg','50'],['lp','reg','10'],['lpc','reg','40'],
+  ['reg','rec',''],['rec','web','40'],['web','grab',''],
+  ['grab','fer','10'],['grab','rtg','60'],['grab','csm','6'],['grab','lista',''],
   ['lp','lista',''],['rtg','lista',''],['cd','lista',''],['seq','lista',''],['csm','seq',''],
-  ['fer','sqln',''],['lista','demo','40'],['nur','sqlc',''],['csm','sqlc',''],
-  ['demo','sqln','35'],['demo','sqlc','25'],['sqln','pre',''],['sqlc','pre',''],['demo','pre','12'],
-  ['ya','pre',''],['pre','hab','12'],
+  ['fer','sqln',''],['lista','demo','15'],['nur','sqlc',''],['csm','sqlc',''],
+  ['demo','sqln','12'],['demo','sqlc','8'],['sqln','pre',''],['sqlc','pre',''],['demo','pre','5'],
+  ['ya','pre',''],['pre','hab','5'],
 ];
 
 // Accionables por semana (estrategia.md §8 Calendario)
@@ -276,12 +274,12 @@ const ACTS = [
   [1,'Vie 13 nov','Artes del lote 1 (6 piezas del webinar) en Claude Design','Diego',['li','meta']],
   [1,'Vie 13 nov','Forms HubSpot, UTMs, pixels y registro del webinar; campañas a revisión','Diego',['lgf','li','meta','gg']],
   [2,'Lun 16 nov','Festivo · arranca la pauta del webinar (LinkedIn, Meta, Google)','Diego',['li','meta','gg']],
-  [2,'Lun 16 nov','Artes del lote 2: suite, headers de email y banner in-app','Diego',['ecl','app','org']],
-  [2,'Mar 17 nov','Lanzamiento de la suite: email a clientes y leads, in-app, WhatsApp CSM y LinkedIn','Diego / Vips / CSMs',['ecl','app','wa','eml','org']],
+  [2,'Lun 16 nov','Artes del lote 2: anuncio de los tres productos y headers de email','Diego',['ecl','org']],
+  [2,'Mar 17 nov','Anuncio de los tres productos: email a clientes y leads, WhatsApp CSM y LinkedIn','Diego / Vips / CSMs',['ecl','wa','eml','org']],
   [2,'Mié 18 nov','Carrusel "Qué cambia el 1 de enero" + post de Pedro','Diego + Pedro',['org']],
   [2,'Jue 19 nov','Email de nurturing: Gestión de Personal (P.D. webinar)','Diego',['nur']],
   [2,'Vie 20 nov','Prototipo de Reloj para demos (meta)','Carolina',['demo']],
-  [2,'Vie 20 nov','Corte de registros: si hay < 150, mover la reserva de $2k','Diego',['reg','li','meta']],
+  [2,'Vie 20 nov','Corte de registros: si hay < 50, mover la reserva de $2k','Diego',['reg','li','meta']],
   [3,'Lun 23 nov','Recordatorio del webinar: email, LinkedIn y WhatsApp a registrados','Diego + CSMs',['rec','wa']],
   [3,'Lun 23 nov','Límite del prototipo para la demo · plática con FitchUp/Worky','Carolina · Fer + Santiago',['web']],
   [3,'Mar 24 nov','Webinar 10:00 CDMX + recordatorio 8:30','Pedro + Diego',['web','rec']],
@@ -304,7 +302,7 @@ const ACTS = [
   [11,'Vie 30 ene','Retro de campaña','Todos',['hab']],
 ];
 
-const KPIS = [['300','registros webinar'],['105','asistentes'],['150','lista prioritaria'],['40','demos'],['60','SQLs'],['12','preventas'],['$28k','pauta']];
+const KPIS = [['100','registros webinar'],['50','empresas'],['40','asistentes'],['25','lista prioritaria'],['15','demos'],['20','SQLs'],['5','preventas'],['$28k','pauta']];
 const LANES = {a:'No clientes', m:'Convergen', b:'Clientes'};
 const COLS = ['Fuentes de tráfico','Captura','Registro','Recordatorios','Evento','Seguimiento','Preventa','Ventas','Cierre'];
 
@@ -394,7 +392,7 @@ function renderSide() {
       <p>${week ? 'Los nodos en violeta tienen accionables esta semana; los atenuados no están activos.' : 'Elige una semana arriba o un nodo del funnel para ver su detalle.'}</p>
       <div class="legend" style="margin-top:8px"><span><i style="background:#dfd8fd"></i>No clientes</span><span><i style="background:#ffe6b0"></i>Convergen</span><span><i style="background:#c2edee"></i>Clientes</span></div></div>` +
       groups.map(([g, l]) => `<div class="sec"><h3>${g.l} · ${g.r} · ${g.n}</h3><div class="acts">${l.map(actRow).join('')}</div></div>`).join('') +
-      `<div class="sec"><p class="note">Proyección para planear: CPM, CTR y conversión son supuestos (LinkedIn CPL ~$180, Meta ~$65). Se ajustan con datos reales en la revisión de cada lunes. Las miniaturas se llenan solas cuando las piezas de Claude Design se guardan en <code>artes/piezas/</code> con el nombre de la guía.</p></div>`;
+      `<div class="sec"><p class="note">Proyección para planear: CPM, CTR y conversión son supuestos (LinkedIn CPL ≈ $400, Meta ≈ $130). Se ajustan con datos reales en la revisión de cada lunes. Las miniaturas se llenan solas cuando las piezas de Claude Design se guardan en <code>artes/piezas/</code> con el nombre de la guía.</p></div>`;
   }
 }
 side.addEventListener('click', e => {

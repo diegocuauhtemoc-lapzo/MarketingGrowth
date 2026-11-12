@@ -10,8 +10,9 @@ para que los enlaces entre páginas sigan funcionando fuera del visor."""
 import base64, json, mimetypes, pathlib, re, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent          # lanzamiento/
-OUT = pathlib.Path(sys.argv[1]); OUT.mkdir(parents=True, exist_ok=True)
-LINKS = json.loads(pathlib.Path(sys.argv[2]).read_text()) if len(sys.argv) > 2 else {}
+OUT = None
+LINKS = {}
+FONT_KEEP = None   # regex: si se define, solo se incrustan los @font-face cuyo archivo coincida
 MIME = {'.otf': 'font/otf', '.ttf': 'font/ttf', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.webp': 'image/webp',
         '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg'}
 ASSET = re.compile(r'\.(otf|ttf|woff2|svg|webp|png|jpe?g)$', re.I)
@@ -34,7 +35,10 @@ def build_html(name, out_name=None, force_fase=None):
     # Hojas de estilo
     def css(m):
         p = (base / m.group(1)).resolve()
-        return f'<style>\n{inline_css(p.read_text(encoding="utf-8"), p.parent)}\n</style>'
+        txt = p.read_text(encoding="utf-8")
+        if FONT_KEEP:
+            txt = re.sub(r'@font-face\s*{[^}]*}', lambda f: f.group(0) if re.search(FONT_KEEP, f.group(0)) else '', txt)
+        return f'<style>\n{inline_css(txt, p.parent)}\n</style>'
     html = re.sub(r'<link rel="stylesheet" href="([^"]+)">', css, html)
     # Scripts externos
     html = re.sub(r'<script src="([^"]+)"></script>',
@@ -54,9 +58,14 @@ def build_html(name, out_name=None, force_fase=None):
         html = html.replace(f'href="{page}"', f'href="{url}" target="_top"')
     if force_fase:
         html = html.replace('<head>', f'<head>\n<script>window.FORCE_FASE = "{force_fase}";</script>', 1)
+    if OUT is None: return html
     out = OUT / (out_name or name.replace('/', '-'))
     out.write_text(html, encoding='utf-8')
     return out
+
+def md_to_html(text):
+    return subprocess.run(['node', '-e', "const {marked}=require(process.argv[1]);let s='';process.stdin.on('data',d=>s+=d).on('end',()=>process.stdout.write(marked.parse(s)))",
+                           str(ROOT / 'vendor' / 'marked.min.js')], input=text, capture_output=True, text=True, check=True).stdout
 
 MD_CSS = """
 body{margin:0;background:#fff;color:#3F3F46;font-family:Poppins,Arial,sans-serif}
@@ -89,6 +98,8 @@ def build_md(name, title):
     return out
 
 if __name__ == '__main__':
+    OUT = pathlib.Path(sys.argv[1]); OUT.mkdir(parents=True, exist_ok=True)
+    LINKS = json.loads(pathlib.Path(sys.argv[2]).read_text()) if len(sys.argv) > 2 else {}
     outs = [build_html('deck.html'), build_html('reloj-checador.html'), build_html('reloj-checador.html', 'reloj-checador-5-ene.html', 'post'),
             build_html('gestion-personal.html'), build_html('reclutamiento.html'),
             build_md('estrategia.md', 'Estrategia de lanzamiento'), build_md('copys.md', 'Copys y artes'),

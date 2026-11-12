@@ -4,8 +4,9 @@ Material de Marketing/Growth para el lanzamiento acordado en la sesión *Product
 
 | Archivo | Qué es |
 |---|---|
+| [`lanzamiento-q4.html`](lanzamiento-q4.html) | **Página única para presentar**: presentación, estrategia, funnel, copys y artes, y mockups de las landings en un solo archivo. Se regenera con `python3 lanzamiento/scripts/build-suite.py` |
 | [`estrategia.md`](estrategia.md) | Estrategia integral: objetivos, posicionamiento, fases, canales, calendario, presupuesto, KPIs, riesgos y responsables |
-| [`copys.md`](copys.md) | Copys listos para usar: ads, posts, emails, WhatsApp, in-app, guion de webinar y briefs de artes |
+| [`copys.md`](copys.md) | Copys listos para usar: ads, posts, emails, WhatsApp, guion de webinar y briefs de artes |
 | [`reloj-checador.html`](reloj-checador.html) | Landing de Reloj Checador (preventa / lista prioritaria + registro al webinar) |
 | [`gestion-personal.html`](gestion-personal.html) | Landing de Gestión de Personal (disponible, agenda demo) |
 | [`reclutamiento.html`](reclutamiento.html) | Landing de Reclutamiento (disponible, agenda demo) |

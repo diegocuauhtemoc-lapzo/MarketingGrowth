@@ -8,16 +8,16 @@
 
 ## 0. Resumen ejecutivo
 
-- **Qué lanzamos.** Tres productos que convierten a Lapzo en suite: **Gestión de Personal (GP)** y **Reclutamiento**, que ya se pueden vender y habilitar, y **Reloj Checador**, que se vende desde ya, tiene su release final el **31-dic-2026** y se habilita a clientes la **2.ª semana de enero 2027**.
-- **Por qué ahora.** La reforma a la LFT (jornada de 40 horas) obliga a las empresas a llevar un **registro electrónico de la jornada a partir del 1-ene-2027**. Las multas reportadas llegan a cerca de **$590 mil MXN**. Es el único de los tres productos con *momentum* externo, y la competencia (Buk, Kerana, Runa) ya lo está aprovechando. Además, dic-ene es temporada alta de compra en RH por cierre y estreno de presupuesto.
-- **Cómo.** Una sola campaña paraguas, **"Tu gente, de principio a fin"**, que arranca con **pauta desde el lunes 16-nov** y el **anuncio de la suite el martes 17-nov**, con el mismo mensaje en dos frentes:
+- **Qué lanzamos.** Tres productos que completan la oferta de Lapzo para RH: **Gestión de Personal (GP)** y **Reclutamiento**, que ya se pueden vender y habilitar, y **Reloj Checador**, que se vende desde ya, tiene su release final el **31-dic-2026** y se habilita a clientes la **2.ª semana de enero 2027**.
+- **Por qué ahora.** La reforma a la LFT (jornada de 40 horas) obliga a las empresas a llevar un **registro electrónico de la jornada a partir del 1-ene-2027**. Las multas reportadas llegan a cerca de **$590 mil MXN**. Es el único de los tres productos con *momentum* externo, y la competencia (Buk, Crehana, Runa) ya lo está aprovechando. Además, dic-ene es temporada alta de compra en RH por cierre y estreno de presupuesto.
+- **Cómo.** Una sola campaña paraguas, **"Tu gente, de principio a fin"**, que arranca con **pauta desde el lunes 16-nov** y el **anuncio de los tres productos el martes 17-nov**, con el mismo mensaje en dos frentes:
   - **Hacia adentro (clientes):** anunciamos GP y Reclutamiento como *disponibles* y Reloj Checador como *próximamente*, con lista prioritaria. Lo usamos como palanca de cross-sell y retención (TaaS).
   - **Hacia afuera (no clientes):** usamos la ley como gancho, con un **webinar el martes 24-nov** ("Registro electrónico de jornada 2027: lo que tu empresa debe tener listo el 1 de enero"). Así generamos audiencia y leads *antes* del lanzamiento, para que el 31-dic/5-ene no empecemos de cero.
 - **Metas (Pipeline + Preventa).** Propuesta a validar con Fer y Vips:
-  - **60 SQLs**: 35 nuevos + 25 cross-sell.
-  - **12 preventas de Reloj Checador** firmadas antes del 15-ene.
-  - **300 registros** al webinar.
-- **Presupuesto de pauta:** **$28,000 MXN** (tope < $30k), enfocado en registros al webinar y retargeting. Lo demás va por canales propios: email HubSpot, WhatsApp, in-app y orgánico.
+  - **20 SQLs**: 12 nuevos + 8 cross-sell.
+  - **5 preventas de Reloj Checador** firmadas antes del 15-ene.
+  - **100 registros** al webinar, de **50 empresas**, con **40 asistentes**.
+- **Presupuesto de pauta:** **$28,000 MXN** (tope < $30k), enfocado en registros al webinar y retargeting. Lo demás va por canales propios: email HubSpot, WhatsApp y orgánico.
 
 ---
 
@@ -75,24 +75,25 @@ Las metas cuantitativas son **hipótesis a validar** el jueves con Fer (ventas n
 ### Objetivo 1: Pipeline (SQLs)
 | KPI | Meta propuesta | Fecha | Dueño |
 |---|---|---|---|
-| SQLs nuevos (no clientes) atribuidos a la campaña | 35 | 15-ene | Diego / Fer |
-| Oportunidades de cross-sell en clientes (GP, Rec, Reloj) | 25 | 15-ene | Vips / Pedro |
+| SQLs nuevos (no clientes) atribuidos a la campaña | 12 | 15-ene | Diego / Fer |
+| Oportunidades de cross-sell en clientes (GP, Rec, Reloj) | 8 | 15-ene | Vips / Pedro |
 | Valor de pipeline generado | Definir con el pricing de Fer | 15-ene | Fer |
 | Tiempo de contacto a lead del webinar o landing | < 24 h hábiles | Continuo | Fer |
 
 ### Objetivo 2: Preventa Reloj Checador
 | KPI | Meta propuesta | Fecha | Dueño |
 |---|---|---|---|
-| Inscritos a la *lista prioritaria* de Reloj | 150 empresas | 31-dic | Diego |
-| Demos de Reloj (con prototipo/Figma) | 40 | 31-dic | Fer / Vips |
-| Preventas de Reloj firmadas (solas o bundle GP + Reloj) | 12 | 15-ene | Fer / Vips |
+| Inscritos a la *lista prioritaria* de Reloj | 25 empresas | 31-dic | Diego |
+| Demos de Reloj (con prototipo/Figma) | 15 | 31-dic | Fer / Vips |
+| Preventas de Reloj firmadas (solas o bundle GP + Reloj) | 5 | 15-ene | Fer / Vips |
 
 ### KPIs de soporte (salud del funnel)
 | Métrica | Meta |
 |---|---|
-| Registros al webinar del 24-nov | 300 (≈60% externos, 40% clientes) |
-| Asistencia en vivo | ≥ 35% de los registros |
-| CPL de pauta (registro a webinar / lista) | ≤ $120 MXN |
+| Registros al webinar del 24-nov | 100 personas de 50 empresas (60 externos, 40 clientes) |
+| Asistencia en vivo | 40 personas (40% de los registros) |
+| Registros pagados (LinkedIn + Meta) | 50 con $12,000 de pauta del webinar |
+| CPL de pauta del webinar | ≤ $240 MXN promedio (LinkedIn ≈ $400, Meta ≈ $130) |
 | CTR de email a clientes | ≥ 3.5% |
 | Conversión de landing a lead | ≥ 12% |
 | MQL a SQL | ≥ 25% |
@@ -123,7 +124,7 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 | **Pedro**, Director de RH (Tier 1-2) | Cumplimiento sin fricción + riesgo de multa + "no es otra herramienta, es tu mismo aliado" | LinkedIn, email, webinar |
 | **Sofía**, RH multi-rol (Tier 3) | "Deja de cuadrar asistencias en Excel": centraliza jornada, solicitudes y documentos | Meta (IG), LinkedIn, WhatsApp |
 | **Santiago**, Directivo (Tier 3) | Riesgo legal y control de horas extra: "cada minuto extra se paga" | LinkedIn, Google Search |
-| **Andrea**, C&D (Tier 1-2), solo clientes | "Tu plataforma de capacitación ahora cubre la operación de tu gente": cross-sell | Email, in-app |
+| **Andrea**, C&D (Tier 1-2), solo clientes | "Tu plataforma de capacitación ahora cubre la operación de tu gente": cross-sell | Email, WhatsApp CSM |
 
 > Ojo con los nombres: "Pedro" y "Santiago" en esta tabla son los ICPs ficticios, no Pedro Sors ni Santiago Maldonado.
 
@@ -131,7 +132,7 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 | Competidor | Qué está haciendo | Cómo respondemos |
 |---|---|---|
 | **Buk** | WhatsApp masivo de Reloj con urgencia; suite con nómina | No competimos en nómina. Competimos en *talento + operación* en un solo lugar y en acompañamiento (aliado, CS) |
-| **Kerana** | Workshops presenciales de Reloj | Webinar del 24-nov + sesión presencial opcional para cuentas clave en enero (fase 2, si hay tracción) |
+| **Crehana** | Workshops presenciales de Reloj | Webinar del 24-nov + sesión presencial opcional para cuentas clave en enero (fase 2, si hay tracción) |
 | **Runa** | ~$22 MXN por empleado con reloj | Insumo para el pricing de Fer y Diego. Comunicar bundle, no precio |
 | **FitchUp / Worky** | Partners con clientes compartidos | Excluirlos de la comunicación. Mensajes que no los ataquen. Fer y Santiago llevan la conversación |
 
@@ -149,8 +150,8 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 | Segmento | Criterio (HubSpot) | Producto foco | Canal |
 |---|---|---|---|
 | A. Cuentas clave (Tier 1) | Top cuentas por ARR, con CSM asignado | Bundle GP + Reloj, Reclutamiento | Contacto 1:1 de CSM/Pedro + invitación personal al webinar |
-| B. Clientes con plan multi-módulo | ≥ 2 módulos activos | GP + Reloj | Email + in-app + WhatsApp CSM |
-| C. Clientes de 1 módulo (CyA) | 1 módulo activo | GP (retención) + Reloj | Email + in-app |
+| B. Clientes con plan multi-módulo | ≥ 2 módulos activos | GP + Reloj | Email + WhatsApp CSM |
+| C. Clientes de 1 módulo (CyA) | 1 módulo activo | GP (retención) + Reloj | Email |
 | D. Cuentas en riesgo / renovación ≤ 90 días | Lista de Vips | GP + Reloj como palanca de retención (TaaS) | 1:1 CSM |
 | **EXCLUSIÓN** | Clientes que llegaron por o trabajan con **FitchUp** o **Worky** (incluye Tata) | — | **Ninguno**. Lista de supresión global en HubSpot, Meta (custom audience excluida) y WhatsApp |
 
@@ -170,7 +171,7 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
  11  16 17 ──── 23 24 25 ───────── 15 ─── 24 ── 31      5 ─ 12 ──── 31
  [F0 Prep][F1+F2 Captación][F3 Webinar + Preventa ────────][F4 GA][ F5 Habilitación ]
           16-nov: arranca pauta    24-nov: webinar              31-dic release
-          17-nov: anuncio suite                                 5-ene anuncio "ya está"
+          17-nov: anuncio 3 prod.                               5-ene anuncio "ya está"
 ```
 
 ### F0: Preparación (11 al 15-nov)
@@ -181,7 +182,7 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 | Lista de exclusión FitchUp/Worky | Vips / Pedro | 13-nov |
 | Forms HubSpot, UTMs, pixel Meta, Insight Tag LinkedIn y listas de segmentos | Diego | 13-nov |
 | Artes de pauta (6 piezas del webinar) | Diseño (brief en `copys.md`) | **13-nov** (para subir campañas a aprobación ese día) |
-| Artes restantes: key visual, banner in-app, header de email | Diseño | 16-nov |
+| Artes restantes: anuncio de lanzamiento y headers de email | Diseño | 16-nov |
 | Campañas de LinkedIn, Meta y Google cargadas y en revisión de la plataforma | Diego | 13-nov |
 | Kit de ventas y CS: one-pager por producto, FAQ de alcance y respuesta tipo "lo tenemos el 31-dic" | Diego + Fer | 16-nov |
 | Prototipo navegable de Reloj (Figma) para demos | Carolina | Meta 20-nov; **límite 23-nov** para la demo del webinar |
@@ -192,7 +193,6 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 - **Lunes 16-nov (festivo):** arranca la pauta de registro al webinar (LinkedIn, Meta y Google). Las campañas se suben el viernes 13 para que pasen la revisión de las plataformas.
 - **Clientes:**
   - Email de anuncio "Lapzo crece contigo: 3 nuevos productos" (segmentos A–D).
-  - Banner in-app.
   - Mensaje de WhatsApp de cada CSM a sus contactos clave.
   - Invitación al webinar en todos los canales.
 - **No clientes:**
@@ -224,7 +224,7 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 ### F4: Release Reloj Checador (31-dic) y anuncio "ya está aquí" (martes 5-ene)
 - El 31-dic es jueves festivo de facto: el release es interno. El **anuncio externo es el 5-ene**.
 - Contenido: *"Ya está aquí. El registro electrónico de jornada ya es obligatorio, y tú ya puedes tenerlo en Lapzo."*
-- A la lista prioritaria, webinar, visitantes y clientes: email + WhatsApp + in-app, con agenda de habilitación.
+- A la lista prioritaria, webinar, visitantes y clientes: email + WhatsApp, con agenda de habilitación.
 - Retargeting a todas las audiencias de F2–F3.
 - Landing de Reloj cambia de "Lista prioritaria" a "Agenda tu demo" (hay que activar la versión B de la landing).
 
@@ -242,7 +242,6 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 |---|---|---|---|
 | **Email HubSpot** | Anuncio, nurturing por producto, webinar, preventa | 1–2 por semana por segmento (máx.) | Diego |
 | **WhatsApp** | Clientes: mensaje 1:1 de CSM (no masivo frío). Leads: solo con opt-in del form | 17-nov, 23-nov (recordatorio), 9-dic (preventa), 5-ene | Vips / CSMs |
-| **In-app (plataforma)** | Banner/aviso a admins de RH de clientes (vía Comunidad/anuncios) | 17 al 24-nov (webinar); 25-nov al 23-dic (lista prioritaria); 5-ene (Reloj ya está) | Diego + Producto |
 | **LinkedIn orgánico** | Lapzo + voceros: anuncio, cuenta regresiva, recap de webinar | 3 posts/sem Lapzo; 1/sem por vocero | Diego + voceros |
 | **Meta orgánico (IG/FB)** | Carruseles y reels con Lapzi (tono más cercano, Sofía) | 2 por semana | Diego |
 | **Pauta** | Registros al webinar, lista prioritaria, retargeting | Ver §7 | Diego |
@@ -254,8 +253,8 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 
 | Canal | Objetivo | Monto | Periodo | Nota |
 |---|---|---|---|---|
-| **LinkedIn Ads** | Registros al webinar (Lead Gen Form), cargos RH/Dirección MX; después, lista prioritaria | $11,000 | $8,000 del 16 al 23-nov (webinar) + $3,000 del 25-nov al 18-dic | CPL esperado alto, pero es la audiencia exacta (Pedro, Santiago) |
-| **Meta Ads** | Registros al webinar + lista prioritaria (Sofía) | $7,000 | $4,000 del 16 al 23-nov (webinar) + $3,000 del 25-nov al 23-dic | Lead form nativo + tráfico a landing |
+| **LinkedIn Ads** | Registros al webinar (Lead Gen Form), cargos RH/Dirección MX; después, lista prioritaria | $11,000 | $8,000 del 16 al 23-nov (webinar) + $3,000 del 25-nov al 18-dic | Meta: 20 registros (CPL ≈ $400). Es la audiencia exacta (Pedro, Santiago) |
+| **Meta Ads** | Registros al webinar + lista prioritaria (Sofía) | $7,000 | $4,000 del 16 al 23-nov (webinar) + $3,000 del 25-nov al 23-dic | Meta: 30 registros (CPL ≈ $130). Lead form nativo + tráfico a landing |
 | **Google Search** | Keywords de alta intención de Reloj | $6,000 | 16-nov al 23-dic y 5 al 31-ene | Concordancia de frase; negativas: "gratis", "app gratis", "biométrico" |
 | **Retargeting (Meta + LinkedIn)** | Visitantes, registrados y engagement: "ya está aquí" | $4,000 | 25-nov al 23-dic y 5 al 20-ene | Audiencias excluyendo partners y clientes ya convertidos |
 | **Total** | | **$28,000** | | Reserva de $2k para impulsar lo que mejor funcione |
@@ -271,7 +270,7 @@ Revisión semanal (lunes): se mueve presupuesto al canal con mejor CPL→SQL, no
 | Jue 12-nov | Sesión de seguimiento: estrategia, artes y landings | Reunión 10:30 |
 | Vie 13-nov | Aprobación de alcance de copys + lista de exclusión. Artes de pauta, forms, pixels y registro del webinar listos; campañas a revisión | Carolina / Vips / Diseño / Diego |
 | **Lun 16-nov** | **Festivo. Arranca la pauta de registro al webinar**; QA de landings | LinkedIn + Meta + Google |
-| **Mar 17-nov** | **Lanzamiento de la suite** + invitación al webinar | Email clientes y leads + in-app + WhatsApp CSM + LinkedIn |
+| **Mar 17-nov** | **Anuncio de los tres productos** + invitación al webinar | Email clientes y leads + WhatsApp CSM + LinkedIn |
 | Mié 18-nov | Post: "Qué cambia el 1 de enero" (carrusel) + post de Pedro | LinkedIn + IG |
 | Jue 19-nov | Email de nurturing: Gestión de Personal (con P.D. del webinar) | Email |
 | ~Vie 20-nov | Prototipo de Reloj para demos (meta; límite 23-nov) | Carolina |
@@ -316,26 +315,53 @@ Revisión semanal (lunes): se mueve presupuesto al canal con mejor CPL→SQL, no
 | Fricción con partners FitchUp / Worky | Pérdida de canal y de Tata | Exclusión global de listas y audiencias. Fer y Santiago hablan con ellos antes del 23-nov (antes del webinar). Mensajes sin atacar competidores |
 | Pricing no definido al lanzar | Fricción en cotización | CTA "agenda demo / cotiza" sin precios; variable `[OFERTA]` en la preventa hasta la propuesta de Fer y Diego |
 | Retraso del release del 31-dic | Preventas sin entrega | Comunicar "habilitación desde enero" (no día exacto). Plan B de comunicación preparado |
-| Ventana de captación corta para el webinar (8 días, 16 al 23-nov) | No llegar a los 300 registros | Pauta concentrada esa semana, invitación a toda la base propia el 17-nov, voceros y WhatsApp de CSMs. Corte el viernes 20-nov: si vamos por debajo de 150, movemos la reserva de $2k a LinkedIn y Meta |
+| Ventana de captación corta para el webinar (8 días, 16 al 23-nov) | No llegar a los 100 registros | Pauta concentrada esa semana, invitación a toda la base propia el 17-nov, voceros y WhatsApp de CSMs. Corte el viernes 20-nov: si vamos por debajo de 50, movemos la reserva de $2k a LinkedIn y Meta |
 | Presupuesto bajo de pauta | Poco volumen externo | Apalancar base propia, voceros, webinar co-organizado con un aliado legal (su audiencia) y orgánico |
 | Afirmaciones legales erróneas | Riesgo reputacional | Validar con legal o el invitado laboral: fechas (1-ene-2027 registro electrónico; 48 a 46 h en 2027; 40 h en 2030) y monto de multas antes de publicar |
 
 ---
 
-## 11. Decisiones que necesito del equipo (sesión del jueves)
+## 11. Siguientes pasos
 
-1. **Metas:** ¿validamos 60 SQLs (35 + 25) y 12 preventas de Reloj al 15-ene?
-2. **Gancho de preventa `[OFERTA]`:** ¿precio early adopter congelado, bundle GP + Reloj con Comunidad de regalo, o solo prioridad de habilitación? Lo define la propuesta de pricing de Fer y Diego.
-3. **Host del webinar:** ¿Pedro? ¿Conseguimos un invitado laboral externo (despacho o aliado) para el bloque de la reforma?
-4. **Prototipo de Reloj:** fecha firme de Carolina para el Figma navegable (lo necesito a más tardar el 23-nov para la demo del webinar del 24-nov).
-5. **Lista de exclusión FitchUp/Worky:** ¿quién la entrega y para cuándo? (Propuesta: Vips, 13-nov.)
-6. **Firma de mensajes a clientes:** ¿va de Vips (CS), de Santiago (CEO) o de Lapzo genérico?
-7. **Estado de la plataforma:** ¿confirmamos el 16-nov que los casos del incidente están cerrados antes del envío a clientes?
-8. **Nombre comercial:** ¿"Gestión de Personal" o "Gestión de Personas"? En la sesión se usaron ambos. Recomiendo **"Gestión de Personal"** y uso ese en las piezas.
+| # | Tema | Pregunta o acción | Responsable | Fecha |
+|---|---|---|---|---|
+| 1 | Metas | ¿Aprobamos 20 SQLs (12 nuevos + 8 cross-sell) y 5 preventas de Reloj Checador al 15-ene? | Fernando Núñez y Vivian Cazadero | 13-nov |
+| 2 | Webinar | Pedro, ¿lo vas a presentar solo o con un especialista laboral invitado? Si hay invitado, ¿quién es y quién lo contacta? | Pedro Sors | 13-nov |
+| 3 | Oferta de preventa | ¿La preventa tendrá precio early adopter, bundle con Comunidad o solo prioridad de habilitación? | Fernando Núñez y Diego Cuauhtémoc; aprueba Santiago Maldonado | 20-nov |
+| 4 | Prototipo | Carolina, ¿confirmas el prototipo navegable de Reloj Checador para el 20-nov? | Carolina Archila | 13-nov |
+| 5 | Alcance del release | Carolina, ¿descansos, confirmación de cierre y horas extra entran en el release del 31-dic? | Carolina Archila | 13-nov |
+| 6 | Exclusión de partners | Vivian, ¿entregas la lista de clientes FitchUp y Worky el 13-nov? | Vivian Cazadero | 13-nov |
+| 7 | Firma a clientes | ¿Los mensajes a clientes los firma Vivian, Santiago o Lapzo? | Vivian Cazadero | 13-nov |
+| 8 | Estabilidad de plataforma | Vivian, ¿confirmas el 16-nov que los casos del incidente del 3-nov están cerrados? | Vivian Cazadero | 16-nov |
+| 9 | Nombre del producto | ¿Usamos "Gestión de Personal" en todas las piezas? | Carolina Archila | 13-nov |
 
 ---
 
-## 12. Fuentes sobre la reforma (validar antes de publicar)
+## 12. Panorama competitivo (investigación del 12-nov-2026)
+
+| Competidor | Control de asistencia | Oferta principal | Precio público | Comunicación de la reforma |
+|---|---|---|---|---|
+| **Buk** | Biométrico, facial o app con geocercas; integrado a nómina | Nómina, beneficios, capacitación, desempeño, clima | Cotización por plan y colaboradores; desde ~$2,814 MXN/mes (dato de terceros) | Blog, kit para RH, guía de 40 horas |
+| **Crehana** | Crehana Time: digital, biométrico, remoto; integrado a nómina | Aprendizaje, talento, desempeño, clima, nómina | Cotización; promoción "sin pago hasta la primera nómina" | Comparativas contra Worky y Runa |
+| **Runa** | App, web o reloj; integra biométricos; horas extra en nómina | Nómina y maquila, RH, vacaciones, encuestas | Cotización por colaborador con mínimo mensual | Landing de la reforma, taller y guía 2027 |
+| **Factorial** | App, tablet o computadora con geolocalización | Ausencias, turnos, nómina, desempeño, reclutamiento | Desde $80.10 MXN por persona/mes (dato de terceros) | Blog de registro electrónico y multas |
+| **Humand** | App con reconocimiento facial, geolocalización y kiosco | Comunicación interna para personal operativo | No publicado; ~USD 4 por usuario/mes (dato de terceros) | Sin campaña 2027 identificada |
+| **Rankmi** | Biométrico, facial, app con GPS y WhatsApp | Desempeño, clima, nómina, aprendizaje | Cotización | Blogs, landing México, comparativas contra Buk |
+| **Ubits** | No ofrece control de asistencia | Aprendizaje, desempeño, reclutamiento, NOM-035 | No publicado | Sin comunicación identificada |
+| **Worky** (partner) | WhatsApp, app, web, QR, GPS; integrado a nómina | Nómina, Core HR, vacaciones, intranet | Core HR $30 MXN por colaborador/mes; asistencia +$45 (dato de terceros) | Landings "obligatorio 2027" y multas |
+| **FitchUp** (partner) | Control horario para personal operativo | RH en la nube para personal operativo | Cotización por colaborador activo | Landing de la ley de 40 horas |
+
+**Conclusiones**
+1. El mensaje de miedo y multas ya lo usan Worky, Rankmi, Runa y Factorial. Lapzo se diferencia como aliado de talento: cumplimiento más conocimiento de los colaboradores.
+2. La LFT no exige biométricos ni integración con nómina: Reloj Checador v1 cumple sin hardware adicional. La mayoría de los competidores condiciona la asistencia a migrar su nómina.
+3. Referencia de precio de asistencia: entre $45 y $80 MXN por colaborador/mes. Casi todos cotizan; publicar precio sería un diferenciador.
+4. Ubits no tiene control de asistencia: sus clientes de talento son una oportunidad de cross-sell para Reloj Checador.
+
+**Fuentes** (consultadas el 12-nov-2026; los precios de terceros deben validarse en la página oficial antes de usarse externamente): buk.mx/productos/administracion/control-de-asistencia · buk.mx/precios · buk.mx/blog/reloj-checador-reforma-laboral · crehana.com/gestion-de-asistencia · runahr.com/mx/product-asistencias · recursos.runahr.com/mx-reforma-jornada-laboral · runahr.com/mx/recursos/hr-management/cuanto-cuesta-un-software-de-recursos-humanos · factorial.mx/plan-de-precios · factorial.mx/blog/reloj-checador-digital · kiwiiapp.com/mx/comparativas/kiwii-vs-factorial · humand.co/modules/time-tracking · capterra.com/p/10020153/Humand · rankmi.com/mx/administracion-y-nomina/control-de-asistencia · g2.com/products/rankmi/pricing · ubits.com/modulos/por-que-ubits · worky.mx/precios-y-planes · worky.mx/app-checador · fichap.com/en/ley-40-horas-mexico
+
+---
+
+## 13. Fuentes sobre la reforma (validar antes de publicar)
 
 - [El Imparcial: la jornada de 40 horas obligará a usar reloj checador a partir de 2027](https://www.elimparcial.com/mexico/2026/03/15/jornada-de-40-horas-no-beneficiara-a-todos-los-trabajadores-y-obligara-a-las-empresas-a-usar-el-reloj-checador-a-partir-de-2027-para-vigilar-las-horas-extra/)
 - [El Imparcial: reloj checador obligatorio y multas de hasta 590 mil pesos](https://www.elimparcial.com/mexico/2026/04/14/la-nueva-jornada-laboral-de-40-horas-en-mexico-incluira-reloj-checador-obligatorio-y-multas-de-hasta-590-mil-pesos-para-empresas-que-incumplan/)
