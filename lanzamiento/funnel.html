@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funnel del lanzamiento — Lapzo</title>
+<style>
+@font-face{font-family:"Poppins";src:url("lz/fonts/Poppins-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Poppins";src:url("lz/fonts/Poppins-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
+@font-face{font-family:"Poppins";src:url("lz/fonts/Poppins-SemiBold.ttf") format("truetype");font-weight:600;font-display:swap}
+@font-face{font-family:"LZ Degular";src:url("lz/fonts/Degular-Bold.otf") format("opentype");font-weight:700;font-display:swap}
+:root{
+  color-scheme:light;
+  --ink:#211435;--action:#7d4de5;--hl:#c7a4ff;--brand10:#ebecfe;--brand30:#a996ff;--brand50:#5624c0;
+  --text:#262338;--text2:#4e4b66;--muted:#666983;--border:#d9dbe9;--canvas:#f7f8f9;--surface:#fff;
+  --laneA:#f3f0ff;--laneB:#ebf9f9;--laneM:#fff8e9;
+  --aqua:#288c8d;--aquabg:#c2edee;--orange:#c25100;--orangebg:#fedec8;--green:#067306;--greenbg:#eaf9de;
+  --font:"Poppins",Arial,sans-serif;--fontm:"LZ Degular","Poppins",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font:400 14px/1.45 var(--font);color:var(--text);background:var(--canvas);display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--action);outline-offset:2px}
+
+/* Barra superior */
+.top{background:var(--ink);color:#fff;padding:16px 20px 14px;display:flex;flex-direction:column;gap:12px}
+.top .row{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.top h1{margin:0;font:700 26px/1.05 var(--fontm);letter-spacing:-.01em}
+.top h1 span{color:var(--hl)}
+.top p{margin:4px 0 0;font-size:12.5px;color:rgba(255,255,255,.7);max-width:640px}
+.kpis{display:flex;gap:8px;flex-wrap:wrap}
+.kpi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:6px 10px;min-width:88px}
+.kpi b{display:block;font:700 20px/1 var(--fontm);color:var(--hl)}
+.kpi small{font-size:10.5px;color:rgba(255,255,255,.65)}
+.weeks{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
+.wk{flex:0 0 auto;border:1px solid rgba(255,255,255,.16);background:transparent;color:rgba(255,255,255,.78);border-radius:10px;padding:6px 10px;cursor:pointer;text-align:left;line-height:1.2}
+.wk b{display:block;font-weight:600;font-size:12px}
+.wk small{font-size:10.5px;opacity:.75}
+.wk:hover{border-color:rgba(255,255,255,.35);color:#fff}
+.wk.on{background:var(--brand30);border-color:var(--brand30);color:var(--ink)}
+.wk.key b::after{content:" ★";color:#fec195}
+.wk.on.key b::after{color:var(--brand50)}
+
+/* Lienzo */
+.main{flex:1;display:flex;min-height:0}
+.board{flex:1;overflow:auto;position:relative;background-color:var(--canvas);background-image:radial-gradient(#d9dbe9 1px,transparent 1px);background-size:18px 18px}
+.canvas{position:relative}
+.lane{position:absolute;left:0;right:0;border-top:1px dashed #c3c7cd}
+.lane span{position:sticky;left:8px;display:inline-block;margin:8px;font:600 10.5px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:6px}
+.lane.a{background:linear-gradient(var(--laneA),rgba(243,240,255,.55))}.lane.a span{background:#dfd8fd;color:var(--brand50)}
+.lane.m{background:rgba(255,248,233,.7)}.lane.m span{background:#ffe6b0;color:#946300}
+.lane.b{background:linear-gradient(rgba(235,249,249,.55),var(--laneB))}.lane.b span{background:var(--aquabg);color:var(--aqua)}
+.colh{position:absolute;top:6px;font:600 10.5px/1.2 var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:center}
+svg.edges{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
+.edge{fill:none;stroke:#a0a3bd;stroke-width:1.6;transition:opacity .25s,stroke .25s}
+.edge.hot{stroke:var(--action);stroke-width:2.2}
+.edge.dim{opacity:.18}
+.elabel{font:600 10px var(--font);fill:var(--brand50);paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round;transition:opacity .25s}
+.elabel.dim{opacity:.15}
+.node{position:absolute;width:196px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 11px 10px;box-shadow:0 2px 6px #14142a0d;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:6px;transition:opacity .25s,box-shadow .2s,border-color .2s,transform .2s}
+.node:hover{box-shadow:0 8px 24px #14142a1f;transform:translateY(-1px)}
+.node.dim{opacity:.28}
+.node.live{border-color:var(--action);box-shadow:0 0 0 3px rgba(125,77,229,.18),0 8px 24px #14142a14}
+.node.sel{border-color:var(--ink);box-shadow:0 0 0 3px rgba(33,20,53,.25)}
+.node .hd{display:flex;align-items:center;gap:8px}
+.node .ic{flex:0 0 auto;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-size:14px;background:var(--brand10)}
+.node .t{font:600 12.5px/1.25 var(--font);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.node .m{display:flex;align-items:baseline;gap:6px}
+.node .m b{font:700 20px/1 var(--fontm);color:var(--brand50)}
+.node .m small{font-size:10.5px;color:var(--muted);line-height:1.2}
+.node .tags{display:flex;gap:4px;flex-wrap:nowrap;overflow:hidden;mask-image:linear-gradient(90deg,#000 85%,transparent)}
+.tag{font:500 10px/1 var(--font);padding:4px 6px;border-radius:999px;background:#f0f1f4;color:var(--text2);white-space:nowrap}
+.tag.money{background:var(--greenbg);color:var(--green)}
+.tag.date{background:var(--brand10);color:var(--brand50)}
+.tag.img{background:var(--orangebg);color:var(--orange)}
+.node .thumbs{display:flex;gap:4px}
+.node .thumbs img,.node .thumbs i{width:36px;height:24px;border-radius:4px;object-fit:cover;background:#f0f1f4;border:1px dashed #c3c7cd;display:block}
+.node.merge{border-width:2px;border-color:#eaac30}
+.node[data-t=money] .ic{background:var(--greenbg)}
+.node[data-t=sales] .ic{background:#ffecf8}
+.node[data-t=event] .ic{background:#fff3eb}
+.node[data-t=client] .ic{background:var(--aquabg)}
+
+/* Panel lateral */
+.side{width:360px;flex:0 0 auto;border-left:1px solid var(--border);background:var(--surface);overflow:auto;display:flex;flex-direction:column}
+.side .sec{padding:16px 18px;border-bottom:1px solid #eff0f6}
+.side h2{margin:0 0 4px;font:700 20px/1.1 var(--fontm)}
+.side h3{margin:0 0 10px;font:600 11px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--action)}
+.side .lane-tag{display:inline-block;margin-bottom:8px}
+.side dl{display:grid;grid-template-columns:92px 1fr;gap:6px 10px;margin:10px 0 0;font-size:13px}
+.side dt{color:var(--muted)}
+.side dd{margin:0}
+.side p{margin:6px 0;font-size:13px;color:var(--text2)}
+.acts{display:flex;flex-direction:column;gap:8px}
+.act{display:grid;grid-template-columns:54px 1fr;gap:2px 10px;padding:8px 10px;border:1px solid #eff0f6;border-radius:10px;cursor:pointer;background:#fff;text-align:left}
+.act:hover{border-color:var(--brand30);background:#faf9ff}
+.act .d{grid-row:span 2;font:600 11.5px/1.2 var(--font);color:var(--brand50)}
+.act .w{font:500 13px/1.3 var(--font)}
+.act .o{font-size:11.5px;color:var(--muted)}
+.pieces{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.piece{border:1px solid #eff0f6;border-radius:10px;overflow:hidden;background:#fff}
+.piece img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#f0f1f4}
+.piece .ph{aspect-ratio:16/10;display:grid;place-items:center;background:repeating-linear-gradient(135deg,#f7f8f9 0 8px,#f0f1f4 8px 16px);font-size:10.5px;color:var(--muted);text-align:center;padding:6px}
+.piece small{display:block;padding:5px 7px;font-size:10px;color:var(--text2);word-break:break-all}
+.note{font-size:11.5px;color:var(--muted);background:#fff8e9;border-radius:8px;padding:8px 10px}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:11.5px;color:var(--text2)}
+.legend span{display:inline-flex;gap:5px;align-items:center}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.close{float:right;border:none;background:#f0f1f4;border-radius:8px;width:28px;height:28px;cursor:pointer}
+@media (max-width:900px){
+  .main{flex-direction:column}
+  .board{flex:0 0 auto;height:64vh}
+  .side{width:auto;border-left:0;border-top:1px solid var(--border);overflow:visible}
+  html,body{height:auto}
+  .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%}
+  .kpi{min-width:0;padding:5px 8px}.kpi b{font-size:17px}
+  .top p{display:none}
+  .top h1{font-size:22px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="row">
+    <div>
+      <h1>Funnel del lanzamiento: <span>semana a semana</span></h1>
+      <p>De izquierda a derecha: de dónde viene la gente, dónde se convierte y quién la mueve al siguiente paso. Elige una semana para ver qué está activo y qué toca hacer. Las cifras son la proyección para planear.</p>
+    </div>
+    <div class="kpis" id="kpis"></div>
+  </div>
+  <div class="weeks" id="weeks" role="group" aria-label="Semanas de la campaña"></div>
+</header>
+
+<div class="main">
+  <div class="board" id="board"><div class="canvas" id="canvas"></div></div>
+  <aside class="side" id="side" aria-live="polite"></aside>
+</div>
+
+<script>
+// ---------- Datos (de estrategia.md §4–§9 y copys.md) ----------
+const P = 'artes/piezas/';
+const WEEKS = [
+  {id:1,  l:'S1',  r:'9–15 nov',   n:'Preparación'},
+  {id:2,  l:'S2',  r:'16–22 nov',  n:'Arranque y captación', key:1},
+  {id:3,  l:'S3',  r:'23–29 nov',  n:'Webinar', key:1},
+  {id:4,  l:'S4',  r:'30 nov–6 dic', n:'Preventa'},
+  {id:5,  l:'S5',  r:'7–13 dic',   n:'Preventa'},
+  {id:6,  l:'S6',  r:'14–20 dic',  n:'Preventa: cierre'},
+  {id:7,  l:'S7',  r:'21–27 dic',  n:'Pausa de pauta'},
+  {id:8,  l:'S8',  r:'28 dic–3 ene', n:'Release'},
+  {id:9,  l:'S9',  r:'4–10 ene',   n:'Ya está aquí', key:1},
+  {id:10, l:'S10', r:'11–17 ene',  n:'Habilitación'},
+  {id:11, l:'S11', r:'18–31 ene',  n:'Adopción y retro'},
+];
+const rng = (a,b) => Array.from({length:b-a+1},(_,i)=>a+i);
+
+// lane: a = no clientes, m = convergen, b = clientes. col/row = posición en el lienzo.
+const NODES = [
+  // Fuentes · no clientes
+  {id:'li',  lane:'a', col:0, row:0, t:'ads',   ic:'in', title:'LinkedIn Ads', m:'45', mu:'registros', budget:'$8k webinar (16–23 nov) + $3k lista (25 nov–18 dic)', owner:'Diego', date:'16 nov → 18 dic', weeks:rng(2,6),
+    detail:'Lead Gen Form a cargos de RH y Dirección en México. Proyección: ~36k impresiones, ~200 clics, CPL ~$180.', copy:'copys.md §11 · L1, L2, L3',
+    imgs:['li-webinar-ley-1200x627.png','li-webinar-horas-extra-1200x627.png','li-webinar-ley-1080x1080.png']},
+  {id:'meta',lane:'a', col:0, row:1, t:'ads',   ic:'f',  title:'Meta Ads', m:'60', mu:'registros + 25 a lista', budget:'$4k webinar (16–23 nov) + $3k lista (25 nov–23 dic)', owner:'Diego', date:'16 nov → 23 dic', weeks:rng(2,7),
+    detail:'Lead form nativo y tráfico a la landing, perfil Sofía. Proyección: ~90k impresiones, ~1,000 clics, CPL ~$65.', copy:'copys.md §11 · M1, M2',
+    imgs:['meta-webinar-excel-1080x1080.png','meta-webinar-agenda-1080x1350.png','meta-webinar-story-1080x1920.png']},
+  {id:'gg',  lane:'a', col:0, row:2, t:'ads',   ic:'G',  title:'Google Search', m:'25', mu:'registros / lista', budget:'$6k (16 nov–23 dic y 5–31 ene)', owner:'Diego', date:'16 nov → 31 ene', weeks:[...rng(2,7),...rng(9,11)],
+    detail:'Keywords de alta intención: "reloj checador", "registro electrónico de jornada". Proyección: ~500 clics a la landing.', copy:'copys.md §11 · RSA + keywords', imgs:[]},
+  {id:'org', lane:'a', col:0, row:3, t:'org',   ic:'✦',  title:'Orgánico + voceros', m:'30', mu:'registros', budget:'$0', owner:'Diego + Santiago, Pedro, Fer', date:'17 nov → 25 dic', weeks:rng(2,7),
+    detail:'Post de anuncio, carrusel "Qué cambia el 1 de enero", encuesta, reel con Lapzi y posts de voceros. Cuenta regresiva 30/14/7 días.', copy:'copys.md §9 y §10',
+    imgs:['suite-1080x1080.png','carrusel-que-cambia-1.png','countdown-30d.png']},
+  {id:'eml', lane:'a', col:0, row:4, t:'email', ic:'✉',  title:'Email a base de leads', m:'20', mu:'registros', budget:'$0', owner:'Diego', date:'17 nov', weeks:[2],
+    detail:'Invitación al webinar a leads no clientes en HubSpot (sin cuentas de la lista de exclusión FitchUp/Worky).', copy:'copys.md §4 · Invitación', imgs:['email-header-webinar-600x200.png']},
+  // Fuentes · clientes
+  {id:'ecl', lane:'b', col:0, row:6, t:'client',ic:'✉',  title:'Email anuncio de la suite', m:'70', mu:'registros (CTR ≥3.5%)', budget:'$0', owner:'Diego (firma Vivian/Santiago)', date:'Mar 17 nov', weeks:[2],
+    detail:'"Lapzo crece contigo: 3 nuevos productos" a segmentos A–D, con invitación al webinar.', copy:'copys.md §1', imgs:['email-header-suite-600x200.png']},
+  {id:'app', lane:'b', col:0, row:7, t:'client',ic:'▣',  title:'Banner in-app', m:'25', mu:'registros', budget:'$0', owner:'Diego + Producto', date:'17 → 24 nov', weeks:[2,3],
+    detail:'Aviso a admins de RH. Después del webinar cambia a "primera ola" (25 nov–23 dic) y en enero a "agenda tu habilitación".', copy:'copys.md §8', imgs:['inapp-banner.png']},
+  {id:'wa',  lane:'b', col:0, row:8, t:'client',ic:'☏',  title:'WhatsApp CSM (1:1)', m:'25', mu:'registros', budget:'$0', owner:'Vips / CSMs', date:'17 nov · 23 nov', weeks:[2,3],
+    detail:'Mensaje personal de cada CSM a sus contactos clave (W1) y recordatorio a registrados (W2). Cuentas Tier 1: invitación 1:1 de Pedro.', copy:'copys.md §7 · W1, W2', imgs:[]},
+  {id:'nur', lane:'b', col:2, row:9, t:'client',ic:'✉',  title:'Nurturing GP y Reclutamiento', m:'—', mu:'cross-sell', budget:'$0', owner:'Diego', date:'Jue 19 nov · Jue 26 nov', weeks:[2,3],
+    detail:'Email de Gestión de Personal (con P.D. del webinar) y de Reclutamiento, a clientes y leads. Alimentan las demos de cross-sell.', copy:'copys.md §2 y §3', imgs:[]},
+
+  // Captura
+  {id:'lgf', lane:'a', col:1, row:0.5, t:'form',ic:'▤',  title:'Formularios nativos', m:'105', mu:'registros', budget:'—', owner:'Diego', date:'16 → 23 nov', weeks:[2,3],
+    detail:'Lead Gen Form de LinkedIn y lead form de Meta conectados a HubSpot (producto_interes = Reloj, registro_webinar).', copy:'estrategia.md §3 · Tracking', imgs:[]},
+  {id:'lp',  lane:'a', col:1, row:3, t:'page',  ic:'◧',  title:'Landing Reloj Checador', m:'75', mu:'registros', budget:'—', owner:'Diego', date:'16 nov → ene', weeks:rng(2,11),
+    detail:'Registro al webinar + lista prioritaria. Cambia sola a "grabación" el 24-nov y a "ya está aquí" el 5-ene.', copy:'reloj-checador.html', link:'reloj-checador.html', imgs:['landing-reloj-checador.png']},
+  {id:'lpc', lane:'b', col:1, row:7, t:'page',  ic:'◧',  title:'Registro desde clientes', m:'120', mu:'registros', budget:'—', owner:'Diego', date:'17 → 24 nov', weeks:[2,3],
+    detail:'Link de registro del webinar (Zoom/Teams) desde email, in-app y WhatsApp.', copy:'estrategia.md §5 · F1', imgs:[]},
+
+  // Convergen
+  {id:'reg', lane:'m', col:2, row:5, t:'form',  ic:'✓',  merge:1, title:'Registro al webinar', m:'300', mu:'registros (180 ext · 120 clientes)', budget:'CPL ≤ $120', owner:'Diego', date:'16 → 24 nov', weeks:[2,3],
+    detail:'Corte el viernes 20-nov: si vamos por debajo de 150, la reserva de $2k se mueve a LinkedIn y Meta.', copy:'estrategia.md §4', imgs:[]},
+  {id:'rec', lane:'m', col:3, row:5, t:'email', ic:'⏰', title:'Recordatorios', m:'2', mu:'envíos', budget:'$0', owner:'Diego + CSMs', date:'Lun 23 · Mar 24 nov 8:30', weeks:[3],
+    detail:'Email + LinkedIn el 23-nov y WhatsApp a registrados; email "en 90 minutos empezamos" el 24-nov.', copy:'copys.md §4 · Recordatorios', imgs:[]},
+  {id:'web', lane:'m', col:4, row:5, t:'event', ic:'▶',  merge:1, title:'Webinar · 24 nov 10:00', m:'105', mu:'asistentes (35%)', budget:'$0', owner:'Pedro (host) + Diego', date:'Mar 24 nov', weeks:[3],
+    detail:'"Registro electrónico de jornada 2027". Reforma (invitado laboral), 5 claves, demo con prototipo de Reloj y lista prioritaria.', copy:'copys.md §12 · Guion', imgs:[]},
+  {id:'grab',lane:'m', col:5, row:5, t:'email', ic:'▷',  title:'Grabación + one-pager', m:'300', mu:'envíos', budget:'$0', owner:'Diego', date:'Mié 25 nov', weeks:[3],
+    detail:'A asistentes y no asistentes, con CTA a lista prioritaria / demo.', copy:'copys.md §4 · Post-webinar', imgs:[]},
+
+  // Seguimiento por audiencia
+  {id:'fer', lane:'a', col:5, row:2, t:'sales', ic:'☎',  title:'Alta intención → Fer', m:'25', mu:'contactos en <24 h', budget:'—', owner:'Fer', date:'Desde 25 nov', weeks:rng(3,6),
+    detail:'No clientes que asistieron y pidieron demo o tienen fit alto.', copy:'estrategia.md §5 · F3', imgs:[]},
+  {id:'rtg', lane:'a', col:5, row:3.5, t:'ads',   ic:'↺',  title:'Retargeting', m:'195', mu:'no asistentes + visitantes', budget:'$4k (25 nov–23 dic y 5–20 ene)', owner:'Diego', date:'25 nov → 20 ene', weeks:[...rng(3,7),...rng(9,11)],
+    detail:'Meta + LinkedIn a visitantes, registrados y engagement; excluye partners y clientes ya convertidos.', copy:'copys.md §11 · M3, M4', imgs:['preventa-1080x1080.png','preventa-1200x627.png']},
+  {id:'csm', lane:'b', col:5, row:7, t:'sales', ic:'☎',  title:'Alta intención → CSM', m:'15', mu:'clientes en <24 h', budget:'—', owner:'Vips / CSMs', date:'Desde 25 nov', weeks:rng(3,6),
+    detail:'Clientes asistentes con interés en Reloj, GP o el bundle.', copy:'estrategia.md §5 · F3', imgs:[]},
+
+  // Preventa
+  {id:'lista',lane:'m', col:6, row:5, t:'form', ic:'★',  merge:1, title:'Lista prioritaria', m:'150', mu:'empresas al 31 dic', budget:'—', owner:'Diego', date:'25 nov → 31 dic', weeks:rng(3,8),
+    detail:'Primera ola de habilitación en enero. El gancho comercial es [OFERTA] (pendiente de pricing).', copy:'copys.md §5', imgs:[]},
+  {id:'seq', lane:'b', col:6, row:8, t:'email', ic:'✉',  title:'Secuencia de preventa', m:'3', mu:'emails + WhatsApp', budget:'$0', owner:'Diego + CSMs', date:'1 · 9 · 15 dic', weeks:[4,5,6],
+    detail:'P1 "Asegura tu lugar" (1-dic), P2 presupuesto + W3 WhatsApp (9-dic), P3 "últimos lugares" (15-dic).', copy:'copys.md §5 y §7', imgs:[]},
+  {id:'cd',  lane:'a', col:6, row:1, t:'org',   ic:'⏳', title:'Cuenta regresiva', m:'3', mu:'piezas', budget:'$0', owner:'Diego', date:'2 · 18 · 25 dic', weeks:[4,6,7],
+    detail:'"Faltan 30 / 14 / 7 días para el registro electrónico de jornada." Orgánico LinkedIn + IG.', copy:'artes/claude-design.md · Lote 3', imgs:['countdown-30d.png','countdown-14d.png','countdown-7d.png']},
+
+  // Ventas
+  {id:'demo',lane:'m', col:7, row:5, t:'sales', ic:'◎',  merge:1, title:'Demos de Reloj', m:'40', mu:'al 31 dic', budget:'—', owner:'Fer / Vips', date:'25 nov → 31 dic', weeks:rng(3,8),
+    detail:'Con el prototipo de Figma de Carolina (meta 20-nov, límite 23-nov). Discurso: "llega el 31-dic, te muestro cómo funcionará".', copy:'copys.md §14 · FAQ', imgs:[]},
+  {id:'sqln',lane:'a', col:7, row:2, t:'sales', ic:'◆',  title:'SQLs nuevos', m:'35', mu:'al 15 ene', budget:'—', owner:'Fer', date:'→ 15 ene', weeks:rng(3,10),
+    detail:'Pipeline de no clientes: Reloj, GP, Reclutamiento o bundle.', copy:'estrategia.md §4', imgs:[]},
+  {id:'sqlc',lane:'b', col:7, row:8, t:'sales', ic:'◆',  title:'SQLs cross-sell', m:'25', mu:'al 15 ene', budget:'—', owner:'Vips / Pedro', date:'→ 15 ene', weeks:rng(2,10),
+    detail:'Oportunidades en clientes actuales (GP, Reclutamiento, Reloj). Palanca de retención TaaS.', copy:'estrategia.md §4', imgs:[]},
+
+  // Cierre
+  {id:'ya',  lane:'a', col:8, row:1, t:'event', ic:'✺',  title:'"Ya está aquí"', m:'5 ene', mu:'todos los canales', budget:'Retargeting + Google', owner:'Diego', date:'Mar 5 ene', weeks:[9],
+    detail:'Email + WhatsApp + in-app + landing versión B. Release interno el 31-dic (Carolina).', copy:'copys.md §6 · W4 · M4', imgs:['ya-esta-aqui-1080x1080.png','ya-esta-aqui-1200x627.png']},
+  {id:'pre', lane:'m', col:8, row:5, t:'money', ic:'$',  merge:1, title:'Preventas firmadas', m:'12', mu:'al 15 ene', budget:'—', owner:'Fer / Vips', date:'→ 15 ene', weeks:rng(3,10),
+    detail:'Reloj solo o bundle GP + Reloj. Corte de KPIs el viernes 15-ene.', copy:'estrategia.md §4', imgs:[]},
+  {id:'hab', lane:'b', col:8, row:7.5, t:'client',ic:'⚙', title:'Habilitación 1.ª ola', m:'12', mu:'empresas', budget:'—', owner:'Producto / CS', date:'Mar 12 ene', weeks:[10,11],
+    detail:'Onboarding de la primera ola, primer caso de uso para fines de enero y retro el 30-ene.', copy:'estrategia.md §5 · F5', imgs:[]},
+];
+
+const EDGES = [
+  ['li','lgf','45'],['meta','lgf','60'],['meta','lp',''],['gg','lp','25'],['org','lp','30'],['eml','lp','20'],
+  ['ecl','lpc','70'],['app','lpc','25'],['wa','lpc','25'],
+  ['lgf','reg','105'],['lp','reg','75'],['lpc','reg','120'],
+  ['reg','rec',''],['rec','web','105'],['web','grab',''],
+  ['grab','fer','25'],['grab','rtg','195'],['grab','csm','15'],['grab','lista',''],
+  ['lp','lista',''],['rtg','lista',''],['cd','lista',''],['seq','lista',''],['csm','seq',''],
+  ['fer','sqln',''],['lista','demo','40'],['nur','sqlc',''],['csm','sqlc',''],
+  ['demo','sqln','35'],['demo','sqlc','25'],['sqln','pre',''],['sqlc','pre',''],['demo','pre','12'],
+  ['ya','pre',''],['pre','hab','12'],
+];
+
+// Accionables por semana (estrategia.md §8 Calendario)
+const ACTS = [
+  [1,'Jue 12 nov','Sesión de seguimiento: estrategia, artes y landings','Diego',['reg']],
+  [1,'Vie 13 nov','Aprobación de alcance de copys + lista de exclusión FitchUp/Worky','Carolina / Vips',['lp']],
+  [1,'Vie 13 nov','Artes del lote 1 (6 piezas del webinar) en Claude Design','Diego',['li','meta']],
+  [1,'Vie 13 nov','Forms HubSpot, UTMs, pixels y registro del webinar; campañas a revisión','Diego',['lgf','li','meta','gg']],
+  [2,'Lun 16 nov','Festivo · arranca la pauta del webinar (LinkedIn, Meta, Google)','Diego',['li','meta','gg']],
+  [2,'Lun 16 nov','Artes del lote 2: suite, headers de email y banner in-app','Diego',['ecl','app','org']],
+  [2,'Mar 17 nov','Lanzamiento de la suite: email a clientes y leads, in-app, WhatsApp CSM y LinkedIn','Diego / Vips / CSMs',['ecl','app','wa','eml','org']],
+  [2,'Mié 18 nov','Carrusel "Qué cambia el 1 de enero" + post de Pedro','Diego + Pedro',['org']],
+  [2,'Jue 19 nov','Email de nurturing: Gestión de Personal (P.D. webinar)','Diego',['nur']],
+  [2,'Vie 20 nov','Prototipo de Reloj para demos (meta)','Carolina',['demo']],
+  [2,'Vie 20 nov','Corte de registros: si hay < 150, mover la reserva de $2k','Diego',['reg','li','meta']],
+  [3,'Lun 23 nov','Recordatorio del webinar: email, LinkedIn y WhatsApp a registrados','Diego + CSMs',['rec','wa']],
+  [3,'Lun 23 nov','Límite del prototipo para la demo · plática con FitchUp/Worky','Carolina · Fer + Santiago',['web']],
+  [3,'Mar 24 nov','Webinar 10:00 CDMX + recordatorio 8:30','Pedro + Diego',['web','rec']],
+  [3,'Mié 25 nov','Grabación + one-pager; arranca preventa; la pauta pasa a lista y retargeting','Diego',['grab','lista','rtg','li','meta']],
+  [3,'Mié 25 nov','Seguimiento < 24 h a asistentes de alta intención','Fer / CSMs',['fer','csm']],
+  [3,'Jue 26 nov','Email de nurturing: Reclutamiento','Diego',['nur']],
+  [4,'Mar 1 dic','Preventa: email 1 "Asegura tu lugar en la primera ola"','Diego',['seq','lista']],
+  [4,'Mié 2 dic','Cuenta regresiva: faltan 30 días','Diego',['cd']],
+  [4,'Semana','Demos con prototipo a lista prioritaria y asistentes','Fer / Vips',['demo']],
+  [5,'Mié 9 dic','Preventa: email 2 (presupuesto) + WhatsApp CSM','Diego + CSMs',['seq']],
+  [6,'Mar 15 dic','Preventa: email 3 "Últimos lugares de la primera ola"','Diego',['seq']],
+  [6,'Vie 18 dic','Cuenta regresiva: faltan 14 días · fin de LinkedIn Ads','Diego',['cd','li']],
+  [7,'Mié 23 dic','Fin de Meta, Google y retargeting (pausa hasta el 4-ene)','Diego',['meta','gg','rtg']],
+  [7,'Vie 25 dic','Cuenta regresiva: faltan 7 días','Diego',['cd']],
+  [8,'Jue 31 dic','Release de Reloj Checador (interno) · corte de lista prioritaria','Carolina · Diego',['ya','lista']],
+  [9,'Mar 5 ene','"Reloj Checador ya está aquí": todos los canales + landing versión B','Diego / CSMs',['ya','lp','rtg','gg']],
+  [10,'Mar 12 ene','Habilitación de la primera ola','Producto / CS',['hab']],
+  [10,'Vie 15 ene','Corte de KPIs: preventas y SQLs','Diego / Fer / Vips',['pre','sqln','sqlc']],
+  [11,'Mar 20 ene','Fin del retargeting de enero','Diego',['rtg']],
+  [11,'Vie 30 ene','Retro de campaña','Todos',['hab']],
+];
+
+const KPIS = [['300','registros webinar'],['105','asistentes'],['150','lista prioritaria'],['40','demos'],['60','SQLs'],['12','preventas'],['$28k','pauta']];
+const LANES = {a:'No clientes', m:'Convergen', b:'Clientes'};
+const COLS = ['Fuentes de tráfico','Captura','Registro','Recordatorios','Evento','Seguimiento','Preventa','Ventas','Cierre'];
+
+// ---------- Render ----------
+const CW = 240, X0 = 120, RH = 146, Y0 = 34, NW = 196;
+const canvas = document.getElementById('canvas'), side = document.getElementById('side');
+const byId = Object.fromEntries(NODES.map(n => [n.id, n]));
+let week = 0, sel = null;
+
+document.getElementById('kpis').innerHTML = KPIS.map(([b,s]) => `<div class="kpi"><b>${b}</b><small>${s}</small></div>`).join('');
+const wkBar = document.getElementById('weeks');
+wkBar.innerHTML = `<button class="wk on" data-w="0"><b>Todo</b><small>16 nov – 31 ene</small></button>` +
+  WEEKS.map(w => `<button class="wk${w.key?' key':''}" data-w="${w.id}"><b>${w.l} · ${w.n}</b><small>${w.r}</small></button>`).join('');
+wkBar.addEventListener('click', e => { const b = e.target.closest('.wk'); if (b) setWeek(+b.dataset.w); });
+
+const W = X0 + COLS.length * CW + 40, H = Y0 + 10 * RH + 30;
+canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+const laneBand = (cls, r0, r1) => `<div class="lane ${cls}" style="top:${Y0 + r0*RH}px;height:${(r1-r0)*RH}px"><span>${LANES[cls]}</span></div>`;
+let html = laneBand('a', -0.15, 4.75) + laneBand('m', 4.75, 5.85) + laneBand('b', 5.85, 10.1);
+html += COLS.map((c,i) => `<div class="colh" style="left:${X0 + i*CW}px;width:${NW}px">${c}</div>`).join('');
+html += `<svg class="edges" width="${W}" height="${H}" id="svg"></svg>`;
+const thumbs = n => n.imgs.length ? `<div class="thumbs">${n.imgs.slice(0,3).map(f => `<img src="${P+f}" alt="" onerror="this.replaceWith(Object.assign(document.createElement('i'),{title:'Pendiente: ${f}'}))">`).join('')}</div>` : '';
+html += NODES.map(n => `<button class="node${n.merge?' merge':''}" data-id="${n.id}" data-t="${n.t}" style="left:${X0 + n.col*CW}px;top:${Y0 + 16 + n.row*RH}px">
+  <div class="hd"><span class="ic">${n.ic}</span><span class="t">${n.title}</span></div>
+  <div class="m"><b>${n.m}</b><small>${n.mu}</small></div>
+  <div class="tags">${n.budget && n.budget[0]==='$' ? `<span class="tag money">${n.budget.split(' ')[0]}</span>` : ''}<span class="tag date">${n.date}</span><span class="tag">${n.owner.split(' (')[0]}</span></div>
+  ${thumbs(n)}</button>`).join('');
+canvas.innerHTML = html;
+
+// Conectores (bezier de borde derecho a borde izquierdo)
+const svg = document.getElementById('svg');
+function drawEdges() {
+  const box = id => { const el = canvas.querySelector(`[data-id="${id}"]`); return {x: el.offsetLeft, y: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight}; };
+  svg.innerHTML = `<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#a0a3bd"/></marker>
+    <marker id="arh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7d4de5"/></marker></defs>` +
+  EDGES.map(([a,b,l]) => {
+    const A = box(a), B = box(b);
+    let x1 = A.x + A.w, y1 = A.y + A.h/2, x2 = B.x - 2, y2 = B.y + B.h/2;
+    if (B.x <= A.x) { x1 = A.x + A.w/2; y1 = A.y + (B.y > A.y ? A.h : 0); x2 = B.x + B.w/2; y2 = B.y + (B.y > A.y ? 0 : B.h); }
+    const dx = Math.max(40, (x2 - x1) / 2);
+    const d = B.x <= A.x ? `M${x1},${y1} C${x1},${(y1+y2)/2} ${x2},${(y1+y2)/2} ${x2},${y2}` : `M${x1},${y1} C${x1+dx},${y1} ${x2-dx},${y2} ${x2},${y2}`;
+    const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+    return `<path class="edge" data-a="${a}" data-b="${b}" d="${d}" marker-end="url(#ar)"/>` + (l ? `<text class="elabel" data-a="${a}" data-b="${b}" x="${mx}" y="${my - 4}" text-anchor="middle">${l}</text>` : '');
+  }).join('');
+}
+drawEdges();
+
+function activeSet() {
+  if (!week) return null;
+  return new Set(NODES.filter(n => n.weeks.includes(week)).map(n => n.id));
+}
+function paint() {
+  const act = activeSet();
+  const actsOf = week ? new Set(ACTS.filter(a => a[0] === week).flatMap(a => a[4])) : new Set();
+  canvas.querySelectorAll('.node').forEach(el => {
+    const id = el.dataset.id;
+    el.classList.toggle('dim', !!act && !act.has(id));
+    el.classList.toggle('live', !!act && actsOf.has(id));
+    el.classList.toggle('sel', sel === id);
+  });
+  svg.querySelectorAll('[data-a]').forEach(el => {
+    const on = !act || (act.has(el.dataset.a) && act.has(el.dataset.b));
+    const hot = sel && (el.dataset.a === sel || el.dataset.b === sel);
+    el.classList.toggle('dim', !on && !hot);
+    if (el.tagName === 'path') { el.classList.toggle('hot', !!hot); el.setAttribute('marker-end', hot ? 'url(#arh)' : 'url(#ar)'); }
+  });
+}
+
+const actRow = a => `<button class="act" data-node="${a[4][0]}"><span class="d">${a[1].replace(' ', '<br>')}</span><span class="w">${a[2]}</span><span class="o">${a[3]}</span></button>`;
+function renderSide() {
+  if (sel) {
+    const n = byId[sel];
+    const acts = ACTS.filter(a => a[4].includes(n.id) && (!week || a[0] === week));
+    side.innerHTML = `<div class="sec"><button class="close" data-close aria-label="Cerrar">✕</button>
+      <span class="tag lane-tag" style="background:${n.lane==='a'?'#dfd8fd':n.lane==='b'?'#c2edee':'#ffe6b0'}">${LANES[n.lane]}</span>
+      <h2>${n.title}</h2><p>${n.detail}</p>
+      <dl><dt>Meta</dt><dd><b>${n.m}</b> ${n.mu}</dd><dt>Presupuesto</dt><dd>${n.budget}</dd><dt>Dueño</dt><dd>${n.owner}</dd><dt>Fechas</dt><dd>${n.date}</dd>
+      <dt>Semanas</dt><dd>${n.weeks.map(w => WEEKS[w-1].l).join(', ')}</dd><dt>Copy</dt><dd>${n.link ? `<a href="${n.link}" target="_blank">${n.copy}</a>` : n.copy}</dd></dl></div>` +
+      (n.imgs.length ? `<div class="sec"><h3>Artes</h3><div class="pieces">${n.imgs.map(f => `<div class="piece"><img src="${P+f}" alt="${f}" onerror="this.outerHTML='<div class=ph>Pendiente<br>de Claude Design</div>'"><small>${f}</small></div>`).join('')}</div></div>` : '') +
+      `<div class="sec"><h3>Accionables${week ? ' de ' + WEEKS[week-1].l : ''}</h3><div class="acts">${acts.length ? acts.map(actRow).join('') : '<p>Nada programado esta semana.</p>'}</div></div>`;
+  } else {
+    const list = week ? ACTS.filter(a => a[0] === week) : ACTS;
+    const w = WEEKS[week-1];
+    const groups = week ? [[w, list]] : WEEKS.map(x => [x, ACTS.filter(a => a[0] === x.id)]).filter(g => g[1].length);
+    side.innerHTML = `<div class="sec"><h3>${week ? `${w.l} · ${w.r}` : 'Toda la campaña'}</h3><h2>${week ? w.n : 'Accionables semana a semana'}</h2>
+      <p>${week ? 'Los nodos en violeta tienen accionables esta semana; los atenuados no están activos.' : 'Elige una semana arriba o un nodo del funnel para ver su detalle.'}</p>
+      <div class="legend" style="margin-top:8px"><span><i style="background:#dfd8fd"></i>No clientes</span><span><i style="background:#ffe6b0"></i>Convergen</span><span><i style="background:#c2edee"></i>Clientes</span></div></div>` +
+      groups.map(([g, l]) => `<div class="sec"><h3>${g.l} · ${g.r} · ${g.n}</h3><div class="acts">${l.map(actRow).join('')}</div></div>`).join('') +
+      `<div class="sec"><p class="note">Proyección para planear: CPM, CTR y conversión son supuestos (LinkedIn CPL ~$180, Meta ~$65). Se ajustan con datos reales en la revisión de cada lunes. Las miniaturas se llenan solas cuando las piezas de Claude Design se guardan en <code>artes/piezas/</code> con el nombre de la guía.</p></div>`;
+  }
+}
+side.addEventListener('click', e => {
+  if (e.target.closest('[data-close]')) { sel = null; update(); return; }
+  const a = e.target.closest('.act'); if (a) { select(a.dataset.node); }
+});
+canvas.addEventListener('click', e => { const n = e.target.closest('.node'); if (n) select(n.dataset.id); });
+function select(id) {
+  sel = sel === id ? null : id; update();
+  if (sel) canvas.querySelector(`[data-id="${sel}"]`).scrollIntoView({behavior:'smooth', block:'nearest', inline:'nearest'});
+}
+function setWeek(w) {
+  week = w; wkBar.querySelectorAll('.wk').forEach(b => b.classList.toggle('on', +b.dataset.w === w)); update();
+  // Centra el lienzo en la primera columna activa de la semana.
+  if (!w) return;
+  const live = new Set(ACTS.filter(a => a[0] === w).flatMap(a => a[4]));
+  const ns = NODES.filter(n => live.has(n.id)); if (!ns.length) return;
+  const col = ns.reduce((t, n) => t + n.col, 0) / ns.length, row = ns.reduce((t, n) => t + n.row, 0) / ns.length;
+  const bd = document.getElementById('board');
+  bd.scrollTo({left: Math.max(0, X0 + col*CW + NW/2 - bd.clientWidth/2), top: Math.max(0, Y0 + row*RH + 60 - bd.clientHeight/2), behavior:'smooth'});
+}
+function update() { paint(); renderSide(); try { localStorage.setItem('funnel-week', week); } catch (e) {} }
+let saved = 0; try { saved = +localStorage.getItem('funnel-week') || 0; } catch (e) {}
+setWeek(saved);
+</script>
+</body>
+</html>
