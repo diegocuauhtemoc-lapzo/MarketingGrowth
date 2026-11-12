@@ -32,7 +32,7 @@ if (cd) {
 // Fase de campaña: antes / después del anuncio "ya está aquí" (5-ene-2027).
 // Forzar con ?fase=post para revisar la versión B.
 const LAUNCH = new Date('2027-01-05T00:00:00-06:00').getTime();
-const fase = new URLSearchParams(location.search).get('fase');
+const fase = window.FORCE_FASE || new URLSearchParams(location.search).get('fase');
 if (fase === 'post' || (fase !== 'pre' && Date.now() >= LAUNCH)) {
   document.documentElement.classList.add('post-launch');
   document.querySelectorAll('[data-post]').forEach(el => { el.innerHTML = el.dataset.post; });

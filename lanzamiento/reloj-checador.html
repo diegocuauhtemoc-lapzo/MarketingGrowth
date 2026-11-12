@@ -326,8 +326,9 @@
 
 <script>
   // Logos de clientes (mismos archivos que /public/clients del sitio).
-  const LOGOS = ['farmacias-del-ahorro.webp','deacero.webp','construrama.webp','tim-hortons.webp','neto.webp','tecmilenio.webp','mazda.svg','nestle-color.svg','berel.webp','oxxo.webp','rotoplas.webp','gonher.webp','grupo-petro.webp','innovasport.webp'];
-  const row = alt => LOGOS.map(f => `<img src="lz/clients/${f}" alt="${alt ? f.split('.')[0].replace(/-/g, ' ') : ''}" class="${f.endsWith('.svg') ? 'svg' : ''}" loading="lazy">`).join('');
+  const LOGOS = ['lz/clients/farmacias-del-ahorro.webp','lz/clients/deacero.webp','lz/clients/construrama.webp','lz/clients/tim-hortons.webp','lz/clients/neto.webp','lz/clients/tecmilenio.webp','lz/clients/mazda.svg','lz/clients/nestle-color.svg','lz/clients/berel.webp','lz/clients/oxxo.webp','lz/clients/rotoplas.webp','lz/clients/gonher.webp','lz/clients/grupo-petro.webp','lz/clients/innovasport.webp'];
+  const nm = p => p.split('/').pop().split('.')[0].replace(/-/g, ' ');
+  const row = alt => LOGOS.map(p => `<img src="${p}" alt="${alt ? nm(p) : ''}" class="${p.endsWith('.svg') ? 'svg' : ''}" loading="lazy">`).join('');
   document.getElementById('logos').innerHTML = row(true);
   document.getElementById('logos2').innerHTML = row(false);
   // Controles de estado del hero.

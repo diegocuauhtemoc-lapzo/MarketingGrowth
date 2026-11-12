@@ -76,7 +76,7 @@
     <div class="bar">
       <b id="name"></b><span class="sp"></span>
       <button id="dev" class="only-html">📱 Móvil</button>
-      <a id="open" target="_blank">Abrir en pestaña ↗</a>
+      <a id="open" target="_blank" rel="noopener">Abrir en pestaña ↗</a>
     </div>
     <div class="view" id="view"></div>
   </main>
@@ -85,10 +85,13 @@
 <script>
   const view = document.getElementById('view'), nm = document.getElementById('name'), op = document.getElementById('open'), dev = document.getElementById('dev');
   let mobile = false;
+  // Dentro de claude.ai los archivos del visor solo se ven en su marco; cada página tiene su propio artifact para abrirla en pestaña.
+  const TAB = {"funnel.html": "https://claude.ai/artifact/Qq2EGN9HveTatjqw4WT6dX", "deck.html": "https://claude.ai/artifact/LmiBuomXhXcfnfbWBhh8NJ", "reloj-checador.html": "https://claude.ai/artifact/1yWaqkJhDQJGWAf2UZpjjX", "reloj-checador.html?fase=post": "https://claude.ai/artifact/YSb7M86ZvyP5TJcigE7yxY", "gestion-personal.html": "https://claude.ai/artifact/B6dbdz3JVsvT4hd9c3NMiU", "reclutamiento.html": "https://claude.ai/artifact/R5TGz54gDe7QwaFyjyPun4", "estrategia.md": "https://claude.ai/artifact/LLsAq3amk3QH1ouRrXPq1a", "copys.md": "https://claude.ai/artifact/4LtMj5ua1vGr2QXVRpkX6i", "artes/claude-design.md": "https://claude.ai/artifact/Dkc4Yp782G46aRLu6t2B6z", "README.md": "https://claude.ai/artifact/VrfUjqFLU4U7UV5SU8CnMG"};
+  const LOCAL = location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(location.hostname);
   async function show(f, btn) {
     document.querySelectorAll('aside button').forEach(b => b.classList.toggle('on', b === btn));
     nm.textContent = btn.textContent.replace(/\s+/g, ' ').trim();
-    op.href = f; history.replaceState(null, '', '#' + encodeURIComponent(f));
+    op.href = LOCAL ? f : (TAB[f] || f); history.replaceState(null, '', '#' + encodeURIComponent(f));
     view.innerHTML = '';
     if (f.split('?')[0].endsWith('.md')) {
       dev.style.display = 'none';
