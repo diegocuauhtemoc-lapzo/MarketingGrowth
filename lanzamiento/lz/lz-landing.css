@@ -308,6 +308,7 @@ footer span{font:400 12px/18px var(--lz-font);color:rgba(255,255,255,.5);max-wid
 .post-launch .only-pre{display:none!important}
 .post-launch .only-post{display:revert!important}
 .post-launch .only-post.cd-v{display:block!important}
+.post-webinar .only-webinar{display:none!important}
 
 @media (max-width:960px){
   .hero .rail{grid-template-columns:minmax(0,1fr);gap:40px;padding-top:48px}

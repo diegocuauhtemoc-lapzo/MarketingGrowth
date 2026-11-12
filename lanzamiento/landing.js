@@ -37,3 +37,10 @@ if (fase === 'post' || (fase !== 'pre' && Date.now() >= LAUNCH)) {
   document.documentElement.classList.add('post-launch');
   document.querySelectorAll('[data-post]').forEach(el => { el.innerHTML = el.dataset.post; });
 }
+
+// Después del webinar (martes 24-nov, 11:00 CDMX) la sección pasa a "grabación". Forzar con ?fase=grabacion.
+const WEBINAR_END = new Date('2026-11-24T11:00:00-06:00').getTime();
+if (fase === 'grabacion' || fase === 'post' || (fase !== 'pre' && Date.now() >= WEBINAR_END)) {
+  document.documentElement.classList.add('post-webinar');
+  document.querySelectorAll('[data-pw]').forEach(el => { if (!document.documentElement.classList.contains('post-launch')) el.innerHTML = el.dataset.pw; });
+}
