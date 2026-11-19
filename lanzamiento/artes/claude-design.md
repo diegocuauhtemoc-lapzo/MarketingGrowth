@@ -24,7 +24,7 @@ Eres el diseñador de la campaña de lanzamiento de Lapzo, una plataforma de tal
 CONTEXTO
 - Campaña paraguas: "Tu gente, de principio a fin". Lapzo lanza 3 productos: Reclutamiento y Gestión de Personal (ya disponibles) y Reloj Checador (llega el 31 de diciembre de 2026).
 - Gancho principal: la reforma laboral en México obliga a llevar un registro electrónico de la jornada desde el 1 de enero de 2027.
-- Evento: webinar gratuito "Registro electrónico de jornada 2027: lo que tu empresa debe tener listo el 1 de enero". Martes 24 de noviembre, 10:00 (CDMX), en línea. Con Pedro Sors (Lapzo) y un especialista laboral invitado.
+- Evento: webinar gratuito "Registro electrónico de jornada 2027: lo que tu empresa debe tener listo el 1 de enero". Martes 1 de diciembre, 10:00 (CDMX), en línea. Con Pedro Sors (Lapzo) y un especialista laboral invitado.
 - Audiencia: directores y equipos de RH, y dirección general, de empresas medianas y grandes en México.
 
 DESIGN SYSTEM (el de las landings de lapzo.co)
@@ -61,7 +61,7 @@ Confirma que entendiste el sistema y espera el primer lote.
 Pégalo así:
 
 ```
-LOTE 1: webinar del martes 24 de noviembre. Crea estas 6 piezas con el sistema que te di. Todas llevan el chip "Webinar gratuito · Mar 24 nov · 10:00 CDMX".
+LOTE 1: webinar del martes 1 de diciembre. Crea estas 6 piezas con el sistema que te di. Todas llevan el chip "Webinar gratuito · Mar 1 dic · 10:00 CDMX".
 ```
 
 …y luego la tabla:
@@ -73,7 +73,7 @@ LOTE 1: webinar del martes 24 de noviembre. Crea estas 6 piezas con el sistema q
 | 3 | `li-webinar-ley-1080x1080.png` | 1080×1080 (LinkedIn) | El 1 de enero el registro de jornada *deja de ser opcional.* | Webinar con Pedro Sors y un especialista laboral. | Regístrate gratis | `app-mi-perfil-4-confirmar-cierre.png` recortada, saliendo por la esquina inferior derecha |
 | 4 | `meta-webinar-excel-1080x1080.png` | 1080×1080 (Meta feed) | ¿Todavía registras asistencias *en Excel?* | El 1 de enero cambia la regla. | Aparta tu lugar | `widget-2-trabajando.png` + `lapzi-thinking.png` pequeño a un lado |
 | 5 | `meta-webinar-agenda-1080x1350.png` | 1080×1350 (Meta feed vertical) | Lo que tu empresa debe tener listo *el 1 de enero* | Lista: 1) La reforma en 10 minutos. 2) Las 5 claves para jornadas, turnos y horas extra. 3) Demo de Reloj Checador. 4) Preguntas en vivo. | Aparta tu lugar | `widget-1-sin-iniciar.png` abajo, con `boton-topnav-1-sin-iniciar.png` |
-| 6 | `meta-webinar-story-1080x1920.png` | 1080×1920 (Stories/Reels) | El registro de jornada *ya tiene fecha.* | 1 de enero de 2027. Prepárate con nosotros el martes 24 de noviembre. | Desliza para registrarte | `widget-4-confirmar-cierre.png` grande al centro + `lapzi-pointing-right.png`; respeta 250px libres arriba y abajo |
+| 6 | `meta-webinar-story-1080x1920.png` | 1080×1920 (Stories/Reels) | El registro de jornada *ya tiene fecha.* | 1 de enero de 2027. Prepárate con nosotros el martes 1 de diciembre. | Desliza para registrarte | `widget-4-confirmar-cierre.png` grande al centro + `lapzi-pointing-right.png`; respeta 250px libres arriba y abajo |
 
 Textos que acompañan cada anuncio en la plataforma: `copys.md` §10 (L1 y L2 para las piezas 1–3; M1 para 4–6).
 
@@ -89,10 +89,10 @@ LOTE 2: anuncio de los tres productos "Tu gente, de principio a fin". Tres tarje
 | 8 | `suite-1080x1080.png` | 1080×1080 | Tu gente, *de principio a fin.* | Reclutamiento · Gestión de Personal · Reloj Checador |
 | 9 | `suite-1080x1350.png` | 1080×1350 | Tu gente, *de principio a fin.* | Reclutamiento · Gestión de Personal · Reloj Checador |
 | 10 | `email-header-suite-600x200.png` | 600×200 (exporta a 1200×400) | Tu gente, *de principio a fin.* | — |
-| 11 | `email-header-webinar-600x200.png` | 600×200 (exporta a 1200×400) | Registro de jornada 2027 | Webinar · Mar 24 nov · 10:00 CDMX |
+| 11 | `email-header-webinar-600x200.png` | 600×200 (exporta a 1200×400) | Registro de jornada 2027 | Webinar · Mar 1 dic · 10:00 CDMX |
 | 12 | `email-header-reloj-600x200.png` | 600×200 (exporta a 1200×400) | Reloj Checador *llega el 31 de diciembre.* | — |
 
-### Lote 3: después del webinar (para el 25-nov en adelante)
+### Lote 3: después del webinar (para el 2-dic en adelante)
 
 | # | Archivo | Formato | Titular | Notas |
 |---|---|---|---|---|
@@ -132,7 +132,7 @@ LOTE 2: anuncio de los tres productos "Tu gente, de principio a fin". Tres tarje
 ## 5. Checklist antes de exportar
 
 - [ ] El texto es exactamente el de la tabla (sin cifras, precios ni testimonios añadidos).
-- [ ] Fecha y hora correctas: **martes 24 de noviembre, 10:00 CDMX**.
+- [ ] Fecha y hora correctas: **martes 1 de diciembre, 10:00 CDMX**.
 - [ ] Reloj Checador aparece como "llega el 31 de diciembre" (salvo el lote "ya está aquí").
 - [ ] El producto es una captura real de `producto/`, sin pantallas inventadas.
 - [ ] Nada de nómina, biométricos, geolocalización, kiosco, firma digital ni "cumple al 100%".

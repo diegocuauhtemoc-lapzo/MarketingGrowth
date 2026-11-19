@@ -14,7 +14,7 @@ spec = importlib.util.spec_from_file_location('bs', HERE / 'build-standalone.py'
 bs = importlib.util.module_from_spec(spec); spec.loader.exec_module(bs)
 
 PIXEL_ID = '337850720804196'          # Lernit Pixel (cuenta Lernit - Lapzo)
-CONTENT_NAME = 'Webinar Registro de jornada 2027 (24-nov)'
+CONTENT_NAME = 'Webinar Registro de jornada 2027 (1-dic)'
 
 TRACKING = """
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

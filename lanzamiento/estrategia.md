@@ -12,7 +12,7 @@
 - **Por qué ahora.** La reforma a la LFT (jornada de 40 horas) obliga a las empresas a llevar un **registro electrónico de la jornada a partir del 1-ene-2027**. Las multas reportadas llegan a cerca de **$590 mil MXN**. Es el único de los tres productos con *momentum* externo, y la competencia (Buk, Crehana, Runa) ya lo está aprovechando. Además, dic-ene es temporada alta de compra en RH por cierre y estreno de presupuesto.
 - **Cómo.** Una sola campaña paraguas, **"Tu gente, de principio a fin"**, que arranca con **pauta desde el lunes 16-nov** y el **anuncio de los tres productos el martes 17-nov**, con el mismo mensaje en dos frentes:
   - **Hacia adentro (clientes):** anunciamos GP y Reclutamiento como *disponibles* y Reloj Checador como *próximamente*, con lista prioritaria. Lo usamos como palanca de cross-sell y retención (TaaS).
-  - **Hacia afuera (no clientes):** usamos la ley como gancho, con un **webinar el martes 24-nov** ("Registro electrónico de jornada 2027: lo que tu empresa debe tener listo el 1 de enero"). Así generamos audiencia y leads *antes* del lanzamiento, para que el 31-dic/5-ene no empecemos de cero.
+  - **Hacia afuera (no clientes):** usamos la ley como gancho, con un **webinar el martes 1-dic** ("Registro electrónico de jornada 2027: lo que tu empresa debe tener listo el 1 de enero"). Así generamos audiencia y leads *antes* del lanzamiento, para que el 31-dic/5-ene no empecemos de cero.
 - **Metas (Pipeline + Preventa).** Propuesta a validar con Fer y Vips:
   - **20 SQLs**: 12 nuevos + 8 cross-sell.
   - **5 preventas de Reloj Checador** firmadas antes del 15-ene.
@@ -25,7 +25,7 @@
 
 | Tema | Acuerdo / estado |
 |---|---|
-| Fecha de arranque de comunicación | **17-nov**, para clientes y no clientes. *Ajuste del 12-nov: la pauta arranca antes, el lunes 16-nov, y el webinar se adelanta al martes 24-nov* |
+| Fecha de arranque de comunicación | **17-nov**, para clientes y no clientes. *Ajuste del 12-nov: la pauta arranca antes, el lunes 16-nov, y el webinar se adelanta al martes 24-nov. Ajuste del 18-nov: el webinar se mueve al martes 1-dic y la captación se extiende al 30-nov* |
 | Release Reloj Checador | **31-dic** (Carolina); habilitación en instancia ~2.ª semana de enero |
 | Material de producto para marketing | Desde la próxima semana, links de prueba semanales y Figmas de Reloj (reloj, configuración de jornada, turnos). En ~2 semanas: jornada, turnos y operación funcionales. Lo siguiente es reportería |
 | Reloj Checador vs GP | **Módulos separados** por ahora (feature flag). Se pueden vender juntos como **bundle GP + Reloj** o por separado |
@@ -102,7 +102,7 @@ Las metas cuantitativas son **hipótesis a validar** el jueves con Fer (ventas n
 ### KPIs de soporte (salud del funnel)
 | Métrica | Meta |
 |---|---|
-| Registros al webinar del 24-nov | 100 personas de 50 empresas (60 externos, 40 clientes) |
+| Registros al webinar del 1-dic | 100 personas de 50 empresas (60 externos, 40 clientes) |
 | Asistencia en vivo | 40 personas (40% de los registros) |
 | Registros pagados (LinkedIn + Meta) | 50 con $12,000 de pauta del webinar |
 | CPL de pauta del webinar | ≤ $240 MXN promedio (LinkedIn ≈ $400, Meta ≈ $130) |
@@ -144,7 +144,7 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 | Competidor | Qué está haciendo | Cómo respondemos |
 |---|---|---|
 | **Buk** | WhatsApp masivo de Reloj con urgencia; suite con nómina | No competimos en nómina. Competimos en *talento + operación* en un solo lugar y en acompañamiento (aliado, CS) |
-| **Crehana** | Workshops presenciales de Reloj | Webinar del 24-nov + sesión presencial opcional para cuentas clave en enero (fase 2, si hay tracción) |
+| **Crehana** | Workshops presenciales de Reloj | Webinar del 1-dic + sesión presencial opcional para cuentas clave en enero (fase 2, si hay tracción) |
 | **Runa** | ~$22 MXN por empleado con reloj | Insumo para el pricing de Fer y Diego. Comunicar bundle, no precio |
 | **FitchUp / Worky** | Partners con clientes compartidos | Excluirlos de la comunicación. Mensajes que no los ataquen. Fer y Santiago llevan la conversación |
 
@@ -182,7 +182,7 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
          NOV                         DIC                              ENE
  11  16 17 ──── 23 24 25 ───────── 15 ─── 24 ── 31      5 ─ 12 ──── 31
  [F0 Prep][F1+F2 Captación][F3 Webinar + Preventa ────────][F4 GA][ F5 Habilitación ]
-          16-nov: arranca pauta    24-nov: webinar              31-dic release
+          16-nov: arranca pauta    1-dic: webinar               31-dic release
           17-nov: anuncio 3 prod.                               5-ene anuncio "ya está"
 ```
 
@@ -197,8 +197,8 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 | Artes restantes: anuncio de lanzamiento y headers de email | Diseño | 16-nov |
 | Campañas de LinkedIn, Meta y Google cargadas y en revisión de la plataforma | Diego | 13-nov |
 | Kit de ventas y CS: one-pager por producto, FAQ de alcance y respuesta tipo "lo tenemos el 31-dic" | Diego + Fer | 16-nov |
-| Prototipo navegable de Reloj (Figma) para demos | Carolina | Meta 20-nov; **límite 23-nov** para la demo del webinar |
-| Conversación con Lucas (FitchUp) y Jimena (Worky) | Fer + Santiago | Semana del 16 y 23-nov |
+| Prototipo navegable de Reloj (Figma) para demos | Carolina | Meta 20-nov; **límite 30-nov** para la demo del webinar |
+| Conversación con Lucas (FitchUp) y Jimena (Worky) | Fer + Santiago | Semanas del 16 y 23-nov |
 | Registro del webinar en Zoom/Teams + calendario | Diego | **13-nov** (la pauta necesita el link) |
 
 ### F1: Lanzamiento (lunes 16 y martes 17-nov)
@@ -212,22 +212,22 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
   - Email a la base de leads.
 - **Interno:** brief a todo Lapzo (ventas, CS, soporte) con alcance, FAQ y qué NO prometer, para evitar otro caso "pidieron demo de Reloj y no había".
 
-### F2: Captación para el webinar (16 al 23-nov)
+### F2: Captación para el webinar (16 al 30-nov)
 - Serie de contenido "Cuenta regresiva al 1 de enero": 3 posts esa semana (carrusel, encuesta y video corto con Lapzi); sigue después del webinar con 2 por semana.
 - Pauta de registros al webinar (Meta + LinkedIn) y Search en Google con keywords de alta intención ("reloj checador", "registro electrónico de jornada", "control de asistencia empleados").
-- Email de nurturing de GP el 19-nov y recordatorios del webinar (23 y 24-nov). El de Reclutamiento pasa al 26-nov, después del webinar.
+- Email de nurturing de GP el 19-nov y recordatorios del webinar (30-nov y 1-dic). El de Reclutamiento sale el 26-nov.
 - Ventana corta: son 8 días de captación, así que la mayor parte del presupuesto del webinar se gasta esa semana (ver §7).
 - Ventas y CS usan el prototipo de Reloj en demos desde que Carolina lo libere.
 
-### F3: Webinar y preventa (24-nov al 24-dic)
-- **Webinar (martes 24-nov, 10:00 CDMX, 45 min + 15 de Q&A):** *"Registro electrónico de jornada 2027: lo que tu empresa debe tener listo el 1 de enero"*.
+### F3: Webinar y preventa (1-dic al 24-dic)
+- **Webinar (martes 1-dic, 10:00 CDMX, 45 min + 15 de Q&A):** *"Registro electrónico de jornada 2027: lo que tu empresa debe tener listo el 1 de enero"*.
   - Agenda: la reforma en 10 minutos (invitado experto laboral, idealmente de un despacho o aliado), las 5 claves para prepararte, demo del prototipo de Reloj (Pedro) y oferta de lista prioritaria.
   - Hosts: Pedro Sors + invitado laboral; Diego modera.
 - **Seguimiento:**
   - A las 24 h: grabación + one-pager.
   - Asistentes con intención alta van a Fer (nuevos) o al CSM (clientes) en < 24 h.
   - Los no asistentes reciben la grabación y entran a retargeting.
-- **Preventa (25-nov al 24-dic):**
+- **Preventa (2-dic al 24-dic):**
   - Secuencia "lista prioritaria": 3 emails + WhatsApp para clientes.
   - Mensaje: *"asegura tu habilitación en la primera ola de enero"*. El gancho comercial (precio early adopter, bundle o Comunidad de regalo) **queda pendiente de la propuesta de pricing**; el copy tiene la variable `[OFERTA]`.
   - Aprovechamos la ventana de cierre de presupuesto.
@@ -253,7 +253,7 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 | Canal | Uso | Frecuencia | Dueño |
 |---|---|---|---|
 | **Email HubSpot** | Anuncio, nurturing por producto, webinar, preventa | 1–2 por semana por segmento (máx.) | Diego |
-| **WhatsApp** | Clientes: mensaje 1:1 de CSM (no masivo frío). Leads: solo con opt-in del form | 17-nov, 23-nov (recordatorio), 9-dic (preventa), 5-ene | Vips / CSMs |
+| **WhatsApp** | Clientes: mensaje 1:1 de CSM (no masivo frío). Leads: solo con opt-in del form | 17-nov, 30-nov (recordatorio), 9-dic (preventa), 5-ene | Vips / CSMs |
 | **LinkedIn orgánico** | Lapzo + voceros: anuncio, cuenta regresiva, recap de webinar | 3 posts/sem Lapzo; 1/sem por vocero | Diego + voceros |
 | **Meta orgánico (IG/FB)** | Carruseles y reels con Lapzi (tono más cercano, Sofía) | 2 por semana | Diego |
 | **Pauta** | Registros al webinar, lista prioritaria, retargeting | Ver §7 | Diego |
@@ -265,10 +265,10 @@ Encaja con el posicionamiento de marca ("aliado estratégico", no "plataforma").
 
 | Canal | Objetivo | Monto | Periodo | Nota |
 |---|---|---|---|---|
-| **LinkedIn Ads** | Registros al webinar (Lead Gen Form), cargos RH/Dirección MX; después, lista prioritaria | $11,000 | $8,000 del 16 al 23-nov (webinar) + $3,000 del 25-nov al 18-dic | Meta: 20 registros (CPL ≈ $400). Es la audiencia exacta (Pedro, Santiago) |
-| **Meta Ads** | Registros al webinar + lista prioritaria (Sofía) | $7,000 | $4,000 del 16 al 23-nov (webinar) + $3,000 del 25-nov al 23-dic | Meta: 30 registros (CPL ≈ $130). Lead form nativo + tráfico a landing |
+| **LinkedIn Ads** | Registros al webinar (Lead Gen Form), cargos RH/Dirección MX; después, lista prioritaria | $11,000 | $8,000 del 16 al 30-nov (webinar) + $3,000 del 2-dic al 18-dic | Meta: 20 registros (CPL ≈ $400). Es la audiencia exacta (Pedro, Santiago) |
+| **Meta Ads** | Registros al webinar + lista prioritaria (Sofía) | $7,000 | $4,000 del 16 al 30-nov (webinar) + $3,000 del 2-dic al 23-dic | Meta: 30 registros (CPL ≈ $130). Lead form nativo + tráfico a landing |
 | **Google Search** | Keywords de alta intención de Reloj | $6,000 | 16-nov al 23-dic y 5 al 31-ene | Concordancia de frase; negativas: "gratis", "app gratis", "biométrico" |
-| **Retargeting (Meta + LinkedIn)** | Visitantes, registrados y engagement: "ya está aquí" | $4,000 | 25-nov al 23-dic y 5 al 20-ene | Audiencias excluyendo partners y clientes ya convertidos |
+| **Retargeting (Meta + LinkedIn)** | Visitantes, registrados y engagement: "ya está aquí" | $4,000 | 2-dic al 23-dic y 5 al 20-ene | Audiencias excluyendo partners y clientes ya convertidos |
 | **Total** | | **$28,000** | | Reserva de $2k para impulsar lo que mejor funcione |
 
 Revisión semanal (lunes): se mueve presupuesto al canal con mejor CPL→SQL, no al de mejor CPL a secas.
@@ -285,10 +285,11 @@ Revisión semanal (lunes): se mueve presupuesto al canal con mejor CPL→SQL, no
 | **Mar 17-nov** | **Anuncio de los tres productos** + invitación al webinar | Email clientes y leads + WhatsApp CSM + LinkedIn |
 | Mié 18-nov | Post: "Qué cambia el 1 de enero" (carrusel) + post de Pedro | LinkedIn + IG |
 | Jue 19-nov | Email de nurturing: Gestión de Personal (con P.D. del webinar) | Email |
-| ~Vie 20-nov | Prototipo de Reloj para demos (meta; límite 23-nov) | Carolina |
-| Lun 23-nov | Recordatorio del webinar (email + WhatsApp a clientes con opt-in) | Email / WhatsApp / LinkedIn |
-| **Mar 24-nov** | **Webinar Reloj Checador / reforma**, 10:00 CDMX | Zoom/Teams |
-| Mié 25-nov | Grabación + one-pager; arranca preventa; la pauta pasa a lista prioritaria y retargeting | Email + pauta |
+| ~Vie 20-nov | Prototipo de Reloj para demos (meta; límite 30-nov) | Carolina |
+| Vie 27-nov | Corte de registros: si hay menos de 50, se mueve la reserva de $2k | Diego |
+| Lun 30-nov | Recordatorio del webinar (email + WhatsApp a clientes con opt-in) | Email / WhatsApp / LinkedIn |
+| **Mar 1-dic** | **Webinar Reloj Checador / reforma**, 10:00 CDMX | Zoom/Teams |
+| Mié 2-dic | Grabación + one-pager; arranca preventa; la pauta pasa a lista prioritaria y retargeting | Email + pauta |
 | Jue 26-nov | Email de nurturing: Reclutamiento | Email |
 | Mar 1-dic | Preventa: email 1 | Email |
 | Mié 9-dic | Preventa: email 2 + WhatsApp CSM | Email / WhatsApp |
@@ -324,10 +325,10 @@ Revisión semanal (lunes): se mueve presupuesto al canal con mejor CPL→SQL, no
 | **Estabilidad de plataforma** (incidente SSO/reportes/app del 3-nov, 17 clientes con casos) | Anunciar productos nuevos a clientes molestos resta credibilidad | Antes del envío del 17-nov, Vips confirma que los casos están cerrados. A las cuentas afectadas les llega primero un mensaje 1:1 de su CSM con la explicación del postmortem, y después el anuncio. Si hay otra crisis abierta el 16-nov, se pospone el email a clientes (no la pauta) |
 | Pedir demo de Reloj y no tener qué mostrar (caso Larry) | Quedamos mal en ventas | Discurso único: "llega el 31-dic, te muestro cómo funcionará" + prototipo Figma. Hasta tenerlo, se usa la landing y el one-pager |
 | Prometer de más (nómina, biométricos, firma digital) | Clientes insatisfechos, churn | Check de alcance de Carolina por pieza + FAQ interna de "qué NO decir" |
-| Fricción con partners FitchUp / Worky | Pérdida de canal y de Tata | Exclusión global de listas y audiencias. Fer y Santiago hablan con ellos antes del 23-nov (antes del webinar). Mensajes sin atacar competidores |
+| Fricción con partners FitchUp / Worky | Pérdida de canal y de Tata | Exclusión global de listas y audiencias. Fer y Santiago hablan con ellos antes del 30-nov (antes del webinar). Mensajes sin atacar competidores |
 | Pricing no definido al lanzar | Fricción en cotización | CTA "agenda demo / cotiza" sin precios; variable `[OFERTA]` en la preventa hasta la propuesta de Fer y Diego |
 | Retraso del release del 31-dic | Preventas sin entrega | Comunicar "habilitación desde enero" (no día exacto). Plan B de comunicación preparado |
-| Ventana de captación corta para el webinar (8 días, 16 al 23-nov) | No llegar a los 100 registros | Pauta concentrada esa semana, invitación a toda la base propia el 17-nov, voceros y WhatsApp de CSMs. Corte el viernes 20-nov: si vamos por debajo de 50, movemos la reserva de $2k a LinkedIn y Meta |
+| Ventana de captación corta para el webinar (15 días, 16 al 30-nov) | No llegar a los 100 registros | Pauta concentrada esa semana, invitación a toda la base propia el 17-nov, voceros y WhatsApp de CSMs. Corte el viernes 27-nov: si vamos por debajo de 50, movemos la reserva de $2k a LinkedIn y Meta |
 | Presupuesto bajo de pauta | Poco volumen externo | Apalancar base propia, voceros, webinar co-organizado con un aliado legal (su audiencia) y orgánico |
 | Afirmaciones legales erróneas | Riesgo reputacional | Validar con legal o el invitado laboral: fechas (1-ene-2027 registro electrónico; 48 a 46 h en 2027; 40 h en 2030) y monto de multas antes de publicar |
 

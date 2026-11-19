@@ -45,7 +45,7 @@ LOTE1 = [
 PENDING = [
     ('Lote 2 · 16 nov', 'Anuncio de los tres productos', '1200×627 · 1080×1080 · 1080×1350'),
     ('Lote 2 · 16 nov', 'Headers de email (tres productos, webinar, Reloj Checador)', '600×200'),
-    ('Lote 3 · desde 25 nov', 'Preventa: primera ola de enero', '1080×1080 · 1200×627'),
+    ('Lote 3 · desde 2 dic', 'Preventa: primera ola de enero', '1080×1080 · 1200×627'),
     ('Lote 3 · 2, 18 y 25 dic', 'Cuenta regresiva: 30, 14 y 7 días', '1080×1080'),
     ('Lote 3 · diciembre', 'Carrusel "Qué cambia el 1 de enero"', '1080×1350 × 6'),
     ('Lote 3 · 5 ene', 'Reloj Checador ya está aquí', '1080×1080 · 1200×627 · 1080×1920'),
@@ -54,7 +54,7 @@ PENDING = [
 # ---------- Landings (capturas de escritorio y móvil) ----------
 MOCK = ROOT / 'artes' / 'mockups'
 LANDINGS = [
-    ('reloj', 'Reloj Checador', 'Preventa', 'lapzo.co/reloj-checador', 'Hasta el 4 de enero. Lista prioritaria, webinar del 24 de noviembre y cuenta regresiva al 1 de enero. El hero muestra el widget de Control Horario en sus estados.'),
+    ('reloj', 'Reloj Checador', 'Preventa', 'lapzo.co/reloj-checador', 'Hasta el 4 de enero. Lista prioritaria, webinar del 1 de diciembre y cuenta regresiva al 1 de enero. El hero muestra el widget de Control Horario en sus estados.'),
     ('reloj-5ene', 'Reloj Checador', 'Lanzamiento', 'lapzo.co/reloj-checador', 'Desde el 5 de enero. La página cambia sola: "Agenda tu habilitación", sin webinar y con el producto disponible.'),
     ('gp', 'Gestión de Personal', 'Disponible', 'lapzo.co/gestion-de-personal', 'Organigrama, expediente, solicitudes con aprobación y documentos. Llamado a la acción: agenda una demo.'),
     ('rec', 'Reclutamiento', 'Disponible', 'lapzo.co/reclutamiento', 'Vacantes por competencias e IAMatch, con vacantes y postulantes ilimitados. Llamado a la acción: agenda una demo.'),
@@ -231,7 +231,7 @@ details.guide article{{padding:0 20px 20px;max-width:none}}
     <div class="row">
       <img src="{LOGO}" alt="Lapzo">
       <div class="ttl"><b>Lanzamiento Q4 2026</b>Reclutamiento · Gestión de Personal · Reloj Checador</div>
-      <div class="meta">Marketing y Growth<br>Webinar 24 nov · Release Reloj 31 dic</div>
+      <div class="meta">Marketing y Growth<br>Webinar 1 dic · Release Reloj 31 dic</div>
     </div>
     <nav class="tabs" aria-label="Secciones">
       <a class="tab" href="#presentacion" data-view="presentacion">Presentación</a>
@@ -267,7 +267,7 @@ details.guide article{{padding:0 20px 20px;max-width:none}}
 
   <section class="view" id="v-copys" aria-label="Copys y artes" hidden>
     <div class="arts wrap">
-      <div class="sec-head"><span class="kicker">Artes</span><h2>Lote 1: webinar del 24 de noviembre</h2><p>Diez piezas producidas en Claude Design para LinkedIn y Meta. Haz clic en una pieza para verla en tamaño completo.</p></div>
+      <div class="sec-head"><span class="kicker">Artes</span><h2>Lote 1: webinar del 1 de diciembre</h2><p>Diez piezas producidas en Claude Design para LinkedIn y Meta. Haz clic en una pieza para verla en tamaño completo.</p></div>
       <div class="grid">{gallery}</div>
       <div class="sec-head" style="margin-top:36px"><span class="kicker">Por producir</span><h2>Lotes 2 y 3</h2></div>
       <ul class="pending">{pending}</ul>

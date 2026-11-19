@@ -37,7 +37,7 @@ Este año nos dijiste algo que escuchamos muchas veces: *"tengo demasiadas herra
 **Llega el 31 de diciembre**
 - **Reloj Checador**: jornadas, turnos, registro de entradas y salidas y correcciones de marcación con aprobación. Justo a tiempo para el *registro electrónico de jornada* que pide la reforma laboral a partir del 1 de enero de 2027.
 
-Te invito a nuestro webinar del **martes 24 de noviembre a las 10:00 (CDMX)**: *"Registro electrónico de jornada 2027: lo que tu empresa debe tener listo el 1 de enero"*.
+Te invito a nuestro webinar del **martes 1 de diciembre a las 10:00 (CDMX)**: *"Registro electrónico de jornada 2027: lo que tu empresa debe tener listo el 1 de enero"*.
 
 [Reserva tu lugar →]([LINK_WEBINAR])
 
@@ -67,7 +67,7 @@ Y si en enero sumas **Reloj Checador**, las correcciones de marcación se aprueb
 
 [Agenda una demo de Gestión de Personal →]([LINK_GP])
 
-*P.D. El martes 24 de noviembre a las 10:00 (CDMX) damos un webinar sobre el registro electrónico de jornada que entra el 1 de enero. [Reserva tu lugar →]([LINK_WEBINAR])*
+*P.D. El martes 1 de diciembre a las 10:00 (CDMX) damos un webinar sobre el registro electrónico de jornada que entra el 1 de enero. [Reserva tu lugar →]([LINK_WEBINAR])*
 
 ---
 
@@ -90,7 +90,7 @@ Arrancar 2027 con vacantes abiertas es lo normal. Arrancarlo contratando a la pe
 
 **Invitación a no clientes (17-nov)**
 **Asunto:** El 1 de enero el registro de jornada deja de ser opcional
-**Preheader:** Webinar gratuito, martes 24 de noviembre, 10:00 CDMX.
+**Preheader:** Webinar gratuito, martes 1 de diciembre, 10:00 CDMX.
 
 Hola [NOMBRE]:
 
@@ -101,18 +101,18 @@ En 45 minutos te contamos:
 2. Las 5 claves para tener listo el registro de jornada, turnos y horas extra.
 3. Cómo se ve en la práctica, con una demo de Reloj Checador de Lapzo.
 
-**Martes 24 de noviembre · 10:00 (CDMX) · En línea**
+**Martes 1 de diciembre · 10:00 (CDMX) · En línea**
 [Reserva tu lugar →]([LINK_WEBINAR])
 
-**Recordatorio 1 (lun 23-nov)**
+**Recordatorio 1 (lun 30-nov)**
 **Asunto:** Mañana: lo que tu empresa debe tener listo el 1 de enero
 Cuerpo: 2 líneas + agenda + botón "Agregar a mi calendario".
 
-**Recordatorio 2 (mar 24-nov, 8:30)**
+**Recordatorio 2 (mar 1-dic, 8:30)**
 **Asunto:** En 90 minutos empezamos
 Cuerpo: "Te esperamos a las 10:00. Entra aquí: [LINK_SALA]. Ten a la mano tus dudas sobre turnos y horas extra: las resolvemos en vivo."
 
-**Post-webinar (mié 25-nov)**
+**Post-webinar (mié 2-dic)**
 - **Asunto (asistentes):** Tu grabación + las 5 claves en una página
 - **Asunto (no asistentes):** Te lo perdiste, aquí está la grabación
 - Cuerpo: link a la grabación, one-pager PDF y CTA a la lista prioritaria / demo.
@@ -153,9 +153,9 @@ Desde el 1 de enero el registro electrónico de jornada ya no es opcional. **Rel
 > Solo a contactos con conversación activa con su CSM. Nunca a cuentas de la lista de exclusión FitchUp/Worky.
 
 **W1 (17-nov):**
-> Hola [NOMBRE], soy [CSM] de Lapzo 👋 Te quería contar antes que a nadie: ya tenemos *Gestión de Personal* y *Reclutamiento*, y el 31 de diciembre llega *Reloj Checador*, justo para el registro de jornada obligatorio desde enero. El martes 24 de noviembre damos un webinar de 45 min sobre lo que pide la reforma. ¿Te aparto un lugar? [LINK_WEBINAR]
+> Hola [NOMBRE], soy [CSM] de Lapzo 👋 Te quería contar antes que a nadie: ya tenemos *Gestión de Personal* y *Reclutamiento*, y el 31 de diciembre llega *Reloj Checador*, justo para el registro de jornada obligatorio desde enero. El martes 1 de diciembre damos un webinar de 45 min sobre lo que pide la reforma. ¿Te aparto un lugar? [LINK_WEBINAR]
 
-**W2 (23-nov, solo registrados):**
+**W2 (30-nov, solo registrados):**
 > [NOMBRE], mañana a las 10:00 es el webinar sobre el registro de jornada 2027. Aquí tu acceso: [LINK_SALA]. Si no puedes entrar, te mando la grabación 🙌
 
 **W3 (9-dic):**
@@ -177,11 +177,11 @@ Desde el 1 de enero el registro electrónico de jornada ya no es opcional. **Rel
 > → Reloj Checador: jornadas, turnos y registro de asistencia. Llega el 31 de diciembre.
 >
 > Y justo a tiempo: desde el 1 de enero de 2027, el registro electrónico de jornada es obligatorio en México.
-> Te contamos qué cambia en nuestro webinar del 24 de noviembre 👇
+> Te contamos qué cambia en nuestro webinar del 1 de diciembre 👇
 > [LINK_WEBINAR]
 > #RecursosHumanos #ReformaLaboral #40Horas
 
-**Cuenta regresiva (3 posts, 18-nov / 20-nov / 23-nov)**
+**Cuenta regresiva (3 posts, 20-nov / 25-nov / 30-nov)**
 1. **Carrusel "Qué cambia el 1 de enero":**
    - Portada: "El 1 de enero cambia la forma en que registras la jornada de tu gente"
    - Slide 2: registro electrónico obligatorio
@@ -195,9 +195,9 @@ Desde el 1 de enero el registro electrónico de jornada ya no es opcional. **Rel
 **Post de vocero (Pedro Sors, 18-nov)**
 > En las últimas semanas, casi todos los directores de RH con los que hablo me preguntan lo mismo: *"¿qué hago con el registro de jornada en enero?"*
 > La respuesta corta: no necesitas otra herramienta más, necesitas que tu registro de jornada viva donde ya vive tu gente.
-> El 24 de noviembre lo platicamos a detalle. Te dejo el registro en comentarios.
+> El 1 de diciembre lo platicamos a detalle. Te dejo el registro en comentarios.
 
-**Post de vocero (Fer Núñez, 25-nov)**: ángulo comercial y presupuesto
+**Post de vocero (Fer Núñez, 2-dic)**: ángulo comercial y presupuesto
 > Diciembre y enero son los meses donde RH decide qué herramientas entran al presupuesto. Este año hay una que no es opcional: el registro electrónico de jornada…
 
 **Post de vocero (Santiago Maldonado, 1-dic)**: ángulo visión
@@ -208,7 +208,7 @@ Desde el 1 de enero el registro electrónico de jornada ya no es opcional. **Rel
 ## 9. Meta (IG/FB): orgánico
 
 Tono más cercano, para Sofía y sin formalismos:
-- **Reel con Lapzi:** "POV: es 2 de enero y alguien de dirección te pregunta cómo vas a registrar la jornada 😅" Corte a la demo del prototipo. CTA: "webinar gratis el 24-nov, link en bio".
+- **Reel con Lapzi:** "POV: es 2 de enero y alguien de dirección te pregunta cómo vas a registrar la jornada 😅" Corte a la demo del prototipo. CTA: "webinar gratis el 1-dic, link en bio".
 - **Carrusel:** "Hoy fui reclutadora, capacitadora y checadora de asistencias, todo antes de comer". Muestra los 3 productos en un solo lugar.
 
 ---
@@ -219,13 +219,13 @@ Tono más cercano, para Sofía y sin formalismos:
 | Versión | Intro (≤150 car.) | Headline (≤70) | CTA |
 |---|---|---|---|
 | L1 Ley | Desde el 1 de enero de 2027, el registro electrónico de jornada es obligatorio. ¿Tu empresa está lista? | Registro de jornada 2027: lo que debes tener listo | Registrarse |
-| L2 Riesgo | Las horas extra que no registras son un riesgo legal. Aprende a prepararte en 45 min. | Webinar gratuito · 24 de noviembre · 10:00 CDMX | Registrarse |
+| L2 Riesgo | Las horas extra que no registras son un riesgo legal. Aprende a prepararte en 45 min. | Webinar gratuito · 1 de diciembre · 10:00 CDMX | Registrarse |
 | L3 Tres productos | Reclutamiento, Gestión de Personal y Reloj Checador, con el mismo aliado que desarrolla a tu talento. | Tu gente, de principio a fin | Más información |
 
 ### Meta Ads (lead form / tráfico a landing de Reloj)
 | Versión | Texto principal | Título | Descripción |
 |---|---|---|---|
-| M1 | ¿Todavía registras asistencias en Excel? El 1 de enero cambia la regla. 🕐 | Prepárate para el registro de jornada | Webinar gratis · 24-nov |
+| M1 | ¿Todavía registras asistencias en Excel? El 1 de enero cambia la regla. 🕐 | Prepárate para el registro de jornada | Webinar gratis · 1-dic |
 | M2 | Jornadas, turnos y correcciones de marcación con aprobación, en el mismo lugar que tu gente. | Reloj Checador llega el 31-dic | Únete a la lista prioritaria |
 | M3 (retargeting dic) | Ya te contamos qué cambia. Ahora asegura tu lugar en la primera ola de enero. | Primera ola de Reloj Checador | Cupo limitado |
 | M4 (retargeting ene) | El registro electrónico de jornada ya es obligatorio. Reloj Checador ya está en Lapzo. | Ya está aquí | Agenda tu habilitación |
@@ -240,7 +240,7 @@ Tono más cercano, para Sofía y sin formalismos:
 - Correcciones con aprobación
 - Lapzo, tu aliado de RH
 - Únete a la lista prioritaria
-- Webinar gratis: 24 de nov
+- Webinar gratis: 1 de dic
 - Reloj Checador · Lapzo
 
 **Descripciones (≤90 car.):**
@@ -262,7 +262,7 @@ Tono más cercano, para Sofía y sin formalismos:
 
 ---
 
-## 11. Guion del webinar (mar 24-nov, 60 min)
+## 11. Guion del webinar (mar 1-dic, 60 min)
 
 | Min | Bloque | Quién | Contenido |
 |---|---|---|---|

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ content.html_title or "Webinar: Registro electrónico de jornada 2027 | Lapzo" }}</title>
-<meta name="description" content="{{ content.meta_description or "Webinar gratuito, martes 24 de noviembre a las 10:00 (CDMX): lo que tu empresa debe tener listo el 1 de enero para el registro electrónico de jornada." }}">
+<meta name="description" content="{{ content.meta_description or "Webinar gratuito, martes 1 de diciembre a las 10:00 (CDMX): lo que tu empresa debe tener listo el 1 de enero para el registro electrónico de jornada." }}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
 <style>
@@ -103,7 +103,7 @@ footer span{font:400 12px/18px var(--lz-font);color:rgba(255,255,255,.5);max-wid
      si no está, se carga aquí. Así el PageView no se duplica. -->
 <script>
 (function(){
-  var ID='337850720804196', CN='Webinar Registro de jornada 2027 (24-nov)';
+  var ID='337850720804196', CN='Webinar Registro de jornada 2027 (1-dic)';
   if(!window.fbq){
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -148,13 +148,13 @@ footer span{font:400 12px/18px var(--lz-font);color:rgba(255,255,255,.5);max-wid
       <h1 class="h1">Lo que tu empresa debe tener listo el <span class="hl">1 de enero</span></h1>
       <p class="lead">La reforma laboral pide a las empresas en México llevar un registro electrónico de la jornada a partir de 2027. En una hora te contamos qué cambia, cómo preparar jornadas, turnos y horas extra, y cómo se ve en la práctica.</p>
       <div class="whenrow">
-        <span class="when"><span class="ico spark"></span>Martes 24 de noviembre</span>
+        <span class="when"><span class="ico spark"></span>Martes 1 de diciembre</span>
         <span class="when"><span class="ico info"></span>10:00 a 11:00 (CDMX)</span>
         <span class="when"><span class="ico check"></span>En línea · Zoom</span>
       </div>
       <div class="cd only-live">
         <span class="lbl">Empezamos en</span>
-        <div class="units" data-countdown="2026-11-24T10:00:00-06:00">
+        <div class="units" data-countdown="2026-12-01T10:00:00-06:00">
           <div class="u"><b data-d>--</b><small>días</small></div>
           <div class="u"><b data-h>--</b><small>horas</small></div>
           <div class="u"><b data-m>--</b><small>min</small></div>
@@ -224,7 +224,7 @@ footer span{font:400 12px/18px var(--lz-font);color:rgba(255,255,255,.5);max-wid
     <h2>Llega al 1 de enero con el registro de jornada <span class="hl">resuelto.</span></h2>
     <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start">
       <a class="btn lg" href="#registro" data-pw="Recibe la grabación">Aparta tu lugar</a>
-      <span class="micro">Martes 24 de noviembre · 10:00 (CDMX) · Gratuito</span>
+      <span class="micro">Martes 1 de diciembre · 10:00 (CDMX) · Gratuito</span>
     </div>
   </div>
 </section>
@@ -250,7 +250,7 @@ footer span{font:400 12px/18px var(--lz-font);color:rgba(255,255,255,.5);max-wid
   })();
   (function () {
     var f = new URLSearchParams(location.search).get('fase');
-    if (f === 'grabacion' || (f !== 'pre' && Date.now() >= new Date('2026-11-24T11:00:00-06:00').getTime())) {
+    if (f === 'grabacion' || (f !== 'pre' && Date.now() >= new Date('2026-12-01T11:00:00-06:00').getTime())) {
       document.documentElement.classList.add('post-webinar');
       document.querySelectorAll('[data-pw]').forEach(function (el) { el.innerHTML = el.dataset.pw; });
     }
