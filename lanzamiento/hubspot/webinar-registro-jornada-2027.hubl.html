@@ -99,6 +99,17 @@ footer span{font:400 12px/18px var(--lz-font);color:rgba(255,255,255,.5);max-wid
 @media (prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 {{ standard_header_includes }}
+<!-- Google Tag Manager (contenedor de lapzo.com). Si el header del portal ya lo carga, no se vuelve a cargar. -->
+<script>
+(function(w,d,id){
+  w.dataLayer=w.dataLayer||[];
+  if(d.querySelector('script[src*="googletagmanager.com/gtm.js?id='+id+'"]'))return;
+  w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName('script')[0],j=d.createElement('script');j.async=true;
+  j.src='https://www.googletagmanager.com/gtm.js?id='+id;f.parentNode.insertBefore(j,f);
+})(window,document,'GTM-KPTJ5JG');
+window.dataLayer.push({event:'webinar_landing_view',page_type:'landing',webinar_id:'reloj-webinar-1dic'});
+</script>
 <!-- Meta Pixel (Lernit Pixel). recursos.lapzo.com ya lo carga desde el header del portal (incluido arriba);
      si no está, se carga aquí. Así el PageView no se duplica. -->
 <script>
@@ -118,7 +129,7 @@ footer span{font:400 12px/18px var(--lz-font);color:rgba(255,255,255,.5);max-wid
     if(sent)return; sent=true;
     var eid='lead-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);
     fbq('track','Lead',{content_name:CN,content_category:'webinar',currency:'MXN',value:0},{eventID:eid});
-    window.dataLayer.push({event:'webinar_registro',form_source:src||'hubspot',event_id:eid});
+    window.dataLayer.push({event:'webinar_registro',form_source:src||'hubspot',event_id:eid,webinar_id:'reloj-webinar-1dic',form_id:'9395ea23-312f-44c3-93ff-188c04cfe1e2'});
   };
   window.addEventListener('message',function(e){
     if(e.data&&e.data.type==='hsFormCallback'&&e.data.eventName==='onFormSubmitted')window.lzLead('hs-legacy');
@@ -128,6 +139,7 @@ footer span{font:400 12px/18px var(--lz-font);color:rgba(255,255,255,.5);max-wid
 </script>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPTJ5JG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="hdr">
   <div class="in">
     <a href="#top" class="logo" aria-label="Lapzo"><i>&#8623;</i>lapzo</a>
