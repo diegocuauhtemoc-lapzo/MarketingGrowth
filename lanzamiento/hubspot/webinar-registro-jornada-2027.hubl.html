@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ content.html_title or "Webinar: Registro electrónico de jornada 2027 | Lapzo" }}</title>
+<meta name="description" content="{{ content.meta_description or "Webinar gratuito, martes 1 de diciembre a las 10:00 (CDMX): lo que tu empresa debe tener listo el 1 de enero para el registro electrónico de jornada." }}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+:root{color-scheme:light;--lz-neutral-70:#262338;--lz-neutral-60:#4e4b66;--lz-neutral-55:#666983;--lz-neutral-50:#6e7191;--lz-neutral-30:#d9dbe9;--lz-neutral-20:#f7f8f9;--lz-brand-50:#5624c0;--lz-brand-40:#6d29ff;--lz-brand-10:#ebecfe;--lz-magenta-60:#cd519d;--lz-action:#7d4de5;--lz-ink:#211435;--lz-hl:#c7a4ff;--lz-text:var(--lz-neutral-70);--lz-text-2:var(--lz-neutral-60);--lz-muted:var(--lz-neutral-55);--lz-border:var(--lz-neutral-30);--lz-font:"Poppins",Arial,sans-serif;--lz-shadow-sm:0 2px 6px #14142a0d;--lz-shadow-lg:0 16px 48px #14142a26;--rail:1200px;--gutter:24px}
+*,::before,::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font:400 16px/1.5 var(--lz-font);color:var(--lz-text);background:var(--lz-neutral-20);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3,p{margin:0;overflow-wrap:break-word}
+img{max-width:100%;display:block}
+a{color:var(--lz-action);text-decoration:none}
+:where(a,button,input,select):focus-visible{outline:3px solid var(--lz-brand-40);outline-offset:3px}
+.sec{position:relative;width:100%}
+.rail{position:relative;max-width:var(--rail);margin:0 auto;padding:96px var(--gutter)}
+.ink{background:var(--lz-ink);color:#fff;overflow:hidden}
+.surface{background:#fff}
+.blob{position:absolute;border-radius:50%;filter:blur(140px);pointer-events:none;animation:drift 20s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(80px,60px)}}
+.kicker{font:600 12px/18px var(--lz-font);letter-spacing:.08em;text-transform:uppercase;color:var(--lz-action)}
+.ink .kicker{color:var(--lz-hl)}
+.h1{font:700 clamp(40px,5.4vw,64px)/1.02 var(--lz-font);letter-spacing:-.02em;text-wrap:balance}
+.h2{font:700 clamp(32px,4vw,48px)/1.05 var(--lz-font);letter-spacing:-.015em;text-wrap:balance}
+.hl{color:var(--lz-hl)}
+.lead{font:400 18px/28px var(--lz-font);color:var(--lz-text-2);text-wrap:pretty;max-width:620px}
+.ink .lead{color:rgba(255,255,255,.78)}
+.head{display:flex;flex-direction:column;gap:12px;max-width:760px;margin-bottom:48px}
+.eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;padding:4px 10px;border-radius:4px;background:rgba(169,150,255,.14);color:var(--lz-hl);font:500 12px/18px var(--lz-font)}
+.ico{display:inline-grid;place-items:center;width:18px;height:18px;flex:0 0 auto;font:700 13px/1 var(--lz-font)}
+.ico.check::before{content:"\2713"}.ico.spark::before{content:"\2726"}.ico.info::before{content:"i";font-style:italic}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.6875rem 1.125rem;border:0;border-radius:.75rem;background:var(--lz-action);color:#fff;font:500 15px/1.4 var(--lz-font);cursor:pointer;white-space:nowrap;transition:background .16s}
+.btn:hover{background:var(--lz-brand-50);color:#fff}
+.btn.sm{min-height:2.75rem;padding:.5rem .875rem;font-size:14px}
+.btn.lg{min-height:3.25rem;padding:.875rem 1.5rem;font-size:16px}
+.hdr{position:sticky;top:0;z-index:80;background:var(--lz-ink);border-bottom:1px solid rgba(255,255,255,.08)}
+.hdr .in{max-width:var(--rail);margin:0 auto;padding:12px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font:700 24px/1 var(--lz-font);color:#fff;letter-spacing:-.02em;display:inline-flex;align-items:center;gap:6px}
+.logo i{font-style:normal;color:#a996ff}
+.hdr nav{display:flex;align-items:center;gap:24px}
+.hdr nav a{font:500 14px/20px var(--lz-font);color:rgba(255,255,255,.72)}
+.hdr nav a:hover{color:#fff}
+.hdr nav a.btn{color:#fff}
+.hero .rail{padding-top:72px;padding-bottom:88px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
+.hero-text{display:flex;flex-direction:column;gap:24px}
+.whenrow{display:flex;flex-wrap:wrap;gap:10px}
+.when{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font:500 14px/20px var(--lz-font);color:#fff}
+.when .ico{width:15px;height:15px;color:var(--lz-hl)}
+.cd{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.cd .lbl{font:500 13px/18px var(--lz-font);color:rgba(255,255,255,.64)}
+.cd .units{display:flex;gap:8px}
+.cd .u{min-width:58px;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);text-align:center}
+.cd .u b{display:block;font:700 22px/1 var(--lz-font);color:#fff}
+.cd .u small{font:500 10.5px/14px var(--lz-font);color:rgba(255,255,255,.55)}
+.formcard{background:#fff;color:var(--lz-text);border-radius:24px;box-shadow:var(--lz-shadow-lg);padding:32px;border:1px solid var(--lz-border)}
+.formcard h3{font:700 24px/1.15 var(--lz-font);color:var(--lz-ink);margin-bottom:6px}
+.formcard .sub{font:400 14px/20px var(--lz-font);color:var(--lz-text-2);margin-bottom:18px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.card{background:#fff;border-radius:12px;box-shadow:var(--lz-shadow-sm);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--lz-shadow-lg)}
+.card .top{position:relative;height:120px;background:var(--lz-ink);overflow:hidden}
+.card .top::before{content:"";position:absolute;width:200px;height:200px;right:-60px;top:-80px;border-radius:50%;background:var(--lz-action);opacity:.45;filter:blur(50px)}
+.card .top b{position:absolute;left:24px;bottom:14px;font:700 40px/1 var(--lz-font);color:#fff}
+.card .bd{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px}
+.card h3{font:600 19px/25px var(--lz-font)}
+.card p{font:400 15px/24px var(--lz-font);color:var(--lz-text-2)}
+.disclaimer{margin-top:20px;font:400 12.5px/19px var(--lz-font);color:var(--lz-muted);display:flex;gap:8px;align-items:flex-start}
+.panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px}
+.person{background:#fff;border:1px solid var(--lz-border);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.person .ph{width:72px;height:72px;border-radius:50%;background:var(--lz-brand-10);display:grid;place-items:center;font:700 22px/1 var(--lz-font);color:var(--lz-action)}
+.person b{font:700 20px/1.15 var(--lz-font);color:var(--lz-ink)}
+.person span{font:400 14px/20px var(--lz-font);color:var(--lz-text-2)}
+.person .role{display:inline-flex;align-self:flex-start;padding:2px 10px;border-radius:999px;background:var(--lz-brand-10);color:var(--lz-brand-50);font:600 11px/18px var(--lz-font);letter-spacing:.04em;text-transform:uppercase}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:48px;align-items:center}
+.checks{display:flex;flex-direction:column;gap:12px}
+.checks div{display:flex;gap:10px;align-items:flex-start;font:400 15px/22px var(--lz-font)}
+.checks .ico{color:var(--lz-hl);margin-top:2px}
+.final h2{font:700 clamp(36px,5vw,58px)/1.02 var(--lz-font);letter-spacing:-.02em;text-wrap:balance}
+.micro{font:400 13px/20px var(--lz-font);color:rgba(255,255,255,.64)}
+footer{background:var(--lz-ink);border-top:1px solid rgba(255,255,255,.08)}
+footer .in{max-width:var(--rail);margin:0 auto;padding:24px var(--gutter);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer span{font:400 12px/18px var(--lz-font);color:rgba(255,255,255,.5);max-width:640px}
+.hs-form fieldset{max-width:none!important}
+.hs-form .hs-form-field{margin-bottom:14px}
+.hs-form label{display:block;font:500 14px/20px var(--lz-font);color:var(--lz-text);margin-bottom:6px}
+.hs-form .hs-input:not([type=checkbox]):not([type=radio]){width:100%!important;min-height:44px;padding:10px 12px;border:1px solid var(--lz-neutral-50);border-radius:8px;font:400 15px/22px var(--lz-font);color:var(--lz-text);background:#fff}
+.hs-form .hs-button{width:100%;min-height:52px;border:0;border-radius:8px;background:var(--lz-action);color:#fff;font:600 16px/1 var(--lz-font);cursor:pointer}
+.hs-form .hs-button:hover{background:var(--lz-brand-50)}
+.hs-form .hs-error-msgs{list-style:none;padding:0;margin:6px 0 0;color:#b42318;font:400 13px/18px var(--lz-font)}
+.hs-form .legal-consent-container,.hs-form .hs-richtext{font:400 12px/18px var(--lz-font);color:var(--lz-muted)}
+.submitted-message{font:500 16px/24px var(--lz-font);color:var(--lz-ink)}
+.post-webinar .only-live{display:none!important}
+@media (max-width:960px){.hero .rail{grid-template-columns:minmax(0,1fr);gap:40px;padding-top:48px}.hdr nav a:not(.btn){display:none}}
+@media (max-width:560px){:root{--gutter:16px}.rail{padding-top:56px;padding-bottom:56px}.hero .rail{padding-top:28px;padding-bottom:48px}.h1{font-size:clamp(32px,9vw,40px);line-height:1.05}.lead{font-size:16px;line-height:25px}.formcard{padding:22px 18px}}
+@media (prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+{{ standard_header_includes }}
+<!-- Google Tag Manager (contenedor de lapzo.com). Si el header del portal ya lo carga, no se vuelve a cargar. -->
+<script>
+(function(w,d,id){
+  w.dataLayer=w.dataLayer||[];
+  if(d.querySelector('script[src*="googletagmanager.com/gtm.js?id='+id+'"]'))return;
+  w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName('script')[0],j=d.createElement('script');j.async=true;
+  j.src='https://www.googletagmanager.com/gtm.js?id='+id;f.parentNode.insertBefore(j,f);
+})(window,document,'GTM-KPTJ5JG');
+window.dataLayer.push({event:'webinar_landing_view',page_type:'landing',webinar_id:'reloj-webinar-1dic'});
+</script>
+<!-- Meta Pixel (Lernit Pixel). recursos.lapzo.com ya lo carga desde el header del portal (incluido arriba);
+     si no está, se carga aquí. Así el PageView no se duplica. -->
+<script>
+(function(){
+  var ID='337850720804196', CN='Webinar Registro de jornada 2027 (1-dic)';
+  if(!window.fbq){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',ID);
+    fbq('track','PageView');
+  }
+  fbq('trackCustom','ViewWebinarLanding',{content_name:CN});
+  window.dataLayer=window.dataLayer||[];
+  var sent=false;
+  window.lzLead=function(src){
+    if(sent)return; sent=true;
+    var eid='lead-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);
+    fbq('track','Lead',{content_name:CN,content_category:'webinar',currency:'MXN',value:0},{eventID:eid});
+    window.dataLayer.push({event:'webinar_registro',form_source:src||'hubspot',event_id:eid,webinar_id:'reloj-webinar-1dic',form_id:'9395ea23-312f-44c3-93ff-188c04cfe1e2'});
+  };
+  window.addEventListener('message',function(e){
+    if(e.data&&e.data.type==='hsFormCallback'&&e.data.eventName==='onFormSubmitted')window.lzLead('hs-legacy');
+  });
+  window.addEventListener('hs-form-event:on-submission:success',function(){window.lzLead('hs-v4');});
+})();
+</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPTJ5JG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="hdr">
+  <div class="in">
+    <a href="#top" class="logo" aria-label="Lapzo"><i>&#8623;</i>lapzo</a>
+    <nav aria-label="Secciones">
+      <a href="#aprende">Qué vas a aprender</a>
+      <a href="#panel">Panel</a>
+      <a class="btn sm" href="#registro" data-pw="Recibe la grabación">Aparta tu lugar</a>
+    </nav>
+  </div>
+</header>
+
+<section class="sec ink hero" id="top">
+  <div class="blob" style="width:620px;height:620px;left:-180px;top:-260px;background:var(--lz-action);opacity:.35"></div>
+  <div class="blob" style="width:420px;height:420px;right:-120px;bottom:-200px;background:var(--lz-magenta-60);opacity:.22;animation-direction:alternate-reverse"></div>
+  <div class="rail">
+    <div class="hero-text">
+      <div class="eyebrow"><span class="ico spark" style="width:14px;height:14px"></span><span data-pw="Webinar · grabación disponible">Webinar gratuito · en línea</span></div>
+      <h1 class="h1">Lo que tu empresa debe tener listo el <span class="hl">1 de enero</span></h1>
+      <p class="lead">La reforma laboral pide a las empresas en México llevar un registro electrónico de la jornada a partir de 2027. En una hora te contamos qué cambia, cómo preparar jornadas, turnos y horas extra, y cómo se ve en la práctica.</p>
+      <div class="whenrow">
+        <span class="when"><span class="ico spark"></span>Martes 1 de diciembre</span>
+        <span class="when"><span class="ico info"></span>10:00 a 11:00 (CDMX)</span>
+        <span class="when"><span class="ico check"></span>En línea · Zoom</span>
+      </div>
+      <div class="cd only-live">
+        <span class="lbl">Empezamos en</span>
+        <div class="units" data-countdown="2026-12-01T10:00:00-06:00">
+          <div class="u"><b data-d>--</b><small>días</small></div>
+          <div class="u"><b data-h>--</b><small>horas</small></div>
+          <div class="u"><b data-m>--</b><small>min</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="formcard" id="registro">
+      <h3 data-pw="Recibe la grabación">Aparta tu lugar</h3>
+      <p class="sub" data-pw="Déjanos tus datos y te enviamos la grabación y las 5 claves en una página.">Cupo limitado. Te enviamos el enlace de acceso y un recordatorio antes de empezar.</p>
+      {% form "registro_webinar" form_to_use="9395ea23-312f-44c3-93ff-188c04cfe1e2", response_response_type="inline", response_message="¡Listo! Te enviamos el enlace de acceso a tu correo.", label="Formulario de registro" %}
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="aprende">
+  <div class="rail">
+    <div class="head">
+      <div class="kicker">Agenda · 60 minutos</div>
+      <h2 class="h2">Qué vas a aprender</h2>
+      <p class="lead">Una conversación práctica para equipos de RH, nómina y dirección que necesitan llegar al 1 de enero con el registro de jornada resuelto.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="top"><b>01</b></div><div class="bd"><h3>La reforma en 10 minutos</h3><p>Qué entra en vigor en 2027, qué no cambia todavía y qué te pueden pedir en una inspección.</p></div></div>
+      <div class="card"><div class="top"><b>02</b></div><div class="bd"><h3>Las 5 claves para prepararte</h3><p>Jornadas, turnos, descansos y horas extra: lo que conviene definir antes de elegir una herramienta.</p></div></div>
+      <div class="card"><div class="top"><b>03</b></div><div class="bd"><h3>Así se ve en la práctica</h3><p>Cómo tu gente marcará entrada, descansos y salida con Reloj Checador de Lapzo.</p></div></div>
+      <div class="card"><div class="top"><b>04</b></div><div class="bd"><h3>Preguntas en vivo</h3><p>Trae tus dudas sobre turnos, horas extra y casos de tu operación: las resolvemos en vivo.</p></div></div>
+    </div>
+    <p class="disclaimer"><span class="ico info"></span>Información general con base en la reforma a la Ley Federal del Trabajo publicada en 2026. No constituye asesoría legal.</p>
+  </div>
+</section>
+
+<section class="sec surface" id="panel">
+  <div class="rail">
+    <div class="head">
+      <div class="kicker">Panel</div>
+      <h2 class="h2">Una conversación desde tres miradas: <span style="color:var(--lz-action)">legal, RH y producto</span></h2>
+    </div>
+    <div class="panel">
+      <div class="person"><div class="ph">PS</div><span class="role">Modera</span><b>Pedro Sors</b><span>COO de Lapzo</span></div>
+      <div class="person"><div class="ph">CA</div><span class="role">Producto</span><b>Carolina Archila</b><span>Producto en Lapzo · Reloj Checador</span></div>
+      <div class="person"><div class="ph"><span class="ico info" style="width:28px;height:28px"></span></div><span class="role">Invitado</span><b>Especialista laboral</b><span>Abogado laboralista · por confirmar</span></div>
+      <div class="person"><div class="ph"><span class="ico check" style="width:28px;height:28px"></span></div><span class="role">Invitado</span><b>Líder de RH</b><span>Empresa cliente de Lapzo · por confirmar</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink">
+  <div class="blob" style="width:520px;height:520px;right:-160px;top:-160px;background:var(--lz-action);opacity:.25"></div>
+  <div class="rail">
+    <div class="split">
+      <div>
+        <div class="kicker">Para quién es</div>
+        <h2 class="h2" style="margin-top:12px">Si hoy registras asistencias en Excel, <span class="hl">este webinar es para ti</span></h2>
+      </div>
+      <div class="checks">
+        <div><span class="ico check"></span>Directores y gerentes de RH, nómina y operaciones</div>
+        <div><span class="ico check"></span>Empresas en México con personal por turnos, híbrido o en campo</div>
+        <div><span class="ico check"></span>Equipos que necesitan demostrar horas trabajadas y horas extra</div>
+        <div><span class="ico check"></span>Quienes buscan una solución sin hardware adicional</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink final" style="border-top:1px solid rgba(255,255,255,.08)">
+  <div class="rail" style="display:flex;flex-direction:column;gap:24px">
+    <h2>Llega al 1 de enero con el registro de jornada <span class="hl">resuelto.</span></h2>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+      <a class="btn lg" href="#registro" data-pw="Recibe la grabación">Aparta tu lugar</a>
+      <span class="micro">Martes 1 de diciembre · 10:00 (CDMX) · Gratuito</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="in">
+    <span class="logo" style="font-size:20px"><i>&#8623;</i>lapzo</span>
+    <span>© 2026 Lapzo. La información sobre la reforma laboral es de carácter general y no sustituye asesoría legal.</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var cd = document.querySelector('[data-countdown]'); if (!cd) return;
+    var t = new Date(cd.dataset.countdown).getTime();
+    function tick() {
+      var ms = Math.max(0, t - Date.now());
+      cd.querySelector('[data-d]').textContent = Math.floor(ms / 864e5);
+      cd.querySelector('[data-h]').textContent = String(Math.floor(ms / 36e5) % 24).padStart(2, '0');
+      cd.querySelector('[data-m]').textContent = String(Math.floor(ms / 6e4) % 60).padStart(2, '0');
+    }
+    tick(); setInterval(tick, 30000);
+  })();
+  (function () {
+    var f = new URLSearchParams(location.search).get('fase');
+    if (f === 'grabacion' || (f !== 'pre' && Date.now() >= new Date('2026-12-01T11:00:00-06:00').getTime())) {
+      document.documentElement.classList.add('post-webinar');
+      document.querySelectorAll('[data-pw]').forEach(function (el) { el.innerHTML = el.dataset.pw; });
+    }
+  })();
+</script>
+{{ standard_footer_includes }}
+</body>
+</html>
